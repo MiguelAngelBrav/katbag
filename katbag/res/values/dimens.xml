@@ -1,0 +1,8 @@
+<resources>
+
+    <!-- sliding menu options -->
+    <dimen name="slidingmenu_offset">90dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- estilos generales -->
+    <style name="AppTheme" parent="Holo.Theme.Light">
+        <item name="actionBarItemBackground">@drawable/selectable_background_katbag</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Katbag</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Katbag</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Katbag</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Katbag</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Katbag</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_katbag</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_katbag</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Katbag</item>
+    </style>
+
+    <!-- estilos actionbar -->
+    <style name="ActionBar.Solid.Katbag" parent="Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="background">@drawable/ab_solid_katbag</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_katbag</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_katbag</item>
+        <item name="progressBarStyle">@style/ProgressBar.Katbag</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Katbag" parent="Widget.Sherlock.Light.ActionBar">
+        <item name="background">@drawable/ab_transparent_katbag</item>
+        <item name="progressBarStyle">@style/ProgressBar.Katbag</item>
+    </style>
+
+    <style name="PopupMenu.Katbag" parent="Widget.Sherlock.Light.ListPopupWindow">
+        <item name="popupBackground">@drawable/menu_dropdown_panel_katbag</item>
+    </style>
+
+    <style name="DropDownListView.Katbag" parent="Widget.Sherlock.Light.ListView.DropDown">
+        <item name="listSelector">@drawable/selectable_background_katbag</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Katbag" parent="Widget.Sherlock.Light.ActionBar.TabView">
+        <item name="background">@drawable/tab_indicator_ab_katbag</item>
+    </style>
+
+    <style name="DropDownNav.Katbag" parent="">
+        <item name="background">@drawable/spinner_background_ab_katbag</item>
+        <item name="popupBackground">@drawable/menu_dropdown_panel_katbag</item>
+        <item name="dropDownSelector">@drawable/selectable_background_katbag</item>
+    </style>
+
+    <style name="ProgressBar.Katbag" parent="Widget.Sherlock.Light.ProgressBar.Horizontal">
+        <item name="progressDrawable">@drawable/progress_horizontal_katbag</item>
+    </style>
+
+    <style name="ActionButton.CloseMode.Katbag" parent="Widget.Sherlock.Light.ActionButton.CloseMode">
+        <item name="background">@drawable/btn_cab_done_katbag</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Katbag.Widget" parent="Holo.Theme">
+        <item name="popupMenuStyle">@style/PopupMenu.Katbag</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Katbag</item>
+    </style>
+
+    <!-- estilos personalizados -->
+
+</resources>
