@@ -13,6 +13,7 @@ public class BoardActivity extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		v = inflater.inflate(R.layout.fragment_activity_board, container, false);
+		
 		return v;
 	}
 }

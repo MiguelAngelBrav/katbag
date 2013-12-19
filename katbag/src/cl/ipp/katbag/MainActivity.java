@@ -20,12 +20,12 @@ public class MainActivity extends RootActivity {
 		
 		SlidingMenu sm = getSlidingMenu();
 		
-		// si es tablet, no se despliega el menu slider		
+		// si es tablet, esconde menu slider		
 		if (findViewById(R.id.fragment_menu_container) != null) {
 			sm.setSlidingEnabled(false);     
 		    actionBar.setDisplayHomeAsUpEnabled(false);
 		    
-		} else { // si es un smartphone, se muestra el menu slider
+		} else { // si es smartphone, muestra menu slider
 			sm.setShadowWidthRes(R.dimen.shadow_width);
 			sm.setShadowDrawable(R.drawable.shadow);
 			sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);

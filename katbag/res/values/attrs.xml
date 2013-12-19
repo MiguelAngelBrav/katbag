@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ActionBar Sherlock -->
-    <attr name="popupBackground" format="reference" />
-    <attr name="listSelector" format="reference" />
-    <attr name="dropDownSelector" format="reference" />
-    <attr name="progressDrawable" format="reference" />
-
 </resources>

@@ -514,10 +514,6 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int dropDownListViewStyle=0x7f01003c;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int dropDownSelector=0x7f010104;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -867,10 +863,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int listPreferredItemPaddingRight=0x7f010034;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int listSelector=0x7f010103;
         /**  Specifies the drawable used for the application logo. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -992,11 +984,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int persistent=0x7f0100a6;
-        /**  ActionBar Sherlock 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int popupBackground=0x7f010102;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1086,10 +1073,6 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int progressBarStyle=0x7f010052;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int progressDrawable=0x7f010105;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1792,6 +1775,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int abs__primary_text_disable_only_holo_light=0x7f090033;
         public static final int abs__primary_text_holo_dark=0x7f090034;
         public static final int abs__primary_text_holo_light=0x7f090035;
+        /**  colores personalizados 
+         */
+        public static final int background_color_menu_layout=0x7f090031;
         public static final int background_dark=0x7f090011;
         public static final int background_holo_dark=0x7f09001b;
         public static final int background_holo_light=0x7f09001c;
@@ -1854,10 +1840,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int holo_red_light=0x7f090008;
         public static final int link_text_holo_dark=0x7f09002f;
         public static final int link_text_holo_light=0x7f090030;
-        /**  actionbar 
- colores personalizados 
-         */
-        public static final int pressed_katbag=0x7f090031;
         public static final int primary_text_disable_only_holo_dark=0x7f090036;
         public static final int primary_text_disable_only_holo_light=0x7f090037;
         public static final int primary_text_holo_dark=0x7f090038;
@@ -2291,31 +2273,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int list_longpressed_holo=0x7f020119;
         public static final int list_pressed_holo_dark=0x7f02011a;
         public static final int list_pressed_holo_light=0x7f02011b;
-        public static final int list_section_divider_holo_dark=0x7f02011c;
-        public static final int list_section_divider_holo_light=0x7f02011d;
-        public static final int list_selector_background_transition_holo_dark=0x7f02011e;
-        public static final int list_selector_background_transition_holo_light=0x7f02011f;
-        public static final int list_selector_disabled_holo_dark=0x7f020120;
-        public static final int list_selector_disabled_holo_light=0x7f020121;
-        public static final int list_selector_holo_dark=0x7f020122;
-        public static final int list_selector_holo_light=0x7f020123;
-        public static final int menu_dropdown_panel_holo_dark=0x7f020124;
-        public static final int menu_dropdown_panel_holo_light=0x7f020125;
-        public static final int menu_dropdown_panel_katbag=0x7f020126;
-        public static final int numberpicker_selection_divider=0x7f020127;
-        public static final int old_switch_inner_holo_dark=0x7f020128;
-        public static final int old_switch_inner_holo_light=0x7f020129;
-        public static final int old_switch_thumb_activated_holo_dark=0x7f02012a;
-        public static final int old_switch_thumb_activated_holo_light=0x7f02012b;
-        public static final int old_switch_thumb_disabled_holo_dark=0x7f02012c;
-        public static final int old_switch_thumb_disabled_holo_light=0x7f02012d;
-        public static final int old_switch_thumb_holo_dark=0x7f02012e;
-        public static final int old_switch_thumb_holo_light=0x7f02012f;
-        public static final int old_switch_thumb_pressed_holo_dark=0x7f020130;
-        public static final int old_switch_thumb_pressed_holo_light=0x7f020131;
-        public static final int overscroll_edge=0x7f020132;
-        public static final int overscroll_glow=0x7f020133;
-        public static final int pressed_background_katbag=0x7f020134;
+        public static final int list_pressed_katbag=0x7f02011c;
+        public static final int list_section_divider_holo_dark=0x7f02011d;
+        public static final int list_section_divider_holo_light=0x7f02011e;
+        public static final int list_selector_background_transition_holo_dark=0x7f02011f;
+        public static final int list_selector_background_transition_holo_light=0x7f020120;
+        public static final int list_selector_disabled_holo_dark=0x7f020121;
+        public static final int list_selector_disabled_holo_light=0x7f020122;
+        public static final int list_selector_holo_dark=0x7f020123;
+        public static final int list_selector_holo_light=0x7f020124;
+        public static final int menu_dropdown_panel_holo_dark=0x7f020125;
+        public static final int menu_dropdown_panel_holo_light=0x7f020126;
+        public static final int menu_dropdown_panel_katbag=0x7f020127;
+        public static final int numberpicker_selection_divider=0x7f020128;
+        public static final int old_switch_inner_holo_dark=0x7f020129;
+        public static final int old_switch_inner_holo_light=0x7f02012a;
+        public static final int old_switch_thumb_activated_holo_dark=0x7f02012b;
+        public static final int old_switch_thumb_activated_holo_light=0x7f02012c;
+        public static final int old_switch_thumb_disabled_holo_dark=0x7f02012d;
+        public static final int old_switch_thumb_disabled_holo_light=0x7f02012e;
+        public static final int old_switch_thumb_holo_dark=0x7f02012f;
+        public static final int old_switch_thumb_holo_light=0x7f020130;
+        public static final int old_switch_thumb_pressed_holo_dark=0x7f020131;
+        public static final int old_switch_thumb_pressed_holo_light=0x7f020132;
+        public static final int overscroll_edge=0x7f020133;
+        public static final int overscroll_glow=0x7f020134;
         public static final int progress_bg_holo_dark=0x7f020135;
         public static final int progress_bg_holo_light=0x7f020136;
         public static final int progress_bg_katbag=0x7f020137;
@@ -2791,8 +2773,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_menu=0x7f0c0030;
     }
     public static final class style {
-        /**  estilos actionbar 
-         */
         public static final int ActionBar_Solid_Katbag=0x7f0d00e7;
         public static final int ActionBar_Transparent_Katbag=0x7f0d00e8;
         public static final int ActionBarTabStyle_Katbag=0x7f0d00eb;
@@ -2804,8 +2784,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  API 11 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0d00f0;
-        /**  estilos generales 
-         */
         public static final int AppTheme=0x7f0d00e6;
         public static final int DropDownListView_Katbag=0x7f0d00ea;
         public static final int DropDownNav_Katbag=0x7f0d00ec;

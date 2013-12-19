@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- actionbar -->
-    <color name="pressed_katbag">#CC6FB400</color>
-    
     <!-- colores personalizados -->
-    <color name="pressed_katbag">#CC6FB400</color>
+    <color name="background_color_menu_layout">#373737</color>
 
 </resources>
