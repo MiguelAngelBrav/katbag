@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <!-- game -->
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_game" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/select_type_item_game_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/select_type_item_game_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- book -->
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_book" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/select_type_item_book_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/select_type_item_book_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- comic -->
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_comic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/select_type_item_comic_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/select_type_item_comic_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

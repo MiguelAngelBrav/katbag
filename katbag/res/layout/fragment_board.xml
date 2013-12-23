@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <!-- dummy -->
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_game" />
+
+        <TextView
+            style="@style/generic_item_title_1"
+            android:text="Aplicación de monstruos" />
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_book" />
+
+        <TextView
+            style="@style/generic_item_title_1"
+            android:text="Aplicación de monstruos" />
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/generic_row" >
+
+        <ImageView style="@style/image_row_comic" />
+
+        <TextView
+            style="@style/generic_item_title_1"
+            android:text="Aplicación de monstruos" />
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

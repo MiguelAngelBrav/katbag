@@ -6,13 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MenuActivity extends Fragment {
+public class Board extends Fragment {
 	
 	static View v = null;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		v = inflater.inflate(R.layout.fragment_activity_menu, container, false);
+		v = inflater.inflate(R.layout.fragment_board, container, false);
+		
 		return v;
+	}
+	
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_board);
 	}
 }

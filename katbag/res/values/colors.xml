@@ -2,6 +2,17 @@
 <resources>
 
     <!-- colores personalizados -->
-    <color name="background_color_menu_layout">#373737</color>
+    <color name="background_color_layout">#F0F0F0</color>
+    <color name="background_color_layout_default">#FFFFFF</color>
+    <color name="background_color_layout_press">#CCCCCC</color>
+    <color name="background_color_layout_menu">#373737</color>
+    <color name="background_color_layout_menu_default">#373737</color>
+    <color name="background_color_layout_menu_press">#4D4D4D</color>
+    <color name="border_row_generic">#CCCCCC</color>
+    <color name="border_row_menu">#505050</color>
+    <color name="menu_item">#FFFFFF</color>
+    <color name="generic_item_title">#393838</color>
+    <color name="generic_item_subtitle">#909090</color>
+    <color name="subtitle">#909090</color>
 
 </resources>
