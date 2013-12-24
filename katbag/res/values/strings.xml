@@ -27,6 +27,14 @@
 	<string name="select_type_item_game_subtitle">Crea juegos sencillos</string>
 	<string name="select_type_item_book_subtitle">Crea un cuento con imagenes y sonido</string>
 	<string name="select_type_item_comic_subtitle">Crea tus propios personajes con dialogo</string>
-	    
+	
+	<!-- texts add -->
+	<string name="subtitle_config_app">Detalles</string>
+	<string name="config_app_world_title">Escenarios</string>
+	<string name="config_app_drawing_title">Personajes</string>
+	<string name="config_app_develop_title">Programación</string>
+	<string name="config_app_world_subtitle">Selecciona color, imagen ó una foto</string>
+	<string name="config_app_drawing_subtitle">Arma tus personajes arrastrando partes</string>
+	<string name="config_app_develop_subtitle">Objetos, eventos, acciones, movimiento</string>
 
 </resources>

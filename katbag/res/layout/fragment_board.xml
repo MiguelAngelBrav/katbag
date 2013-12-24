@@ -7,7 +7,7 @@
 
     <!-- dummy -->
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_game" />
 
@@ -21,7 +21,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_book" />
 
@@ -35,7 +35,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_comic" />
 

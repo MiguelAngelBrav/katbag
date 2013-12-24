@@ -7,7 +7,9 @@
 
     <!-- game -->
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout
+        android:id="@+id/type_app_game"
+        style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_game" />
 
@@ -33,7 +35,9 @@
 
     <!-- book -->
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout
+        android:id="@+id/type_app_book"
+        style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_book" />
 
@@ -59,7 +63,9 @@
 
     <!-- comic -->
 
-    <LinearLayout style="@style/generic_row" >
+    <LinearLayout
+        android:id="@+id/type_app_comic"
+        style="@style/generic_row_clickable" >
 
         <ImageView style="@style/image_row_comic" />
 

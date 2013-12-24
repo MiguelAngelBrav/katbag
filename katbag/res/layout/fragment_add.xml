@@ -1,16 +1,132 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Add" >
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/generic_row_no_clickable"
+        android:layout_marginTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/border_row_generic"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp" >
+
+            <ImageView style="@style/image_row_game" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:hint="Escribe un nombre"
+            android:lines="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <!-- details -->
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello_world" />
+        style="@style/subtitle"
+        android:text="@string/subtitle_config_app" />
 
-</RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <!-- world -->
+
+    <LinearLayout
+        android:id="@+id/config_app_world"
+        style="@style/generic_row_clickable" >
+
+        <ImageView style="@style/image_row_world" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/config_app_world_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/config_app_world_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- drawing -->
+
+    <LinearLayout
+        android:id="@+id/config_app_drawing"
+        style="@style/generic_row_clickable" >
+
+        <ImageView style="@style/image_row_drawing" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/config_app_drawing_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/config_app_drawing_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- develop -->
+
+    <LinearLayout
+        android:id="@+id/config_app_develop"
+        style="@style/generic_row_clickable" >
+
+        <ImageView style="@style/image_row_develop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/generic_item_title_2"
+                android:text="@string/config_app_develop_title" />
+
+            <TextView
+                style="@style/generic_item_subtitle"
+                android:text="@string/config_app_develop_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView style="@style/image_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

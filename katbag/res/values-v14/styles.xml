@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+    <style name="AppTheme" parent="Holo.Theme.Light">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_katbag</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Katbag</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Katbag</item>
