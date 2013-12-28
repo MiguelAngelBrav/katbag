@@ -5,9 +5,7 @@
     android:background="@color/background_color_layout"
     android:orientation="vertical" >
 
-    <LinearLayout
-        style="@style/generic_row_no_clickable"
-        android:layout_marginTop="10dp" >
+    <LinearLayout style="@style/generic_row_no_clickable" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -18,14 +16,20 @@
             android:paddingRight="5dp"
             android:paddingTop="5dp" >
 
-            <ImageView style="@style/image_row_game" />
+            <ImageView
+                android:id="@+id/config_image_type_app"
+                android:src="@drawable/katbag_icon_game"
+                style="@style/generic_image_row" />
         </LinearLayout>
 
         <EditText
+            android:id="@+id/name_app"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ellipsize="end"
-            android:hint="Escribe un nombre"
+            android:hint="@string/config_hint_name_app"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName"
             android:lines="1"
             android:singleLine="true" />
     </LinearLayout>
@@ -43,15 +47,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:progress="10" />
 
-    <!-- world -->
+    <!-- worlds -->
 
     <LinearLayout
-        android:id="@+id/config_app_world"
+        android:id="@+id/config_app_worlds"
         style="@style/generic_row_clickable" >
 
-        <ImageView style="@style/image_row_world" />
+        <ImageView style="@style/image_row_worlds" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -60,11 +65,11 @@
 
             <TextView
                 style="@style/generic_item_title_2"
-                android:text="@string/config_app_world_title" />
+                android:text="@string/config_app_worlds_title" />
 
             <TextView
                 style="@style/generic_item_subtitle"
-                android:text="@string/config_app_world_subtitle" />
+                android:text="@string/config_app_worlds_subtitle" />
         </LinearLayout>
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
@@ -73,13 +78,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- drawing -->
+    <!-- drawings -->
 
     <LinearLayout
-        android:id="@+id/config_app_drawing"
+        android:id="@+id/config_app_drawings"
         style="@style/generic_row_clickable" >
 
-        <ImageView style="@style/image_row_drawing" />
+        <ImageView style="@style/image_row_drawings" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,11 +93,11 @@
 
             <TextView
                 style="@style/generic_item_title_2"
-                android:text="@string/config_app_drawing_title" />
+                android:text="@string/config_app_drawings_title" />
 
             <TextView
                 style="@style/generic_item_subtitle"
-                android:text="@string/config_app_drawing_subtitle" />
+                android:text="@string/config_app_drawings_subtitle" />
         </LinearLayout>
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
@@ -101,13 +106,13 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- develop -->
+    <!-- developments -->
 
     <LinearLayout
-        android:id="@+id/config_app_develop"
+        android:id="@+id/config_app_developments"
         style="@style/generic_row_clickable" >
 
-        <ImageView style="@style/image_row_develop" />
+        <ImageView style="@style/image_row_developments" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -116,11 +121,11 @@
 
             <TextView
                 style="@style/generic_item_title_2"
-                android:text="@string/config_app_develop_title" />
+                android:text="@string/config_app_developments_title" />
 
             <TextView
                 style="@style/generic_item_subtitle"
-                android:text="@string/config_app_develop_subtitle" />
+                android:text="@string/config_app_developments_subtitle" />
         </LinearLayout>
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >

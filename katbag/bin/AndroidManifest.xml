@@ -8,6 +8,17 @@
         android:minSdkVersion="7"
         android:targetSdkVersion="15" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -41,6 +52,18 @@
         <activity
             android:name="cl.ipp.katbag.SelectTypeMainActivity"
             android:label="@string/title_activity_select_type" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.Worlds"
+            android:label="@string/title_activity_worlds" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.Drawings"
+            android:label="@string/title_activity_drawings" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.Developments"
+            android:label="@string/title_activity_developments" >
         </activity>
     </application>
 

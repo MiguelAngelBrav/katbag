@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/worlds_dropdown_menu_setting"
+        android:icon="@drawable/abs__ic_menu_moreoverflow_holo_dark"
+        android:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/worlds_dropdown_menu_new"
+                android:showAsAction="never"
+                android:title="@string/worlds_dropdown_menu_new"/>
+            <item
+                android:id="@+id/worlds_dropdown_menu_duplicate"
+                android:showAsAction="never"
+                android:title="@string/worlds_dropdown_menu_duplicate"/>
+        </menu>
+    </item>
+
+</menu>

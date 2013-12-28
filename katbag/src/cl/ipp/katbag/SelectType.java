@@ -1,8 +1,5 @@
 package cl.ipp.katbag;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -56,24 +53,16 @@ public class SelectType extends Fragment implements OnClickListener {
 			type_app = "comic";
 			break;
 		}
-		
-		JSONObject newApp = new JSONObject();
-		try {
-			newApp.put("type_app", type_app);
-			Bundle bundle = new Bundle();
-			bundle.putString("NewApp", newApp.toString());
-			
-			mFragment = new Add();
-			mFragment.setArguments(bundle);
-			FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
-			t.replace(R.id.fragment_main_container, mFragment);
-			t.addToBackStack(mFragment.getClass().getSimpleName());
-			t.commit();			
-			
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+				
+		Bundle bundle = new Bundle();
+		bundle.putString("type_app", type_app);
+				
+		mFragment = new Add();
+		mFragment.setArguments(bundle);
+		FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
+		t.replace(R.id.fragment_main_container, mFragment);
+		t.addToBackStack(mFragment.getClass().getSimpleName());
+		t.commit();			
 	}
 	
 	

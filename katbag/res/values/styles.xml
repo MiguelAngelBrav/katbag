@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme" parent="Holo.Theme.Light">
+    <style name="AppTheme" parent="@style/Holo.Theme">
         <item name="actionBarItemBackground">@drawable/selectable_background_katbag</item>
         <item name="popupMenuStyle">@style/PopupMenu.Katbag</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Katbag</item>
@@ -11,16 +11,18 @@
         <item name="actionModeBackground">@drawable/cab_background_top_katbag</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_katbag</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Katbag</item>
-
-        <!-- Light.DarkActionBar specific -->
-        <item name="actionBarWidgetTheme">@style/Theme.Katbag.Widget</item>
     </style>
 
-    <style name="ActionBar.Solid.Katbag" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.Solid.Katbag" parent="@style/Widget.Sherlock.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_katbag</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_katbag</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_katbag</item>
         <item name="progressBarStyle">@style/ProgressBar.Katbag</item>
+        <item name="titleTextStyle">@style/ActionBar.TitleTextStyle.Katbag</item>
+    </style>
+
+    <style name="ActionBar.TitleTextStyle.Katbag" parent="@style/TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/title_text_color_actionbar</item>
     </style>
 
     <style name="ActionBar.Transparent.Katbag" parent="@style/Widget.Sherlock.ActionBar">
@@ -37,11 +39,11 @@
     </style>
 
     <style name="ActionBarTabStyle.Katbag" parent="@style/Widget.Sherlock.ActionBar.TabView">
-        <item name="android:background">@drawable/tab_indicator_ab_katbag</item>
+        <item name="background">@drawable/tab_indicator_ab_katbag</item>
     </style>
 
     <style name="DropDownNav.Katbag" parent="@style/Widget.Sherlock.Spinner.DropDown.ActionBar">
-        <item name="android:background">@drawable/spinner_background_ab_katbag</item>
+        <item name="background">@drawable/spinner_background_ab_katbag</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_katbag</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_katbag</item>
     </style>
@@ -51,11 +53,11 @@
     </style>
 
     <style name="ActionButton.CloseMode.Katbag" parent="@style/Widget.Sherlock.ActionButton.CloseMode">
-        <item name="android:background">@drawable/btn_cab_done_katbag</item>
+        <item name="background">@drawable/btn_cab_done_katbag</item>
     </style>
 
     <!-- this style is only referenced in a Light.DarkActionBar based theme -->
-    <style name="Theme.Katbag.Widget" parent="@style/Theme.Sherlock">
+    <style name="Theme.Katbag.Widget" parent="@style/Holo.Theme">
         <item name="popupMenuStyle">@style/PopupMenu.Katbag</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Katbag</item>
     </style>
@@ -107,8 +109,7 @@
     <style name="generic_row">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">10dp</item>
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:orientation">horizontal</item>
@@ -147,16 +148,16 @@
         <item name="android:src">@drawable/katbag_icon_comic</item>
     </style>
 
-    <style name="image_row_world" parent="generic_image_row">
-        <item name="android:src">@drawable/katbag_icon_world</item>
+    <style name="image_row_worlds" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_worlds</item>
     </style>
 
-    <style name="image_row_drawing" parent="generic_image_row">
-        <item name="android:src">@drawable/katbag_icon_drawing</item>
+    <style name="image_row_drawings" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_drawings</item>
     </style>
 
-    <style name="image_row_develop" parent="generic_image_row">
-        <item name="android:src">@drawable/katbag_icon_develop</item>
+    <style name="image_row_developments" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_developments</item>
     </style>
 
     <style name="generic_item_title">

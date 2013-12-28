@@ -2,6 +2,7 @@ package cl.ipp.katbag;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
@@ -11,11 +12,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnOpenListener;
 
 public class MainActivity extends RootActivity {
 	
@@ -29,7 +33,7 @@ public class MainActivity extends RootActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		setBehindContentView(R.layout.fragment_menu);
-
+		
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
 		
@@ -47,7 +51,16 @@ public class MainActivity extends RootActivity {
 			sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 			sm.setFadeDegree(0.35f);
 			sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		    sm.setSlidingEnabled(true);     
+		    sm.setSlidingEnabled(true);
+		    sm.setOnOpenListener(new OnOpenListener() {
+				
+				@Override
+				public void onOpen() {
+					hideSoftKeyboard();					
+				}
+			});
+		        		    
+		    
 		    actionBar.setDisplayHomeAsUpEnabled(true);
 		    TABLET = false;//tablet
 		}
@@ -73,7 +86,14 @@ public class MainActivity extends RootActivity {
 		}
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+	    return true;
+	}
+	
 	// click home menu button
+	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		int itemId = item.getItemId();
 	    switch (itemId) {
@@ -84,8 +104,10 @@ public class MainActivity extends RootActivity {
 	    
 	    return true;
 	}
-	
+		
 	public void changeFragment(View v) {
+		
+		hideSoftKeyboard();
 
 		switch (v.getId()) {
 		case R.id.menu_item_board:
@@ -113,7 +135,6 @@ public class MainActivity extends RootActivity {
 		FragmentManager m = getSupportFragmentManager();
 		FragmentTransaction t = getSupportFragmentManager().beginTransaction();
 		t.replace(R.id.fragment_main_container, mFragment);
-		t.setTransition(t.TRANSIT_FRAGMENT_FADE);
 		t.addToBackStack(mFragment.getClass().getSimpleName());
 		m.popBackStack();
 		t.commit();
@@ -122,14 +143,11 @@ public class MainActivity extends RootActivity {
 			toggle();	
 		}		
 	}
-	
+		
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		FragmentManager m = getSupportFragmentManager();
-	    if(keyCode == KeyEvent.KEYCODE_BACK) {			
-	    	
-	    	Log.d("onKeyDown", "count: " + m.getBackStackEntryCount());
-	    	
+	    if(keyCode == KeyEvent.KEYCODE_BACK) {
 	    	if (m.getBackStackEntryCount() <= 1) {
 	    		mFragment = new Board();
 	    		FragmentTransaction t = getSupportFragmentManager().beginTransaction();
@@ -165,7 +183,12 @@ public class MainActivity extends RootActivity {
 	    } else {
 	        return super.onKeyDown(keyCode, event);
 	    }
-
 	}
-
+	
+	public void hideSoftKeyboard() {
+		if (getCurrentFocus() != null) {
+			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);	
+		}
+    }
 }

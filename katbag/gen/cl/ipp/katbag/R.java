@@ -1771,24 +1771,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int abs__bright_foreground_disabled_holo_light=0x7f090005;
         public static final int abs__bright_foreground_holo_dark=0x7f090002;
         public static final int abs__bright_foreground_holo_light=0x7f090003;
-        public static final int abs__primary_text_disable_only_holo_dark=0x7f09003d;
-        public static final int abs__primary_text_disable_only_holo_light=0x7f09003e;
-        public static final int abs__primary_text_holo_dark=0x7f09003f;
-        public static final int abs__primary_text_holo_light=0x7f090040;
+        public static final int abs__primary_text_disable_only_holo_dark=0x7f09003e;
+        public static final int abs__primary_text_disable_only_holo_light=0x7f09003f;
+        public static final int abs__primary_text_holo_dark=0x7f090040;
+        public static final int abs__primary_text_holo_light=0x7f090041;
         /**  colores personalizados 
          */
-        public static final int background_color_layout=0x7f090031;
-        public static final int background_color_layout_default=0x7f090032;
-        public static final int background_color_layout_menu=0x7f090034;
-        public static final int background_color_layout_menu_default=0x7f090035;
-        public static final int background_color_layout_menu_press=0x7f090036;
-        public static final int background_color_layout_press=0x7f090033;
+        public static final int background_color_layout=0x7f090032;
+        public static final int background_color_layout_default=0x7f090033;
+        public static final int background_color_layout_menu=0x7f090035;
+        public static final int background_color_layout_menu_default=0x7f090036;
+        public static final int background_color_layout_menu_press=0x7f090037;
+        public static final int background_color_layout_press=0x7f090034;
         public static final int background_dark=0x7f090011;
         public static final int background_holo_dark=0x7f09001b;
         public static final int background_holo_light=0x7f09001c;
         public static final int background_light=0x7f090012;
-        public static final int border_row_generic=0x7f090037;
-        public static final int border_row_menu=0x7f090038;
+        public static final int border_row_generic=0x7f090038;
+        public static final int border_row_menu=0x7f090039;
         public static final int bright_foreground_dark=0x7f090013;
         public static final int bright_foreground_dark_disabled=0x7f090015;
         public static final int bright_foreground_dark_inverse=0x7f090017;
@@ -1811,8 +1811,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int dim_foreground_inverse_disabled_holo_light=0x7f09002a;
         public static final int dim_foreground_inverse_holo_dark=0x7f090025;
         public static final int dim_foreground_inverse_holo_light=0x7f090029;
-        public static final int generic_item_subtitle=0x7f09003b;
-        public static final int generic_item_title=0x7f09003a;
+        public static final int generic_item_subtitle=0x7f09003c;
+        public static final int generic_item_title=0x7f09003b;
         public static final int highlighted_text_holo_dark=0x7f09002d;
         public static final int highlighted_text_holo_light=0x7f09002e;
         public static final int hint_foreground_holo_dark=0x7f09002b;
@@ -1849,20 +1849,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int holo_red_light=0x7f090008;
         public static final int link_text_holo_dark=0x7f09002f;
         public static final int link_text_holo_light=0x7f090030;
-        public static final int menu_item=0x7f090039;
-        public static final int primary_text_disable_only_holo_dark=0x7f090041;
-        public static final int primary_text_disable_only_holo_light=0x7f090042;
-        public static final int primary_text_holo_dark=0x7f090043;
-        public static final int primary_text_holo_light=0x7f090044;
-        public static final int primary_text_nodisable_holo_dark=0x7f090045;
-        public static final int primary_text_nodisable_holo_light=0x7f090046;
-        public static final int secondary_text_holo_dark=0x7f090047;
-        public static final int secondary_text_holo_light=0x7f090048;
-        public static final int secondary_text_nodisable_holo_dark=0x7f090049;
-        public static final int secondary_text_nodisable_holo_light=0x7f09004a;
-        public static final int subtitle=0x7f09003c;
-        public static final int tertiary_text_holo_dark=0x7f09004b;
-        public static final int tertiary_text_holo_light=0x7f09004c;
+        public static final int menu_item=0x7f09003a;
+        public static final int primary_text_disable_only_holo_dark=0x7f090042;
+        public static final int primary_text_disable_only_holo_light=0x7f090043;
+        public static final int primary_text_holo_dark=0x7f090044;
+        public static final int primary_text_holo_light=0x7f090045;
+        public static final int primary_text_nodisable_holo_dark=0x7f090046;
+        public static final int primary_text_nodisable_holo_light=0x7f090047;
+        public static final int secondary_text_holo_dark=0x7f090048;
+        public static final int secondary_text_holo_light=0x7f090049;
+        public static final int secondary_text_nodisable_holo_dark=0x7f09004a;
+        public static final int secondary_text_nodisable_holo_light=0x7f09004b;
+        public static final int subtitle=0x7f09003d;
+        public static final int tertiary_text_holo_dark=0x7f09004c;
+        public static final int tertiary_text_holo_light=0x7f09004d;
+        /**  actionbar 
+         */
+        public static final int title_text_color_actionbar=0x7f090031;
         public static final int transparent=0x7f090010;
     }
     public static final class dimen {
@@ -2280,10 +2283,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int katbag_arrow_right=0x7f020114;
         public static final int katbag_icon_book=0x7f020115;
         public static final int katbag_icon_comic=0x7f020116;
-        public static final int katbag_icon_develop=0x7f020117;
-        public static final int katbag_icon_drawing=0x7f020118;
+        public static final int katbag_icon_developments=0x7f020117;
+        public static final int katbag_icon_drawings=0x7f020118;
         public static final int katbag_icon_game=0x7f020119;
-        public static final int katbag_icon_world=0x7f02011a;
+        public static final int katbag_icon_worlds=0x7f02011a;
         public static final int katbag_menu_icon_add=0x7f02011b;
         public static final int katbag_menu_icon_board=0x7f02011c;
         public static final int katbag_menu_icon_edit=0x7f02011d;
@@ -2508,8 +2511,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int alarm=0x7f070020;
         public static final int alertTitle=0x7f07005f;
         public static final int all=0x7f070021;
-        public static final int amPm=0x7f0700a2;
-        public static final int back_button=0x7f070096;
+        public static final int amPm=0x7f0700a4;
+        public static final int back_button=0x7f070098;
         public static final int beginning=0x7f070027;
         public static final int bottom=0x7f070011;
         public static final int button1=0x7f07006a;
@@ -2517,17 +2520,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int button3=0x7f070069;
         public static final int buttonPanel=0x7f070066;
         public static final int buttonPanelTopDivivder=0x7f070067;
-        public static final int button_bar=0x7f070095;
+        public static final int button_bar=0x7f070097;
         public static final int calendar_view=0x7f070077;
         public static final int center=0x7f070018;
         public static final int center_horizontal=0x7f070016;
         public static final int center_vertical=0x7f070014;
-        public static final int checkbox=0x7f070089;
+        public static final int checkbox=0x7f07008b;
         public static final int clip_horizontal=0x7f07001b;
         public static final int clip_vertical=0x7f07001a;
-        public static final int config_app_develop=0x7f07007c;
-        public static final int config_app_drawing=0x7f07007b;
-        public static final int config_app_world=0x7f07007a;
+        public static final int config_app_developments=0x7f07007e;
+        public static final int config_app_drawings=0x7f07007d;
+        public static final int config_app_worlds=0x7f07007c;
+        public static final int config_image_type_app=0x7f070079;
         public static final int contentPanel=0x7f070061;
         public static final int custom=0x7f070065;
         public static final int customPanel=0x7f070064;
@@ -2537,12 +2541,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int decrement=0x7f070032;
         public static final int dialog=0x7f070029;
         public static final int disableHome=0x7f070009;
-        public static final int divider=0x7f0700a0;
+        public static final int divider=0x7f0700a2;
         public static final int dropdown=0x7f07002a;
         public static final int edit=0x7f07002d;
         public static final int edit_query=0x7f07004c;
-        public static final int edittext_container=0x7f07008f;
-        public static final int empty=0x7f070099;
+        public static final int edittext_container=0x7f070091;
+        public static final int empty=0x7f07009b;
         public static final int end=0x7f07001d;
         public static final int expanded_menu=0x7f070078;
         public static final int fill=0x7f070019;
@@ -2551,67 +2555,68 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_main_container=0x7f070058;
         public static final int fragment_menu_container=0x7f070059;
         public static final int fullscreen=0x7f070034;
-        public static final int headers=0x7f070091;
+        public static final int headers=0x7f070093;
         public static final int homeAsUp=0x7f070006;
-        public static final int hour=0x7f07009f;
+        public static final int hour=0x7f0700a1;
         public static final int icon=0x7f07005e;
         public static final int increment=0x7f070031;
-        public static final int internalEmpty=0x7f070088;
+        public static final int internalEmpty=0x7f07008a;
         public static final int left=0x7f070012;
         public static final int leftSpacer=0x7f07002e;
-        public static final int left_icon=0x7f07007d;
+        public static final int left_icon=0x7f07007f;
         public static final int list=0x7f070071;
-        public static final int listContainer=0x7f070087;
+        public static final int listContainer=0x7f070089;
         public static final int listMode=0x7f070002;
-        public static final int list_footer=0x7f070092;
+        public static final int list_footer=0x7f070094;
         public static final int margin=0x7f070033;
-        public static final int menu_item_add=0x7f07007f;
-        public static final int menu_item_board=0x7f07007e;
-        public static final int menu_item_edit=0x7f070080;
-        public static final int menu_item_info=0x7f070081;
+        public static final int menu_item_add=0x7f070081;
+        public static final int menu_item_board=0x7f070080;
+        public static final int menu_item_edit=0x7f070082;
+        public static final int menu_item_info=0x7f070083;
         public static final int message=0x7f070063;
         public static final int middle=0x7f070028;
-        public static final int minute=0x7f0700a1;
+        public static final int minute=0x7f0700a3;
         public static final int month=0x7f070074;
         public static final int month_name=0x7f07006f;
         public static final int music=0x7f070025;
-        public static final int next_button=0x7f070098;
+        public static final int name_app=0x7f07007a;
+        public static final int next_button=0x7f07009a;
         public static final int none=0x7f070026;
         public static final int normal=0x7f070001;
         public static final int notification=0x7f07001f;
-        public static final int numberpicker_input=0x7f07008c;
+        public static final int numberpicker_input=0x7f07008e;
         public static final int parentPanel=0x7f07005a;
         public static final int pickers=0x7f070073;
-        public static final int prefs=0x7f070094;
-        public static final int prefs_frame=0x7f070093;
+        public static final int prefs=0x7f070096;
+        public static final int prefs_frame=0x7f070095;
         public static final int progress=0x7f07002b;
-        public static final int progressBar1=0x7f070079;
-        public static final int progressContainer=0x7f070086;
+        public static final int progressBar1=0x7f07007b;
+        public static final int progressContainer=0x7f070088;
         public static final int progress_number=0x7f07006c;
         public static final int progress_percent=0x7f07006b;
-        public static final int radio=0x7f07008b;
+        public static final int radio=0x7f07008d;
         public static final int right=0x7f070013;
         public static final int rightSpacer=0x7f07002f;
         public static final int ring=0x7f070024;
         public static final int ringtone=0x7f07001e;
         public static final int scrollView=0x7f070062;
         public static final int secondaryProgress=0x7f07002c;
-        public static final int seekbar=0x7f070090;
-        public static final int select_dialog_listview=0x7f07009b;
+        public static final int seekbar=0x7f070092;
+        public static final int select_dialog_listview=0x7f07009d;
         public static final int selected_view=0x7f070035;
-        public static final int shortcut=0x7f07008a;
+        public static final int shortcut=0x7f07008c;
         public static final int showCustom=0x7f070008;
         public static final int showHome=0x7f070005;
         public static final int showTitle=0x7f070007;
-        public static final int skip_button=0x7f070097;
-        public static final int slidingmenumain=0x7f07009d;
+        public static final int skip_button=0x7f070099;
+        public static final int slidingmenumain=0x7f07009f;
         public static final int start=0x7f07001c;
-        public static final int summary=0x7f07008d;
-        public static final int switchWidget=0x7f07009a;
+        public static final int summary=0x7f07008f;
+        public static final int switchWidget=0x7f07009c;
         public static final int system=0x7f070023;
         public static final int tabMode=0x7f070003;
-        public static final int text1=0x7f07009c;
-        public static final int timePicker=0x7f07009e;
+        public static final int text1=0x7f07009e;
+        public static final int timePicker=0x7f0700a0;
         public static final int title=0x7f07006e;
         public static final int titleDivider=0x7f070060;
         public static final int titleDividerTop=0x7f07005c;
@@ -2619,14 +2624,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_template=0x7f07005d;
         public static final int top=0x7f070010;
         public static final int topPanel=0x7f07005b;
-        public static final int type_app_book=0x7f070084;
-        public static final int type_app_comic=0x7f070085;
-        public static final int type_app_game=0x7f070083;
+        public static final int type_app_book=0x7f070086;
+        public static final int type_app_comic=0x7f070087;
+        public static final int type_app_game=0x7f070085;
         public static final int typeface=0x7f070030;
         public static final int useLogo=0x7f070004;
-        public static final int version_app=0x7f070082;
+        public static final int version_app=0x7f070084;
         public static final int voice=0x7f070022;
-        public static final int widget_frame=0x7f07008e;
+        public static final int widget_frame=0x7f070090;
+        public static final int worlds_dropdown_menu_duplicate=0x7f0700a7;
+        public static final int worlds_dropdown_menu_new=0x7f0700a6;
+        public static final int worlds_dropdown_menu_setting=0x7f0700a5;
         public static final int wrap_content=0x7f070000;
         public static final int year=0x7f070076;
     }
@@ -2687,51 +2695,57 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_board=0x7f030021;
         public static final int fragment_bread_crumb_item=0x7f030022;
         public static final int fragment_bread_crumbs=0x7f030023;
-        public static final int fragment_menu=0x7f030024;
-        public static final int fragment_select_type=0x7f030025;
-        public static final int list_content=0x7f030026;
-        public static final int list_menu_item_checkbox=0x7f030027;
-        public static final int list_menu_item_icon=0x7f030028;
-        public static final int list_menu_item_layout=0x7f030029;
-        public static final int list_menu_item_radio=0x7f03002a;
-        public static final int number_picker_with_selector_wheel=0x7f03002b;
-        public static final int preference_category_holo=0x7f03002c;
-        public static final int preference_child_holo=0x7f03002d;
-        public static final int preference_dialog_edittext=0x7f03002e;
-        public static final int preference_dialog_numberpicker=0x7f03002f;
-        public static final int preference_dialog_seekbar=0x7f030030;
-        public static final int preference_dialog_seekbar_widget=0x7f030031;
-        public static final int preference_header_item=0x7f030032;
-        public static final int preference_holo=0x7f030033;
-        public static final int preference_information_holo=0x7f030034;
-        public static final int preference_list_content=0x7f030035;
-        public static final int preference_list_content_single=0x7f030036;
-        public static final int preference_list_fragment=0x7f030037;
-        public static final int preference_widget_checkbox=0x7f030038;
-        public static final int preference_widget_seekbar=0x7f030039;
-        public static final int preference_widget_switch=0x7f03003a;
-        public static final int progress_dialog_holo=0x7f03003b;
-        public static final int select_dialog_holo=0x7f03003c;
-        public static final int select_dialog_item_holo=0x7f03003d;
-        public static final int select_dialog_multichoice_holo=0x7f03003e;
-        public static final int select_dialog_singlechoice_holo=0x7f03003f;
-        public static final int sherlock_spinner_dropdown_item=0x7f030040;
-        public static final int sherlock_spinner_item=0x7f030041;
-        public static final int simple_dropdown_hint=0x7f030042;
-        public static final int simple_dropdown_item_1line=0x7f030043;
-        public static final int simple_list_item_1=0x7f030044;
-        public static final int simple_list_item_2=0x7f030045;
-        public static final int simple_list_item_2_single_choice=0x7f030046;
-        public static final int simple_list_item_activated_1=0x7f030047;
-        public static final int simple_list_item_activated_2=0x7f030048;
-        public static final int simple_list_item_checked=0x7f030049;
-        public static final int simple_list_item_multiple_choice=0x7f03004a;
-        public static final int simple_list_item_single_choice=0x7f03004b;
-        public static final int simple_spinner_dropdown_item=0x7f03004c;
-        public static final int simple_spinner_item=0x7f03004d;
-        public static final int slidingmenumain=0x7f03004e;
-        public static final int time_picker_dialog=0x7f03004f;
-        public static final int time_picker_holo=0x7f030050;
+        public static final int fragment_developments=0x7f030024;
+        public static final int fragment_drawings=0x7f030025;
+        public static final int fragment_menu=0x7f030026;
+        public static final int fragment_select_type=0x7f030027;
+        public static final int fragment_worlds=0x7f030028;
+        public static final int list_content=0x7f030029;
+        public static final int list_menu_item_checkbox=0x7f03002a;
+        public static final int list_menu_item_icon=0x7f03002b;
+        public static final int list_menu_item_layout=0x7f03002c;
+        public static final int list_menu_item_radio=0x7f03002d;
+        public static final int number_picker_with_selector_wheel=0x7f03002e;
+        public static final int preference_category_holo=0x7f03002f;
+        public static final int preference_child_holo=0x7f030030;
+        public static final int preference_dialog_edittext=0x7f030031;
+        public static final int preference_dialog_numberpicker=0x7f030032;
+        public static final int preference_dialog_seekbar=0x7f030033;
+        public static final int preference_dialog_seekbar_widget=0x7f030034;
+        public static final int preference_header_item=0x7f030035;
+        public static final int preference_holo=0x7f030036;
+        public static final int preference_information_holo=0x7f030037;
+        public static final int preference_list_content=0x7f030038;
+        public static final int preference_list_content_single=0x7f030039;
+        public static final int preference_list_fragment=0x7f03003a;
+        public static final int preference_widget_checkbox=0x7f03003b;
+        public static final int preference_widget_seekbar=0x7f03003c;
+        public static final int preference_widget_switch=0x7f03003d;
+        public static final int progress_dialog_holo=0x7f03003e;
+        public static final int select_dialog_holo=0x7f03003f;
+        public static final int select_dialog_item_holo=0x7f030040;
+        public static final int select_dialog_multichoice_holo=0x7f030041;
+        public static final int select_dialog_singlechoice_holo=0x7f030042;
+        public static final int sherlock_spinner_dropdown_item=0x7f030043;
+        public static final int sherlock_spinner_item=0x7f030044;
+        public static final int simple_dropdown_hint=0x7f030045;
+        public static final int simple_dropdown_item_1line=0x7f030046;
+        public static final int simple_list_item_1=0x7f030047;
+        public static final int simple_list_item_2=0x7f030048;
+        public static final int simple_list_item_2_single_choice=0x7f030049;
+        public static final int simple_list_item_activated_1=0x7f03004a;
+        public static final int simple_list_item_activated_2=0x7f03004b;
+        public static final int simple_list_item_checked=0x7f03004c;
+        public static final int simple_list_item_multiple_choice=0x7f03004d;
+        public static final int simple_list_item_single_choice=0x7f03004e;
+        public static final int simple_spinner_dropdown_item=0x7f03004f;
+        public static final int simple_spinner_item=0x7f030050;
+        public static final int slidingmenumain=0x7f030051;
+        public static final int time_picker_dialog=0x7f030052;
+        public static final int time_picker_holo=0x7f030053;
+    }
+    public static final class menu {
+        public static final int world=0x7f0e0000;
     }
     public static final class raw {
         public static final int roboto_bold=0x7f060000;
@@ -2784,12 +2798,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int candidates_style=0x7f0c000e;
         public static final int capital_off=0x7f0c000f;
         public static final int capital_on=0x7f0c0010;
-        public static final int config_app_develop_subtitle=0x7f0c0048;
-        public static final int config_app_develop_title=0x7f0c0045;
-        public static final int config_app_drawing_subtitle=0x7f0c0047;
-        public static final int config_app_drawing_title=0x7f0c0044;
-        public static final int config_app_world_subtitle=0x7f0c0046;
-        public static final int config_app_world_title=0x7f0c0043;
+        public static final int config_app_developments_subtitle=0x7f0c0050;
+        public static final int config_app_developments_title=0x7f0c004d;
+        public static final int config_app_drawings_subtitle=0x7f0c004f;
+        public static final int config_app_drawings_title=0x7f0c004c;
+        public static final int config_app_worlds_subtitle=0x7f0c004e;
+        public static final int config_app_worlds_title=0x7f0c004b;
+        public static final int config_hint_name_app=0x7f0c004a;
         public static final int date_picker_decrement_day_button=0x7f0c0011;
         public static final int date_picker_decrement_month_button=0x7f0c0012;
         public static final int date_picker_decrement_year_button=0x7f0c0013;
@@ -2799,39 +2814,42 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int date_picker_increment_year_button=0x7f0c0017;
         public static final int date_time_done=0x7f0c0018;
         public static final int date_time_set=0x7f0c0019;
-        public static final int dialog_exit_button_no=0x7f0c003b;
-        public static final int dialog_exit_button_yes=0x7f0c003a;
-        public static final int dialog_exit_text=0x7f0c0039;
-        public static final int dialog_exit_title=0x7f0c0038;
-        public static final int image_description=0x7f0c0031;
+        public static final int dialog_exit_button_no=0x7f0c0042;
+        public static final int dialog_exit_button_yes=0x7f0c0041;
+        public static final int dialog_exit_text=0x7f0c0040;
+        public static final int dialog_exit_title=0x7f0c003f;
+        public static final int image_description=0x7f0c0037;
         public static final int loading=0x7f0c001a;
+        /**  messages 
+         */
+        public static final int name_app_empty=0x7f0c0038;
         public static final int next_button_label=0x7f0c001b;
         public static final int number_picker_decrement_button=0x7f0c001c;
         public static final int number_picker_increment_button=0x7f0c001d;
         public static final int number_picker_increment_scroll_action=0x7f0c001e;
         public static final int number_picker_increment_scroll_mode=0x7f0c001f;
-        public static final int option_menu_add=0x7f0c0034;
-        public static final int option_menu_board=0x7f0c0033;
-        public static final int option_menu_edit=0x7f0c0035;
-        public static final int option_menu_info=0x7f0c0036;
+        public static final int option_menu_add=0x7f0c003b;
+        public static final int option_menu_board=0x7f0c003a;
+        public static final int option_menu_edit=0x7f0c003c;
+        public static final int option_menu_info=0x7f0c003d;
         public static final int ringtone_default=0x7f0c0020;
         public static final int ringtone_picker_title=0x7f0c0021;
         public static final int ringtone_silent=0x7f0c0022;
-        public static final int select_type_item_book_subtitle=0x7f0c0040;
-        public static final int select_type_item_book_title=0x7f0c003d;
-        public static final int select_type_item_comic_subtitle=0x7f0c0041;
-        public static final int select_type_item_comic_title=0x7f0c003e;
-        public static final int select_type_item_game_subtitle=0x7f0c003f;
+        public static final int select_type_item_book_subtitle=0x7f0c0047;
+        public static final int select_type_item_book_title=0x7f0c0044;
+        public static final int select_type_item_comic_subtitle=0x7f0c0048;
+        public static final int select_type_item_comic_title=0x7f0c0045;
+        public static final int select_type_item_game_subtitle=0x7f0c0046;
         /**  texts select type 
          */
-        public static final int select_type_item_game_title=0x7f0c003c;
+        public static final int select_type_item_game_title=0x7f0c0043;
         public static final int skip_button_label=0x7f0c0023;
         /**  texts add 
          */
-        public static final int subtitle_config_app=0x7f0c0042;
+        public static final int subtitle_config_app=0x7f0c0049;
         /**  texts menu 
          */
-        public static final int subtitle_options_menu=0x7f0c0032;
+        public static final int subtitle_options_menu=0x7f0c0039;
         public static final int time_picker_decrement_hour_button=0x7f0c0024;
         public static final int time_picker_decrement_minute_button=0x7f0c0025;
         public static final int time_picker_decrement_set_am_button=0x7f0c0026;
@@ -2841,26 +2859,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int time_picker_increment_set_pm_button=0x7f0c002a;
         public static final int time_picker_separator=0x7f0c002b;
         public static final int title_activity_add=0x7f0c002e;
+        public static final int title_activity_add_book=0x7f0c0030;
+        public static final int title_activity_add_comic=0x7f0c0031;
+        public static final int title_activity_add_game=0x7f0c002f;
         public static final int title_activity_board=0x7f0c002d;
-        public static final int title_activity_menu=0x7f0c002f;
-        public static final int title_activity_select_type=0x7f0c0030;
-        public static final int version_app=0x7f0c0037;
+        public static final int title_activity_developments=0x7f0c0036;
+        public static final int title_activity_drawings=0x7f0c0035;
+        public static final int title_activity_menu=0x7f0c0032;
+        public static final int title_activity_select_type=0x7f0c0033;
+        public static final int title_activity_worlds=0x7f0c0034;
+        public static final int version_app=0x7f0c003e;
+        public static final int worlds_dropdown_menu_duplicate=0x7f0c0052;
+        /**  texts worlds 
+         */
+        public static final int worlds_dropdown_menu_new=0x7f0c0051;
     }
     public static final class style {
         public static final int ActionBar_Solid_Katbag=0x7f0d00e7;
-        public static final int ActionBar_Transparent_Katbag=0x7f0d00e8;
-        public static final int ActionBarTabStyle_Katbag=0x7f0d00eb;
-        public static final int ActionButton_CloseMode_Katbag=0x7f0d00ee;
+        public static final int ActionBar_TitleTextStyle_Katbag=0x7f0d00e8;
+        public static final int ActionBar_Transparent_Katbag=0x7f0d00e9;
+        public static final int ActionBarTabStyle_Katbag=0x7f0d00ec;
+        public static final int ActionButton_CloseMode_Katbag=0x7f0d00ef;
         /** 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
  API 11 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0d0104;
+        public static final int AppBaseTheme=0x7f0d0105;
         public static final int AppTheme=0x7f0d00e6;
-        public static final int DropDownListView_Katbag=0x7f0d00ea;
-        public static final int DropDownNav_Katbag=0x7f0d00ec;
+        public static final int DropDownListView_Katbag=0x7f0d00eb;
+        public static final int DropDownNav_Katbag=0x7f0d00ed;
         public static final int Holo=0x7f0d005c;
         public static final int Holo_AlertDialog=0x7f0d005d;
         public static final int Holo_AlertDialog_Light=0x7f0d005e;
@@ -3055,8 +3084,8 @@ End of block BaseLight
          */
         public static final int Holo_Theme_NoActionBar_Fullscreen=0x7f0d00de;
         public static final int Holo_TimePicker=0x7f0d00df;
-        public static final int PopupMenu_Katbag=0x7f0d00e9;
-        public static final int ProgressBar_Katbag=0x7f0d00ed;
+        public static final int PopupMenu_Katbag=0x7f0d00ea;
+        public static final int ProgressBar_Katbag=0x7f0d00ee;
         public static final int Sherlock___TextAppearance_Small=0x7f0d0046;
         public static final int Sherlock___Theme=0x7f0d0051;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0d0053;
@@ -3097,7 +3126,7 @@ End of block BaseLight
         /**  this style is only referenced in a Light.DarkActionBar based theme 
  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_Katbag_Widget=0x7f0d00ef;
+        public static final int Theme_Katbag_Widget=0x7f0d00f0;
         public static final int Theme_Sherlock=0x7f0d0054;
         public static final int Theme_Sherlock_Light=0x7f0d0055;
         public static final int Theme_Sherlock_Light_DarkActionBar=0x7f0d0056;
@@ -3150,32 +3179,32 @@ End of block BaseLight
         public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0d0034;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0d0024;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0d0032;
-        public static final int generic_image_row=0x7f0d00f7;
-        public static final int generic_image_wrap_arrow_right=0x7f0d0102;
-        public static final int generic_item_subtitle=0x7f0d0101;
-        public static final int generic_item_title=0x7f0d00fe;
-        public static final int generic_item_title_1=0x7f0d00ff;
-        public static final int generic_item_title_2=0x7f0d0100;
+        public static final int generic_image_row=0x7f0d00f8;
+        public static final int generic_image_wrap_arrow_right=0x7f0d0103;
+        public static final int generic_item_subtitle=0x7f0d0102;
+        public static final int generic_item_title=0x7f0d00ff;
+        public static final int generic_item_title_1=0x7f0d0100;
+        public static final int generic_item_title_2=0x7f0d0101;
         /**  generic items 
          */
-        public static final int generic_row=0x7f0d00f4;
-        public static final int generic_row_clickable=0x7f0d00f5;
-        public static final int generic_row_no_clickable=0x7f0d00f6;
-        public static final int image_arrow_right=0x7f0d0103;
-        public static final int image_row_book=0x7f0d00f9;
-        public static final int image_row_comic=0x7f0d00fa;
-        public static final int image_row_develop=0x7f0d00fd;
-        public static final int image_row_drawing=0x7f0d00fc;
-        public static final int image_row_game=0x7f0d00f8;
-        public static final int image_row_world=0x7f0d00fb;
-        public static final int menu_image_row=0x7f0d00f2;
-        public static final int menu_item=0x7f0d00f3;
+        public static final int generic_row=0x7f0d00f5;
+        public static final int generic_row_clickable=0x7f0d00f6;
+        public static final int generic_row_no_clickable=0x7f0d00f7;
+        public static final int image_arrow_right=0x7f0d0104;
+        public static final int image_row_book=0x7f0d00fa;
+        public static final int image_row_comic=0x7f0d00fb;
+        public static final int image_row_developments=0x7f0d00fe;
+        public static final int image_row_drawings=0x7f0d00fd;
+        public static final int image_row_game=0x7f0d00f9;
+        public static final int image_row_worlds=0x7f0d00fc;
+        public static final int menu_image_row=0x7f0d00f3;
+        public static final int menu_item=0x7f0d00f4;
         /**  menu items 
          */
-        public static final int menu_row=0x7f0d00f1;
+        public static final int menu_row=0x7f0d00f2;
         /**  estilos personalizados 
          */
-        public static final int subtitle=0x7f0d00f0;
+        public static final int subtitle=0x7f0d00f1;
     }
     public static final class styleable {
         /** Attributes that can be used with a AbsSpinner.

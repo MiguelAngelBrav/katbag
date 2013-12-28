@@ -3,10 +3,19 @@
 
     <string name="app_name">katbag</string>
     <string name="title_activity_board">Tablero</string>
-    <string name="title_activity_add">Nuevo</string>
+    <string name="title_activity_add">&#8230;</string>
+    <string name="title_activity_add_game">Nuevo Juego</string>
+    <string name="title_activity_add_book">Nuevo Libro</string>
+    <string name="title_activity_add_comic">Nuevo Comic</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_select_type">Selecciona Tipo</string>
+    <string name="title_activity_worlds">Escenarios</string>
+    <string name="title_activity_drawings">Dibujos</string>
+    <string name="title_activity_developments">Programa</string>    
     <string name="image_description">image</string>
+
+    <!-- messages -->
+    <string name="name_app_empty">El nombre no puede estar vacío</string>
 
     <!-- texts menu -->
     <string name="subtitle_options_menu">Opciones de menú</string>
@@ -20,21 +29,26 @@
     <string name="dialog_exit_button_yes">Si</string>
     <string name="dialog_exit_button_no">No</string>
 
-	<!-- texts select type -->
-	<string name="select_type_item_game_title">Juegos</string>
-	<string name="select_type_item_book_title">Libros</string>
-	<string name="select_type_item_comic_title">Comics</string>
-	<string name="select_type_item_game_subtitle">Crea juegos sencillos</string>
-	<string name="select_type_item_book_subtitle">Crea un cuento con imagenes y sonido</string>
-	<string name="select_type_item_comic_subtitle">Crea tus propios personajes con dialogo</string>
-	
-	<!-- texts add -->
-	<string name="subtitle_config_app">Detalles</string>
-	<string name="config_app_world_title">Escenarios</string>
-	<string name="config_app_drawing_title">Personajes</string>
-	<string name="config_app_develop_title">Programación</string>
-	<string name="config_app_world_subtitle">Selecciona color, imagen ó una foto</string>
-	<string name="config_app_drawing_subtitle">Arma tus personajes arrastrando partes</string>
-	<string name="config_app_develop_subtitle">Objetos, eventos, acciones, movimiento</string>
+    <!-- texts select type -->
+    <string name="select_type_item_game_title">Juegos</string>
+    <string name="select_type_item_book_title">Libros</string>
+    <string name="select_type_item_comic_title">Comics</string>
+    <string name="select_type_item_game_subtitle">Crea juegos sencillos</string>
+    <string name="select_type_item_book_subtitle">Crea un cuento con imagenes y sonido</string>
+    <string name="select_type_item_comic_subtitle">Crea tus propios personajes con dialogo</string>
+
+    <!-- texts add -->
+    <string name="subtitle_config_app">Detalles</string>
+    <string name="config_hint_name_app">Escribe un nombre</string>
+    <string name="config_app_worlds_title">Escenarios</string>
+    <string name="config_app_drawings_title">Personajes</string>
+    <string name="config_app_developments_title">Programación</string>
+    <string name="config_app_worlds_subtitle">Selecciona color, imagen ó una foto</string>
+    <string name="config_app_drawings_subtitle">Arma tus personajes arrastrando partes</string>
+    <string name="config_app_developments_subtitle">Objetos, eventos, acciones, movimiento</string>
+    
+    <!-- texts worlds -->
+    <string name="worlds_dropdown_menu_new">Nuevo</string>
+    <string name="worlds_dropdown_menu_duplicate">Duplicar</string>
 
 </resources>
