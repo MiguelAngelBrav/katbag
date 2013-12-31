@@ -16,6 +16,10 @@
 
     <!-- messages -->
     <string name="name_app_empty">El nombre no puede estar vacío</string>
+    <string name="name_app_short">El nombre debe tener 3 caracteres como mínimo</string>
+    <string name="name_app_new">Listo!, ahora puedes agregar los escenario, personajes y la programación</string>
+    <string name="name_app_update">Listo!, acabas de cambiar el nombre</string>
+    <string name="app_empty">Primero debes completar el nombre y presionar OK en el teclado</string>
 
     <!-- texts menu -->
     <string name="subtitle_options_menu">Opciones de menú</string>
@@ -50,5 +54,7 @@
     <!-- texts worlds -->
     <string name="worlds_dropdown_menu_new">Nuevo</string>
     <string name="worlds_dropdown_menu_duplicate">Duplicar</string>
+    <string name="worlds_row_name">Escenario</string>
+    <string name="worlds_not_register">No has creado escenarios, crea uno nuevo desde el menú superior</string>
 
 </resources>

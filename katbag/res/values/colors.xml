@@ -17,5 +17,8 @@
     <color name="generic_item_title">#393838</color>
     <color name="generic_item_subtitle">#909090</color>
     <color name="subtitle">#909090</color>
+    
+    <!-- New World -->
+    <color name="background_default_new_world">#006699</color>
 
 </resources>

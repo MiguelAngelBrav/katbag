@@ -14,6 +14,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import cl.ipp.katbag.fragment.Board;
+import cl.ipp.katbag.fragment.SelectType;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
@@ -94,16 +96,16 @@ public class MainActivity extends RootActivity {
 	
 	// click home menu button
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		int itemId = item.getItemId();
-	    switch (itemId) {
-	    case android.R.id.home:
-	        toggle();
-	        break;
-	    }
-	    
-	    return true;
-	}
+		public boolean onMenuItemSelected(int featureId, MenuItem item) {
+			int itemId = item.getItemId();
+		    switch (itemId) {
+		    case android.R.id.home:
+		        toggle();
+		        break;
+		    }
+		    
+		    return true;
+		}
 		
 	public void changeFragment(View v) {
 		

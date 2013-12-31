@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_menu_container"
-        android:name="cl.ipp.katbag.Menu"
+        android:name="cl.ipp.katbag.fragment.Menu"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />

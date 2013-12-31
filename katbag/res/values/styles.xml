@@ -115,15 +115,22 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
-    <style name="generic_row_clickable" parent="generic_row">
+    <style name="generic_row_clickable_base" parent="generic_row">
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="generic_row_clickable" parent="generic_row_clickable_base">
         <item name="android:background">@drawable/row_generic</item>
         <item name="android:clickable">true</item>
     </style>
+    
+    <style name="generic_row_no_clickable" parent="generic_row_clickable_base">
+        <item name="android:background">@drawable/row_generic</item>
+    </style>
 
-    <style name="generic_row_no_clickable" parent="generic_row">
+    <style name="generic_row_for_input" parent="generic_row">
         <item name="android:background">@drawable/row_generic_default</item>
     </style>
 
@@ -190,12 +197,19 @@
         <item name="android:gravity">center_vertical|right</item>
     </style>
 
-    <style name="image_arrow_right">
+    <style name="image_row_base_right">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:contentDescription">@string/image_description</item>
         <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="image_arrow_right" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_arrow_right</item>
+    </style>
+
+    <style name="image_row_remove" parent="image_row_base_right">
+        <item name="android:src">@drawable/katbag_icon_remove</item>
     </style>
 
 </resources>

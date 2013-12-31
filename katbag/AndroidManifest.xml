@@ -29,7 +29,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Board"
+            android:name="cl.ipp.katbag.fragment.Board"
             android:label="@string/title_activity_board" >
         </activity>
         <activity
@@ -42,11 +42,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Menu"
+            android:name="cl.ipp.katbag.fragment.Menu"
             android:label="@string/title_activity_menu" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Add"
+            android:name="cl.ipp.katbag.fragment.Add"
             android:label="@string/title_activity_add" >
         </activity>
         <activity
@@ -54,15 +54,15 @@
             android:label="@string/title_activity_select_type" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Worlds"
+            android:name="cl.ipp.katbag.fragment.Worlds"
             android:label="@string/title_activity_worlds" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Drawings"
+            android:name="cl.ipp.katbag.fragment.Drawings"
             android:label="@string/title_activity_drawings" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Developments"
+            android:name="cl.ipp.katbag.fragment.Developments"
             android:label="@string/title_activity_developments" >
         </activity>
     </application>
