@@ -7,10 +7,17 @@ import android.text.InputFilter;
 import android.text.Spanned;
 
 public class KatbagUtilities {
-	
-	public static void message(Context context, String msg) {
-		Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
-    }
+		
+	private static Toast toast = null;
+
+	public static void message(final Context context, final String msg) {
+		if (toast != null) {
+			toast.cancel();
+		}
+		
+		toast = Toast.makeText(context, msg, Toast.LENGTH_LONG);
+	    toast.show();
+	}
 	
 	public static InputFilter katbagAlphaNumericFilter = new InputFilter() {   
 		@Override  

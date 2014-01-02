@@ -29,7 +29,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 
@@ -57,7 +57,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 
@@ -85,7 +85,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 

@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
@@ -85,6 +84,7 @@ public class Worlds extends SherlockFragment {
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		menu.clear();
 		inflater.inflate(R.menu.world, menu);
 		menuItemNew = menu.findItem(R.id.worlds_dropdown_menu_new);
 		menuItemEdit = menu.findItem(R.id.worlds_dropdown_menu_edit);
@@ -116,10 +116,9 @@ public class Worlds extends SherlockFragment {
 	public final void editMode() {
 		Log.d("editMode", "editMode: " + editMode);
 		
-		View v;
+		View vc;
 		ImageView arrow;
 		ImageView remove;
-		LinearLayout world;
 		
 		if (editMode) {
 			editMode = false;
@@ -134,19 +133,16 @@ public class Worlds extends SherlockFragment {
 			
 		} else {
 			for (int i = 0; i < worldsListView.getChildCount(); i++) {
-				v = (View) worldsListView.getChildAt(i);
-				arrow = (ImageView) v.findViewById(R.id.world_row_image_arrow);
-				remove = (ImageView) v.findViewById(R.id.world_row_image_remove);
-				world = (LinearLayout) v.findViewById(R.id.world_row);
+				vc = (View) worldsListView.getChildAt(i);
+				arrow = (ImageView) vc.findViewById(R.id.world_row_image_arrow);
+				remove = (ImageView) vc.findViewById(R.id.world_row_image_remove);
 				
 				if (editMode) {
 					arrow.setVisibility(View.GONE);
 					remove.setVisibility(View.VISIBLE);
-					world.setClickable(false);
 				} else {
 					arrow.setVisibility(View.VISIBLE);
 					remove.setVisibility(View.GONE);
-					world.setClickable(true);
 				}
 			}	
 		}
@@ -159,7 +155,7 @@ public class Worlds extends SherlockFragment {
 			String item = (String) adapter.getItem(which);
 					
 			View v = (View) worldsListView.getChildAt(which);
-			TextView removeWorld = (TextView) v.findViewById(R.id.world_id_row);
+			TextView removeWorld = (TextView) v.findViewById(R.id.world_row_id);
 			adapter.remove(item);
 			
 			handler.deleteWorldForId(removeWorld.getText().toString());

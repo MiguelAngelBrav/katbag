@@ -123,7 +123,6 @@
 
     <style name="generic_row_clickable" parent="generic_row_clickable_base">
         <item name="android:background">@drawable/row_generic</item>
-        <item name="android:clickable">true</item>
     </style>
     
     <style name="generic_row_no_clickable" parent="generic_row_clickable_base">
@@ -159,8 +158,16 @@
         <item name="android:src">@drawable/katbag_icon_worlds</item>
     </style>
 
+    <style name="image_row_one_world" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_one_world</item>
+    </style>
+    
     <style name="image_row_drawings" parent="generic_image_row">
         <item name="android:src">@drawable/katbag_icon_drawings</item>
+    </style>
+    
+    <style name="image_row_one_drawing" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_one_drawing</item>
     </style>
 
     <style name="image_row_developments" parent="generic_image_row">
@@ -170,8 +177,13 @@
     <style name="generic_item_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxWidth">220dp</item>
+        <item name="android:paddingRight">10dp</item>
         <item name="android:textColor">@color/generic_item_title</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+		<item name="android:ellipsize">end</item>
+		<item name="android:lines">1</item>
     </style>
 
     <style name="generic_item_title_1" parent="generic_item_title">
@@ -204,10 +216,14 @@
         <item name="android:paddingRight">10dp</item>
     </style>
 
-    <style name="image_arrow_right" parent="image_row_base_right">
+    <style name="image_row_arrow_right" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_arrow_right</item>
     </style>
 
+    <style name="image_row_edit" parent="image_row_base_right">
+        <item name="android:src">@drawable/katbag_edit_right</item>
+    </style>
+    
     <style name="image_row_remove" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_icon_remove</item>
     </style>

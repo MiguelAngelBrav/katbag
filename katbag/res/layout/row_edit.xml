@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/edit_row"
+        style="@style/generic_row_clickable" >
+
+        <ImageView
+            android:id="@+id/edit_row_image"
+            style="@style/image_row_game" />
+
+        <TextView
+            android:id="@+id/edit_row_name"
+            style="@style/generic_item_title_1"
+            android:text="Nombre de ejemplo" />
+
+        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+
+            <ImageView
+                android:id="@+id/edit_row_image_arrow"
+                style="@style/image_row_edit" />
+
+            <ImageView
+                android:id="@id/edit_row_image_remove"
+                style="@style/image_row_remove"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/edit_row_id"
+        style="@style/generic_item_title_1"
+        android:visibility="gone" />
+    
+    <TextView
+        android:id="@+id/edit_row_type_app"
+        style="@style/generic_item_title_1"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -17,21 +17,6 @@
         style="@style/subtitle"
         android:text="@string/subtitle_options_menu" />
 
-    <!-- button board -->
-
-    <LinearLayout
-        android:id="@+id/menu_item_board"
-        style="@style/menu_row" >
-
-        <ImageView
-            style="@style/menu_image_row"
-            android:src="@drawable/katbag_menu_icon_board" />
-
-        <TextView
-            style="@style/menu_item"
-            android:text="@string/option_menu_board" />
-    </LinearLayout>
-
     <!-- button add -->
 
     <LinearLayout
@@ -45,6 +30,21 @@
         <TextView
             style="@style/menu_item"
             android:text="@string/option_menu_add" />
+    </LinearLayout>
+
+    <!-- button board -->
+
+    <LinearLayout
+        android:id="@+id/menu_item_board"
+        style="@style/menu_row" >
+
+        <ImageView
+            style="@style/menu_image_row"
+            android:src="@drawable/katbag_menu_icon_board" />
+
+        <TextView
+            style="@style/menu_item"
+            android:text="@string/option_menu_board" />
     </LinearLayout>
 
     <!-- button edit -->
@@ -62,19 +62,19 @@
             android:text="@string/option_menu_edit" />
     </LinearLayout>
 
-    <!-- button info -->
+    <!-- button about -->
 
     <LinearLayout
-        android:id="@+id/menu_item_info"
+        android:id="@+id/menu_item_about"
         style="@style/menu_row" >
 
         <ImageView
             style="@style/menu_image_row"
-            android:src="@drawable/katbag_menu_icon_info" />
+            android:src="@drawable/katbag_menu_icon_about" />
 
         <TextView
             style="@style/menu_item"
-            android:text="@string/option_menu_info" />
+            android:text="@string/option_menu_about" />
     </LinearLayout>
 
     <LinearLayout

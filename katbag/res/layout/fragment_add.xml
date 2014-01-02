@@ -18,8 +18,8 @@
 
             <ImageView
                 android:id="@+id/config_image_type_app"
-                android:src="@drawable/katbag_icon_game"
-                style="@style/generic_image_row" />
+                style="@style/generic_image_row"
+                android:src="@drawable/katbag_icon_game" />
         </LinearLayout>
 
         <EditText
@@ -31,8 +31,8 @@
             android:imeOptions="actionDone"
             android:inputType="textPersonName"
             android:lines="1"
-            android:textColor="@color/generic_item_title"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="@color/generic_item_title" />
     </LinearLayout>
 
     <!-- details -->
@@ -42,14 +42,14 @@
         android:text="@string/subtitle_config_app" />
 
     <ProgressBar
-        android:id="@+id/progressBar1"
+        android:id="@+id/progress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:progress="10" />
+        android:progress="0" />
 
     <!-- worlds -->
 
@@ -75,7 +75,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 
@@ -103,7 +103,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 
@@ -131,7 +131,7 @@
 
         <LinearLayout style="@style/generic_image_wrap_arrow_right" >
 
-            <ImageView style="@style/image_arrow_right" />
+            <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
     </LinearLayout>
 

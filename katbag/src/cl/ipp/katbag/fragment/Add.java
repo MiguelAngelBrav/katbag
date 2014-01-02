@@ -14,6 +14,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import cl.ipp.katbag.MainActivity;
@@ -33,6 +34,11 @@ public class Add extends Fragment implements OnClickListener {
 	public MainActivity mainActivity;
 	public LinearLayout config_app_worlds, config_app_drawings, config_app_developments;
 	public Fragment mFragment;
+	public static final int MAX_LENGTH = 30;
+	public ProgressBar progress;
+	public int score_id_and_name = 0, score = 0;
+	private KatbagHandlerSqlite handler;
+	public static final int SCORE_FOR_HAVE_ID_AND_NAME = 20;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +50,9 @@ public class Add extends Fragment implements OnClickListener {
         if(bundle != null){
     		type_app = bundle.getString("type_app");
         }
+        
+        handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
+        progress = (ProgressBar) v.findViewById(R.id.progress);
         
         setTitleAndImageForTypeApp();
         setEditTextNameApp();        
@@ -78,13 +87,17 @@ public class Add extends Fragment implements OnClickListener {
 	// name app
 	public void setEditTextNameApp() {
         name_app = (EditText) v.findViewById(R.id.name_app);
-        name_app.setFilters(new InputFilter[]{KatbagUtilities.katbagAlphaNumericFilter});
+        name_app.setFilters(new InputFilter[]{KatbagUtilities.katbagAlphaNumericFilter, new InputFilter.LengthFilter(MAX_LENGTH)});
         name_app.setOnEditorActionListener(new OnEditorActionListener() {
 
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                	name_app.setText(name_app.getText().toString().trim());                	
+                	name_app.setText(name_app.getText().toString().trim());  
+                	if (name_app.getText().toString().length() > MAX_LENGTH) {
+                		name_app.setText(name_app.getText().toString().substring(0, MAX_LENGTH).trim());
+					}
+                	  
                 	if (name_app.getText().toString().contentEquals("")) {
                 		KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_empty));
                 	
@@ -92,7 +105,6 @@ public class Add extends Fragment implements OnClickListener {
                     		KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_short));
                     		
 					} else {
-	                	KatbagHandlerSqlite handler = new KatbagHandlerSqlite(getActivity().getBaseContext());
 	                	Log.d("onEditorAction", "id_app: " + id_app);
 	                	if (id_app == -1) { // insert new register
 	                    	id_app = handler.insertApp(name_app.getText().toString(), type_app);
@@ -103,6 +115,9 @@ public class Add extends Fragment implements OnClickListener {
 						}
 	                	
 	                	name_app_text = name_app.getText().toString();
+	                	
+	                	score_id_and_name = SCORE_FOR_HAVE_ID_AND_NAME;
+	                	estimatedProgress();
 					}
                 }
                 return false;
@@ -110,14 +125,6 @@ public class Add extends Fragment implements OnClickListener {
         });
 	}
 	
-	@Override
-	public void onResume() {
-	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
-	    name_app.setText(name_app_text);
-	    Log.d("onResume", "id_app: " + id_app);
-	}
-
 	@Override
 	public void onClick(View v) {
 		
@@ -150,5 +157,28 @@ public class Add extends Fragment implements OnClickListener {
 			t.addToBackStack(mFragment.getClass().getSimpleName());
 			t.commit();
 		}
+	}
+	
+	public void estimatedProgress() {
+		if (id_app == -1) {
+			score_id_and_name = 0;
+        	score = 0;
+		} else {
+        	score_id_and_name = SCORE_FOR_HAVE_ID_AND_NAME;
+        	score = handler.estimatedProgress(String.valueOf(id_app)); 
+		}
+	    
+	    progress.setProgress(score_id_and_name + score);		
+	}
+	
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
+	    name_app.setText(name_app_text);
+
+	    estimatedProgress();
+	    
+	    Log.d("onResume", "id_app: " + id_app);
 	}
 }

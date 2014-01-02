@@ -29,12 +29,12 @@ public class WorldsRowAdapter extends ArrayAdapter<String> {
 			v = vi.inflate(R.layout.row_worlds, parent, false);	
 		}
 		
-		TextView id = (TextView) v.findViewById(R.id.world_id_row);
+		TextView id = (TextView) v.findViewById(R.id.world_row_id);
 		if (id != null) {
 			id.setText(items.get(position));
 		}
 		
-		TextView name = (TextView) v.findViewById(R.id.world_name_row);
+		TextView name = (TextView) v.findViewById(R.id.world_row_name);
 		if (name != null) {
 			name.setText(context.getString(R.string.worlds_row_name) + " " + items.get(position));
 		}

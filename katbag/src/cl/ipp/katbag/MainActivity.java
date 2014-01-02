@@ -14,7 +14,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import cl.ipp.katbag.fragment.About;
+import cl.ipp.katbag.fragment.Add;
 import cl.ipp.katbag.fragment.Board;
+import cl.ipp.katbag.fragment.Edit;
 import cl.ipp.katbag.fragment.SelectType;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -79,7 +82,7 @@ public class MainActivity extends RootActivity {
 	public void setTextVersion() {
 		try {
 			version_app = (TextView) findViewById(R.id.version_app);
-			version_app.setText(getString(R.string.version_app) + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+			version_app.setText(getString(R.string.version_app) + " " + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
 			
 		} catch (NameNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -90,7 +93,6 @@ public class MainActivity extends RootActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
 	    return true;
 	}
 	
@@ -110,24 +112,28 @@ public class MainActivity extends RootActivity {
 	public void changeFragment(View v) {
 		
 		hideSoftKeyboard();
-
+		
 		switch (v.getId()) {
-		case R.id.menu_item_board:
-			mFragment = new Board();
-			break;
-
 		case R.id.menu_item_add:
 			mFragment = new SelectType();
 			break;
+			
+		case R.id.menu_item_board:
+			mFragment = new Board();
+			break;
+			
+		case R.id.menu_item_edit:
+			mFragment = new Edit();
 
-//			case R.id.menu_item_edit:
-//				Log.d("changeFragment", "Agrega el fragment al menu!!!");
-//				mTitle = "...";
-//				break;
-//	
-//			case R.id.menu_item_info:
-//				Log.d("changeFragment", "Agrega el fragment al menu!!!");
-//				break;
+			// reset parameters
+			Add.id_app = -1;
+			Add.name_app_text = "";
+
+			break;
+
+		case R.id.menu_item_about:
+			mFragment = new About();
+			break;
 
 		default:
 			mFragment = new Board();

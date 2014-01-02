@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">katbag</string>
+    <string name="app_name">Katbag</string>
     <string name="title_activity_board">Tablero</string>
     <string name="title_activity_add">&#8230;</string>
     <string name="title_activity_add_game">Nuevo Juego</string>
     <string name="title_activity_add_book">Nuevo Libro</string>
     <string name="title_activity_add_comic">Nuevo Comic</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_edit">Editar Aplicaciones</string>
+    <string name="title_activity_menu">Menu</string>
     <string name="title_activity_select_type">Selecciona Tipo</string>
     <string name="title_activity_worlds">Escenarios</string>
-    <string name="title_activity_drawings">Dibujos</string>
-    <string name="title_activity_developments">Programa</string>    
+    <string name="title_activity_drawings">Personajes</string>
+    <string name="title_activity_developments">Programa</string>
     <string name="image_description">image</string>
 
     <!-- messages -->
@@ -26,8 +27,8 @@
     <string name="option_menu_board">Tablero</string>
     <string name="option_menu_add">Nuevo</string>
     <string name="option_menu_edit">Editar</string>
-    <string name="option_menu_info">Acerca</string>
-    <string name="version_app">Versión:&#160;</string>
+    <string name="option_menu_about">Acerca</string>
+    <string name="version_app">Versión:</string>
     <string name="dialog_exit_title">Estas a punto de salir</string>
     <string name="dialog_exit_text">¿Queres cerrar katbag?</string>
     <string name="dialog_exit_button_yes">Si</string>
@@ -50,11 +51,33 @@
     <string name="config_app_worlds_subtitle">Selecciona color, imagen ó una foto</string>
     <string name="config_app_drawings_subtitle">Arma tus personajes arrastrando partes</string>
     <string name="config_app_developments_subtitle">Objetos, eventos, acciones, movimiento</string>
-    
+
     <!-- texts worlds -->
     <string name="worlds_dropdown_menu_new">Nuevo</string>
     <string name="worlds_dropdown_menu_duplicate">Duplicar</string>
     <string name="worlds_row_name">Escenario</string>
     <string name="worlds_not_register">No has creado escenarios, crea uno nuevo desde el menú superior</string>
+
+    <!-- texts board -->
+    <string name="board_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
+
+    <!-- text edit -->
+    <string name="edit_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
+    <string name="edit_get_id">Id App:</string>
+
+    <!-- text drawings -->
+    <string name="drawings_dropdown_menu_new">Nuevo</string>
+    <string name="drawings_dropdown_menu_duplicate">Duplicar</string>
+    <string name="drawings_row_name">Personaje</string>
+    <string name="drawings_not_register">No has creado personajess, crea uno nuevo desde el menú superior</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!-- text about -->
+    <string name="about_version">Acerca de Katbag: ver</string>
+    <string name="about_text">Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, 
+        construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. \n\n
+        Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
+        desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
+    <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
 
 </resources>
