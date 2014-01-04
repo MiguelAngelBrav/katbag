@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- generic -->
     <string name="app_name">Katbag</string>
     <string name="title_activity_board">Tablero</string>
     <string name="title_activity_add">&#8230;</string>
@@ -70,7 +71,6 @@
     <string name="drawings_dropdown_menu_duplicate">Duplicar</string>
     <string name="drawings_row_name">Personaje</string>
     <string name="drawings_not_register">No has creado personajess, crea uno nuevo desde el menú superior</string>
-    <string name="title_activity_splash">SplashActivity</string>
 
     <!-- text about -->
     <string name="about_version">Acerca de Katbag: ver</string>
@@ -79,5 +79,15 @@
         Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
         desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
     <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
+    
+    <!-- text one world -->
+    <string name="one_world_dropdown_menu_color">Selecciona Color</string>
+    <string name="one_world_dropdown_menu_photo_album">Imagen de Galería</string>
+    <string name="one_world_dropdown_menu_take_photo">Tomar una Foto</string>
+    <string name="one_world_dropdown_menu_add_audio">Agregar Audio</string>
+    <string name="one_world_picker_color_title">Selecciona un color</string>
+    <string name="one_world_picker_color_button_cancel">Cancelar</string>
+    <string name="one_world_picker_color_button_select">Seleccionar</string>
+    
 
 </resources>

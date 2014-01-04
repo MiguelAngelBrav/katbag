@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import cl.ipp.katbag.R;
+import cl.ipp.katbag.fragment.Drawings;
 
 public class DrawingsRowAdapter extends ArrayAdapter<String> {
 
@@ -37,6 +39,17 @@ public class DrawingsRowAdapter extends ArrayAdapter<String> {
 		TextView name = (TextView) v.findViewById(R.id.drawing_row_name);
 		if (name != null) {
 			name.setText(context.getString(R.string.drawings_row_name) + " " + items.get(position));
+		}
+		
+		ImageView arrow = (ImageView) v.findViewById(R.id.drawing_row_image_arrow);
+		ImageView remove = (ImageView) v.findViewById(R.id.drawing_row_image_remove);
+		
+		if (Drawings.editMode) {
+			arrow.setVisibility(View.GONE);
+			remove.setVisibility(View.VISIBLE);
+		} else {
+			arrow.setVisibility(View.VISIBLE);
+			remove.setVisibility(View.GONE);
 		}
 				
 		

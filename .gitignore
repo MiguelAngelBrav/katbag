@@ -1,0 +1,9 @@
+#class file
+*.class
+
+# Mac
+.DS_Store
+
+# ignore generated folders
+katbag/bin/.
+katbag/gen/.

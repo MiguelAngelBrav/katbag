@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
-import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.core.KatbagUtilities;
 import cl.ipp.katbag.row_adapters.EditRowAdapter;
 
@@ -32,11 +31,10 @@ public class Edit extends SherlockFragment {
 	
 	static View v = null;
 	public DragSortListView editListView;
-	protected KatbagHandlerSqlite handler;
 	public static MainActivity mainActivity;
 	public TextView notRegister;
 	public EditRowAdapter adapter;
-	public boolean editMode = false;
+	public static boolean editMode = false;
 	public MenuItem menuItemEdit;
 	public Fragment mFragment;
 	
@@ -50,32 +48,32 @@ public class Edit extends SherlockFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		v = inflater.inflate(R.layout.fragment_edit, container, false);
 		mainActivity = (MainActivity) super.getActivity();
-		mainActivity.supportInvalidateOptionsMenu();
 		
-		handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
 		notRegister = (TextView) v.findViewById(R.id.edit_not_register); 
         loadListView();
         
         editListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				TextView idApp = (TextView) view.findViewById(R.id.edit_row_id);
-				TextView nameApp = (TextView) view.findViewById(R.id.edit_row_name);
-				TextView typeApp = (TextView) view.findViewById(R.id.edit_row_type_app);
-				
-				// initialize parameters of add class
-				Add.id_app = Long.valueOf(idApp.getText().toString());
-				Add.name_app_text = nameApp.getText().toString();
-				
-				Bundle bundle = new Bundle();
-				bundle.putString("type_app", typeApp.getText().toString());
-								
-				mFragment = new Add();
-				mFragment.setArguments(bundle);
-				FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
-				t.replace(R.id.fragment_main_container, mFragment);
-				t.addToBackStack(mFragment.getClass().getSimpleName());
-				t.commit();
+				if (!editMode) {
+					TextView idApp = (TextView) view.findViewById(R.id.edit_row_id);
+					TextView nameApp = (TextView) view.findViewById(R.id.edit_row_name);
+					TextView typeApp = (TextView) view.findViewById(R.id.edit_row_type_app);
+					
+					// initialize parameters of add class
+					Add.id_app = Long.valueOf(idApp.getText().toString());
+					Add.name_app_text = nameApp.getText().toString();
+					
+					Bundle bundle = new Bundle();
+					bundle.putString("type_app", typeApp.getText().toString());
+									
+					mFragment = new Add();
+					mFragment.setArguments(bundle);
+					FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
+					t.replace(R.id.fragment_main_container, mFragment);
+					t.addToBackStack(mFragment.getClass().getSimpleName());
+					t.commit();	
+				}
 			}
 		});
         
@@ -84,7 +82,7 @@ public class Edit extends SherlockFragment {
         	@Override
         	public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
         		TextView idApp = (TextView) arg1.findViewById(R.id.edit_row_id);
-        		KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.edit_get_id) + " " + idApp.getText().toString());
+        		KatbagUtilities.message(mainActivity.context, getString(R.string.edit_get_id) + " " + idApp.getText().toString());
         		return false;
         	}
 		});
@@ -97,7 +95,7 @@ public class Edit extends SherlockFragment {
 		List<String> idList = new ArrayList<String>();
 		idList.clear();
 		
-		idList = handler.selectAllApps();
+		idList = mainActivity.katbagHandler.selectAllApps();
 			
 		if (idList.size() <= 0) {
 			notRegister.setVisibility(View.VISIBLE);
@@ -126,6 +124,9 @@ public class Edit extends SherlockFragment {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode();
+				if (!editMode) {
+					loadListView();
+				}
 				return true;
 			}
 		});
@@ -171,14 +172,14 @@ public class Edit extends SherlockFragment {
 	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
 		@Override
 		public void remove(int which) {
-			Log.d("remove", "remove!!"); 
-			String item = (String) adapter.getItem(which);
-					
-			View v = (View) editListView.getChildAt(which);
-			TextView removeApp = (TextView) v.findViewById(R.id.edit_row_id);
-			adapter.remove(item);
+			Log.d("remove", "remove which:" + which);
 			
-			handler.deleteAppForId(removeApp.getText().toString());
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);	
+			mainActivity.katbagHandler.deleteAppForId(item);
+			
+			adapter.notifyDataSetChanged();
+			editListView.refreshDrawableState();
 		}
 	};
 	

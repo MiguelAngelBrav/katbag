@@ -15,7 +15,7 @@ import android.util.Log;
 public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "katbag_db.sqlite3";
-	private static final int DATABASE_VERSION = 6;
+	private static final int DATABASE_VERSION = 7;
 	
 	public static final String TABLE_APPLICATIONS = "applications";
 	public static final String FIELD_APP_ID = "_ID";
@@ -27,6 +27,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String FIELD_WORLD_APP_ID = "world_app_id";
 	public static final String FIELD_WORLD_TYPE = "world_type";
 	public static final String FIELD_WORLD_SRC = "world_src";
+	public static final String FIELD_WORLD_SCALE_FACTOR = "world_scale_factor";
 	
 	public static final String TABLE_DRAWINGS = "drawings";
 	public static final String FIELD_DRAWING_ID = "_ID";
@@ -68,6 +69,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 				+ FIELD_WORLD_APP_ID + " INTEGER NOT NULL, " 
 				+ FIELD_WORLD_TYPE + " TEXT NOT NULL, " 
 				+ FIELD_WORLD_SRC + " TEXT NOT NULL, " 
+				+ FIELD_WORLD_SCALE_FACTOR + " INTEGER NULL, "
 				+ "FOREIGN KEY(" + FIELD_WORLD_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE"
 				+ ");";
 		db.execSQL(query);
@@ -135,7 +137,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		id = this.getWritableDatabase().insert(TABLE_APPLICATIONS, null, values);	
 		this.close();
 		
-		Log.d("insertApp", "App: " + name + ", id: " + id + ", save!");
+		Log.d("insertApp", "name: " + name + ", id: " + id + ", save!");
 		
 		return id;
 	}
@@ -148,7 +150,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		this.getWritableDatabase().update(TABLE_APPLICATIONS, values, filter, null);
 		this.close();
 		
-		Log.d("updateNameApp", "App: " + name + ", id: " + id + ", update!");
+		Log.d("updateNameApp", "name: " + name + ", id: " + id + ", update!");
 	}
 	
 	// select all apps
@@ -174,7 +176,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public boolean deleteAppForId(String id) {
 		String query = FIELD_APP_ID + " = " + id;
 		
-		Log.d("delete", "App id: " + id + ", delete!");
+		Log.d("deleteAppForId", "id: " + id + ", delete!");
 		
 		return this.getWritableDatabase().delete(TABLE_APPLICATIONS, query, null) > 0;
 	}
@@ -193,21 +195,22 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		id = this.getWritableDatabase().insert(TABLE_WORLDS, null, values);	
 		this.close();
 		
-		Log.d("insertWorld", "Type World: " + type + ", id: " + id + ", save!");
+		Log.d("insertWorld", "type: " + type + ", id: " + id + ", save!");
 		
 		return id;
 	}
 	
 	// update world
-	public long updateWorld(long id, String type, String src) {
+	public long updateWorld(long id, String type, String src, int scale_factor) {
 		String filter = FIELD_WORLD_ID + " = " + id;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_WORLD_TYPE, type);
 		values.put(FIELD_WORLD_SRC, src);
+		values.put(FIELD_WORLD_SCALE_FACTOR, scale_factor);
 		this.getWritableDatabase().update(TABLE_WORLDS, values, filter, null);	
 		this.close();
 		
-		Log.d("updateWorld", "Type World: " + type + ", src: " + src + ", id: " + id + ", update!");
+		Log.d("updateWorld", "type: " + type + ", src: " + src + ", scale_factor: " + scale_factor + ", id: " + id + ", update!");
 		
 		return id;
 	}
@@ -231,11 +234,30 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		return results;
 	}
 	
+	// select worlds
+	public List<String> selectTypeSrcAndScaleFactorWorldForId(long id_world) {
+		List<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_WORLD_TYPE + ", " + FIELD_WORLD_SRC + ", " + FIELD_WORLD_SCALE_FACTOR + " from " + TABLE_WORLDS + " where " + FIELD_WORLD_ID + " = " + id_world;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			results.add(cursor.getString(0));
+			results.add(cursor.getString(1));
+			results.add(cursor.getString(2));
+			cursor.close();
+		}		
+		
+		return results;
+	}
+	
 	// delete world for id
 	public boolean deleteWorldForId(String id) {
 		String query = FIELD_WORLD_ID + " = " + id;
 		
-		Log.d("delete", "World id: " + id + ", delete!");
+		Log.d("deleteWorldForId", "id: " + id + ", delete!");
 		
 		return this.getWritableDatabase().delete(TABLE_WORLDS, query, null) > 0;
 	}
@@ -253,20 +275,20 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		id = this.getWritableDatabase().insert(TABLE_DRAWINGS, null, values);	
 		this.close();
 		
-		Log.d("insertDrawing", "Drawing id: " + id + ", save!");
+		Log.d("insertDrawing", "id: " + id + ", save!");
 		
 		return id;
 	}
 	
 	// update drawing
-	public long updateWorld(long id, String src) {
+	public long updateDrawing(long id, String src) {
 		String filter = FIELD_DRAWING_ID + " = " + id;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_DRAWING_SRC, src);
 		this.getWritableDatabase().update(TABLE_DRAWINGS, values, filter, null);	
 		this.close();
 		
-		Log.d("updateDrawing", "Drawing src: " + src + ", id: " + id + ", update!");
+		Log.d("updateDrawing", "src: " + src + ", id: " + id + ", update!");
 		
 		return id;
 	}
@@ -294,7 +316,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public boolean deleteDrawingForId(String id) {
 		String query = FIELD_DRAWING_ID + " = " + id;
 		
-		Log.d("delete", "Drawing id: " + id + ", delete!");
+		Log.d("deleteDrawingForId", "id: " + id + ", delete!");
 		
 		return this.getWritableDatabase().delete(TABLE_DRAWINGS, query, null) > 0;
 	}

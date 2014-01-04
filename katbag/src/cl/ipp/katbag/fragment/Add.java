@@ -19,7 +19,6 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
-import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.core.KatbagUtilities;
 
 public class Add extends Fragment implements OnClickListener {
@@ -37,7 +36,6 @@ public class Add extends Fragment implements OnClickListener {
 	public static final int MAX_LENGTH = 30;
 	public ProgressBar progress;
 	public int score_id_and_name = 0, score = 0;
-	private KatbagHandlerSqlite handler;
 	public static final int SCORE_FOR_HAVE_ID_AND_NAME = 20;
 	
 	@Override
@@ -51,7 +49,6 @@ public class Add extends Fragment implements OnClickListener {
     		type_app = bundle.getString("type_app");
         }
         
-        handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
         progress = (ProgressBar) v.findViewById(R.id.progress);
         
         setTitleAndImageForTypeApp();
@@ -99,19 +96,19 @@ public class Add extends Fragment implements OnClickListener {
 					}
                 	  
                 	if (name_app.getText().toString().contentEquals("")) {
-                		KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_empty));
+                		KatbagUtilities.message(mainActivity.context, getString(R.string.name_app_empty));
                 	
                 	} else if (name_app.getText().toString().length() < 3) {
-                    		KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_short));
+                    		KatbagUtilities.message(mainActivity.context, getString(R.string.name_app_short));
                     		
 					} else {
 	                	Log.d("onEditorAction", "id_app: " + id_app);
 	                	if (id_app == -1) { // insert new register
-	                    	id_app = handler.insertApp(name_app.getText().toString(), type_app);
-	                    	KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_new) + " (id app: " + String.valueOf(id_app) + ")");
+	                    	id_app = mainActivity.katbagHandler.insertApp(name_app.getText().toString(), type_app);
+	                    	KatbagUtilities.message(mainActivity.context, getString(R.string.name_app_new) + " (id app: " + String.valueOf(id_app) + ")");
 						} else { // update new register
-							handler.updateNameApp(id_app, name_app.getText().toString());
-							KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.name_app_update) + " (id app: " + String.valueOf(id_app) + ")");
+							mainActivity.katbagHandler.updateNameApp(id_app, name_app.getText().toString());
+							KatbagUtilities.message(mainActivity.context, getString(R.string.name_app_update) + " (id app: " + String.valueOf(id_app) + ")");
 						}
 	                	
 	                	name_app_text = name_app.getText().toString();
@@ -131,7 +128,7 @@ public class Add extends Fragment implements OnClickListener {
 		mainActivity.hideSoftKeyboard();
 		
 		if (id_app == -1) {
-			KatbagUtilities.message(mainActivity.getBaseContext(), getString(R.string.app_empty));
+			KatbagUtilities.message(mainActivity.context, getString(R.string.app_empty));
 			
 		} else {			
 			switch (v.getId()) {
@@ -165,7 +162,7 @@ public class Add extends Fragment implements OnClickListener {
         	score = 0;
 		} else {
         	score_id_and_name = SCORE_FOR_HAVE_ID_AND_NAME;
-        	score = handler.estimatedProgress(String.valueOf(id_app)); 
+        	score = mainActivity.katbagHandler.estimatedProgress(String.valueOf(id_app)); 
 		}
 	    
 	    progress.setProgress(score_id_and_name + score);		

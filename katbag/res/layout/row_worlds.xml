@@ -5,7 +5,7 @@
     android:background="@color/background_color_layout"
     android:orientation="vertical" >
 
-    <LinearLayout 
+    <LinearLayout
         android:id="@+id/world_row"
         style="@style/generic_row_no_clickable" >
 
@@ -31,6 +31,8 @@
             <ImageView
                 android:id="@id/world_row_image_remove"
                 style="@style/image_row_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>

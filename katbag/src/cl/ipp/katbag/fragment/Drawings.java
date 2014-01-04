@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
-import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.row_adapters.DrawingsRowAdapter;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -31,9 +30,7 @@ public class Drawings extends SherlockFragment {
 	public TextView notRegister;
 	public DragSortListView drawingsListView;
 	public DrawingsRowAdapter adapter;
-	public boolean editMode = false;
-	protected KatbagHandlerSqlite handler;
-
+	public static boolean editMode = false;
 	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -44,8 +41,6 @@ public class Drawings extends SherlockFragment {
 		mainActivity = (MainActivity) super.getActivity();
 		v = inflater.inflate(R.layout.fragment_drawings, container, false);
 		mainActivity.supportInvalidateOptionsMenu();
-		
-		handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
 		
 		// rescues parameters
 		Bundle bundle = getArguments();
@@ -64,7 +59,7 @@ public class Drawings extends SherlockFragment {
 		List<String> idList = new ArrayList<String>();
 		idList.clear();
 		
-		idList = handler.selectDrawingsForIdApp(id_app);
+		idList = mainActivity.katbagHandler.selectDrawingsForIdApp(id_app);
 			
 		if (idList.size() <= 0) {
 			notRegister.setVisibility(View.VISIBLE);
@@ -94,6 +89,9 @@ public class Drawings extends SherlockFragment {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode();
+				if (!editMode) {
+					loadListView();
+				}
 				return true;
 			}
 		});
@@ -104,7 +102,7 @@ public class Drawings extends SherlockFragment {
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode = false;
 				menuItemEdit.setIcon(R.drawable.ic_action_edit);
-				handler.insertDrawing(id_app, "#006699");
+				mainActivity.katbagHandler.insertDrawing(id_app, "#006699");
 				loadListView();
 				return true;
 			}
@@ -151,14 +149,14 @@ public class Drawings extends SherlockFragment {
 	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
 		@Override
 		public void remove(int which) {
-			Log.d("remove", "remove!!");
-			String item = (String) adapter.getItem(which);
-					
-			View v = (View) drawingsListView.getChildAt(which);
-			TextView removeDrawing = (TextView) v.findViewById(R.id.drawing_row_id);
-			adapter.remove(item);
+			Log.d("remove", "remove which:" + which);
 			
-			handler.deleteDrawingForId(removeDrawing.getText().toString());
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);	
+			mainActivity.katbagHandler.deleteDrawingForId(item);
+			
+			adapter.notifyDataSetChanged();
+			drawingsListView.refreshDrawableState();
 		}
 	};
 		

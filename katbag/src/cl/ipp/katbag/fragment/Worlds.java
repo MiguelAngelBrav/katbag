@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
-import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.row_adapters.WorldsRowAdapter;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -31,9 +34,9 @@ public class Worlds extends SherlockFragment {
 	public TextView notRegister;
 	public DragSortListView worldsListView;
 	public WorldsRowAdapter adapter;
-	public boolean editMode = false;
-	protected KatbagHandlerSqlite handler;
-
+	public static boolean editMode = false;
+	public Fragment mFragment;
+	public static final String DEFAULT_COLOR = "-16750951";
 	
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -44,9 +47,7 @@ public class Worlds extends SherlockFragment {
 		mainActivity = (MainActivity) super.getActivity();
 		v = inflater.inflate(R.layout.fragment_worlds, container, false);
 		mainActivity.supportInvalidateOptionsMenu();
-		
-		handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
-		
+			
 		// rescues parameters
 		Bundle bundle = getArguments();
         if(bundle != null){
@@ -56,6 +57,26 @@ public class Worlds extends SherlockFragment {
         notRegister = (TextView) v.findViewById(R.id.world_not_register); 
         loadListView();
         
+        worldsListView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				if (!editMode) {
+					TextView idWorld = (TextView) view.findViewById(R.id.world_row_id);
+									
+					Bundle bundle = new Bundle();
+					bundle.putLong("id_world", Long.valueOf(idWorld.getText().toString()));
+					bundle.putString("name_world", idWorld.getText().toString());
+									
+					mFragment = new OneWorld();
+					mFragment.setArguments(bundle);
+					FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
+					t.replace(R.id.fragment_main_container, mFragment);
+					t.addToBackStack(mFragment.getClass().getSimpleName());
+					t.commit();
+				}
+			}
+		});
+        
 		return v;
 	}
 	
@@ -64,7 +85,7 @@ public class Worlds extends SherlockFragment {
 		List<String> idList = new ArrayList<String>();
 		idList.clear();
 		
-		idList = handler.selectWorldsForIdApp(id_app);
+		idList = mainActivity.katbagHandler.selectWorldsForIdApp(id_app);
 			
 		if (idList.size() <= 0) {
 			notRegister.setVisibility(View.VISIBLE);
@@ -94,6 +115,9 @@ public class Worlds extends SherlockFragment {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode();
+				if (!editMode) {
+					loadListView();
+				}
 				return true;
 			}
 		});
@@ -104,7 +128,7 @@ public class Worlds extends SherlockFragment {
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode = false;
 				menuItemEdit.setIcon(R.drawable.ic_action_edit);
-				handler.insertWorld(id_app, "color", "#006699");
+				mainActivity.katbagHandler.insertWorld(id_app, "color", DEFAULT_COLOR);
 				loadListView();
 				return true;
 			}
@@ -144,21 +168,25 @@ public class Worlds extends SherlockFragment {
 					arrow.setVisibility(View.VISIBLE);
 					remove.setVisibility(View.GONE);
 				}
-			}	
+			}
+			
+			adapter.notifyDataSetChanged();
+			worldsListView.refreshDrawableState();
 		}
 	}
 		
 	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
+		
 		@Override
 		public void remove(int which) {
-			Log.d("remove", "remove!!");
-			String item = (String) adapter.getItem(which);
-					
-			View v = (View) worldsListView.getChildAt(which);
-			TextView removeWorld = (TextView) v.findViewById(R.id.world_row_id);
-			adapter.remove(item);
+			Log.d("remove", "remove which:" + which);
 			
-			handler.deleteWorldForId(removeWorld.getText().toString());
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);			
+			mainActivity.katbagHandler.deleteWorldForId(item);
+			
+			adapter.notifyDataSetChanged();
+			worldsListView.refreshDrawableState();
 		}
 	};
 		

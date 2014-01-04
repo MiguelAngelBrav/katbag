@@ -1,9 +1,11 @@
 package cl.ipp.katbag;
 
 import org.holoeverywhere.app.AlertDialog;
+import org.holoeverywhere.app.AlertDialog.Builder;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +16,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.fragment.About;
 import cl.ipp.katbag.fragment.Add;
 import cl.ipp.katbag.fragment.Board;
@@ -28,10 +31,12 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnOpenListener;
 
 public class MainActivity extends RootActivity {
 	
+	public final Context context = this;
 	public Fragment mFragment;
 	public TextView version_app;
 	public static boolean TABLET; 
-	public org.holoeverywhere.app.AlertDialog.Builder alertDialog;
+	public Builder alertDialog;
+	public KatbagHandlerSqlite katbagHandler;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,18 +44,21 @@ public class MainActivity extends RootActivity {
 		setContentView(R.layout.activity_main);
 		setBehindContentView(R.layout.fragment_menu);
 		
+		katbagHandler = new KatbagHandlerSqlite(context);
+		
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setDisplayShowTitleEnabled(true);
 		
 		SlidingMenu sm = getSlidingMenu();
 		
-		// if is tablet, hide menu slider		
+		// tablet		
 		if (findViewById(R.id.fragment_menu_container) != null) {
 			sm.setSlidingEnabled(false);     
 		    actionBar.setDisplayHomeAsUpEnabled(false);
 		    TABLET = true;//tablet
+		    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		    
-		} else { // if is smartphone, show menu slider
+		} else { // smartphone
 			sm.setShadowWidthRes(R.dimen.shadow_width);
 			sm.setShadowDrawable(R.drawable.shadow);
 			sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
@@ -64,7 +72,8 @@ public class MainActivity extends RootActivity {
 					hideSoftKeyboard();					
 				}
 			});
-		        		    
+		    
+		    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		        		    
 		    
 		    actionBar.setDisplayHomeAsUpEnabled(true);
 		    TABLET = false;//tablet

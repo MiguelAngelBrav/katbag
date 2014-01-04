@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cl.ipp.katbag.R;
+import cl.ipp.katbag.fragment.Edit;
 
 public class EditRowAdapter extends ArrayAdapter<String> {
 
@@ -58,6 +59,17 @@ public class EditRowAdapter extends ArrayAdapter<String> {
 		TextView type_app = (TextView) v.findViewById(R.id.edit_row_type_app);
 		if (type_app != null) {
 			type_app.setText(mTypeApp);
+		}
+		
+		ImageView arrow = (ImageView) v.findViewById(R.id.edit_row_image_arrow);
+		ImageView remove = (ImageView) v.findViewById(R.id.edit_row_image_remove);
+		
+		if (Edit.editMode) {
+			arrow.setVisibility(View.GONE);
+			remove.setVisibility(View.VISIBLE);
+		} else {
+			arrow.setVisibility(View.VISIBLE);
+			remove.setVisibility(View.GONE);
 		}
 				
 		

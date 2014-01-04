@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
-import cl.ipp.katbag.core.KatbagHandlerSqlite;
 import cl.ipp.katbag.row_adapters.BoardRowAdapter;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -20,7 +19,6 @@ public class Board extends SherlockFragment {
 	
 	static View v = null;
 	public DragSortListView boardListView;
-	protected KatbagHandlerSqlite handler;
 	public static MainActivity mainActivity;
 	public TextView notRegister;
 	public BoardRowAdapter adapter;	
@@ -34,7 +32,6 @@ public class Board extends SherlockFragment {
 		v = inflater.inflate(R.layout.fragment_board, container, false);
 		mainActivity = (MainActivity) super.getActivity();
 		
-		handler = new KatbagHandlerSqlite(mainActivity.getBaseContext());
 		notRegister = (TextView) v.findViewById(R.id.board_not_register); 
         loadListView();
 		
@@ -46,7 +43,7 @@ public class Board extends SherlockFragment {
 		List<String> idList = new ArrayList<String>();
 		idList.clear();
 		
-		idList = handler.selectAllApps();
+		idList = mainActivity.katbagHandler.selectAllApps();
 			
 		if (idList.size() <= 0) {
 			notRegister.setVisibility(View.VISIBLE);
