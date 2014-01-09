@@ -63,7 +63,7 @@ public class MainActivity extends RootActivity {
 			sm.setShadowDrawable(R.drawable.shadow);
 			sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 			sm.setFadeDegree(0.35f);
-			sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+			sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 		    sm.setSlidingEnabled(true);
 		    sm.setOnOpenListener(new OnOpenListener() {
 				

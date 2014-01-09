@@ -124,7 +124,7 @@
     <style name="generic_row_clickable" parent="generic_row_clickable_base">
         <item name="android:background">@drawable/row_generic</item>
     </style>
-    
+
     <style name="generic_row_no_clickable" parent="generic_row_clickable_base">
         <item name="android:background">@drawable/row_generic</item>
     </style>
@@ -161,11 +161,11 @@
     <style name="image_row_one_world" parent="generic_image_row">
         <item name="android:src">@drawable/katbag_icon_one_world</item>
     </style>
-    
+
     <style name="image_row_drawings" parent="generic_image_row">
         <item name="android:src">@drawable/katbag_icon_drawings</item>
     </style>
-    
+
     <style name="image_row_one_drawing" parent="generic_image_row">
         <item name="android:src">@drawable/katbag_icon_one_drawing</item>
     </style>
@@ -182,8 +182,8 @@
         <item name="android:textColor">@color/generic_item_title</item>
         <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
-		<item name="android:ellipsize">end</item>
-		<item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
     </style>
 
     <style name="generic_item_title_1" parent="generic_item_title">
@@ -202,7 +202,7 @@
         <item name="android:textSize">11sp</item>
     </style>
 
-    <style name="generic_image_wrap_arrow_right">
+    <style name="generic_wrap_image_arrow_right">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">horizontal</item>
@@ -223,9 +223,48 @@
     <style name="image_row_edit" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_edit_right</item>
     </style>
-    
+
     <style name="image_row_remove" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_icon_remove</item>
+    </style>
+
+    <!-- toolbar -->
+    <style name="generic_wrap_image_toolbar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="generic_image_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:contentDescription">@string/image_description</item>
+    </style>
+
+    <style name="generic_image_toolbar_bringtofront" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_bringtofront</item>
+    </style>
+
+    <style name="generic_image_toolbar_expand" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_expand</item>
+    </style>
+
+    <style name="generic_image_toolbar_contract" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_contract</item>
+    </style>
+
+    <style name="generic_image_toolbar_turnleft" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_turnleft</item>
+    </style>
+
+    <style name="generic_image_toolbar_turnright" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_turnright</item>
+    </style>
+
+    <style name="generic_image_toolbar_trash" parent="generic_image_toolbar">
+        <item name="android:src">@drawable/katbag_toolbar_icon_trash</item>
     </style>
 
 </resources>

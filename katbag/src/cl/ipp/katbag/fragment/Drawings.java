@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 import cl.ipp.katbag.row_adapters.DrawingsRowAdapter;
@@ -31,12 +35,15 @@ public class Drawings extends SherlockFragment {
 	public DragSortListView drawingsListView;
 	public DrawingsRowAdapter adapter;
 	public static boolean editMode = false;
+	public Fragment mFragment;
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setHasOptionsMenu(true);
 	}
 	
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		mainActivity = (MainActivity) super.getActivity();
 		v = inflater.inflate(R.layout.fragment_drawings, container, false);
@@ -50,6 +57,26 @@ public class Drawings extends SherlockFragment {
         
         notRegister = (TextView) v.findViewById(R.id.drawings_not_register); 
         loadListView();
+        
+        drawingsListView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				if (!editMode) {
+					TextView idDrawing = (TextView) view.findViewById(R.id.drawing_row_id);
+									
+					Bundle bundle = new Bundle();
+					bundle.putLong("id_drawing", Long.valueOf(idDrawing.getText().toString()));
+					bundle.putString("name_drawing", idDrawing.getText().toString());
+									
+					mFragment = new OneDrawing();
+					mFragment.setArguments(bundle);
+					FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();
+					t.replace(R.id.fragment_main_container, mFragment);
+					t.addToBackStack(mFragment.getClass().getSimpleName());
+					t.commit();
+				}
+			}
+		});
         
 		return v;
 	}
@@ -102,7 +129,7 @@ public class Drawings extends SherlockFragment {
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode = false;
 				menuItemEdit.setIcon(R.drawable.ic_action_edit);
-				mainActivity.katbagHandler.insertDrawing(id_app, "#006699");
+				mainActivity.katbagHandler.insertDrawing(id_app);
 				loadListView();
 				return true;
 			}

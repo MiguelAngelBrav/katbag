@@ -38,7 +38,7 @@ public class Edit extends SherlockFragment {
 	public MenuItem menuItemEdit;
 	public Fragment mFragment;
 	
-	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setHasOptionsMenu(true);
@@ -175,8 +175,11 @@ public class Edit extends SherlockFragment {
 			Log.d("remove", "remove which:" + which);
 			
 			String item = (String) adapter.getItem(which);
-			adapter.remove(item);	
-			mainActivity.katbagHandler.deleteAppForId(item);
+			adapter.remove(item);
+			
+			String d[] = item.split("&&");
+			
+			mainActivity.katbagHandler.deleteAppForId(d[0]);
 			
 			adapter.notifyDataSetChanged();
 			editListView.refreshDrawableState();

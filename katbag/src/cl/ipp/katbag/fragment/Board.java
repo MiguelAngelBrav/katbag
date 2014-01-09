@@ -23,10 +23,6 @@ public class Board extends SherlockFragment {
 	public TextView notRegister;
 	public BoardRowAdapter adapter;	
 	
-	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	}
-	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		v = inflater.inflate(R.layout.fragment_board, container, false);

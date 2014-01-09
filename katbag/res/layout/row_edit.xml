@@ -18,7 +18,7 @@
             style="@style/generic_item_title_1"
             android:text="Nombre de ejemplo" />
 
-        <LinearLayout style="@style/generic_image_wrap_arrow_right" >
+        <LinearLayout style="@style/generic_wrap_image_arrow_right" >
 
             <ImageView
                 android:id="@+id/edit_row_image_arrow"

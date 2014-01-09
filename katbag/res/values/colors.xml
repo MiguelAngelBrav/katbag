@@ -18,7 +18,7 @@
     <color name="generic_item_subtitle">#909090</color>
     <color name="subtitle">#909090</color>
     
-    <!-- New World -->
-    <color name="background_default_new_world">#006699</color>
+    <!-- one world -->
+    <color name="border_one_drawing_part">#0000FF</color>
 
 </resources>

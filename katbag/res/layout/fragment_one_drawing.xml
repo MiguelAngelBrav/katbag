@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal|top"
+        android:background="@android:color/background_dark"
+        android:orientation="horizontal"
+        android:padding="3dp" >
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_bringtofront"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_bringtofront" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_expand"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_expand" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_contract"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_contract" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_turnleft"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_turnleft" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_turnright"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_turnright" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_part_trash"
+            style="@style/generic_wrap_image_toolbar" >
+
+            <ImageView style="@style/generic_image_toolbar_trash" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/one_drawing"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="45dp" >
+    </RelativeLayout>
+
+</RelativeLayout>

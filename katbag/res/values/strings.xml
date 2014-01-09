@@ -79,7 +79,7 @@
         Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
         desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
     <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
-    
+
     <!-- text one world -->
     <string name="one_world_dropdown_menu_color">Selecciona Color</string>
     <string name="one_world_dropdown_menu_photo_album">Imagen de Galería</string>
@@ -88,6 +88,25 @@
     <string name="one_world_picker_color_title">Selecciona un color</string>
     <string name="one_world_picker_color_button_cancel">Cancelar</string>
     <string name="one_world_picker_color_button_select">Seleccionar</string>
-    
+
+    <!-- text one drawing -->
+    <string name="one_drawing_dropdown_menu_body">Cuerpo</string>
+    <string name="one_drawing_dropdown_menu_hat">Sombrero</string>
+    <string name="one_drawing_dropdown_menu_wig">Peluca</string>
+    <string name="one_drawing_dropdown_menu_eyes">Ojos</string>
+    <string name="one_drawing_dropdown_menu_glasses">Anteojos</string>
+    <string name="one_drawing_dropdown_menu_mouth">Boca</string>
+    <string name="one_drawing_dropdown_menu_accesory">Accesorios</string>
+    <string name="one_drawing_list_view_parts">Selecciona</string>
+    <string name="one_drawing_dialog_part">Cancelar</string>
+    <string name="one_drawing_name_part_body">Cuerpo</string>
+    <string name="one_drawing_name_part_hat">Sombrero</string>
+    <string name="one_drawing_name_part_wig">Pelo</string>
+    <string name="one_drawing_name_part_eyes">Ojos</string>
+    <string name="one_drawing_name_part_glasses">Anteojos</string>
+    <string name="one_drawing_name_part_mouth">Boca</string>
+    <string name="one_drawing_name_part_accesory">Accesorios</string>
+    <string name="one_drawing_name_part_accesory">Accesorios</string>
+    <string name="one_drawing_message_only_a_body">Solo puedes usar un cuerpo</string>
 
 </resources>

@@ -42,7 +42,7 @@ public class OneWorld extends SherlockFragment {
 	static LinearLayout v = null;
 	public MainActivity mainActivity;
 	public long id_world = -1;
-	public String name_app;
+	public String name_world;
 	public MenuItem menuItemColor, menuItemPhotoAlbum, menuItemTakePhoto;
 	private ColorPicker pickerColor;
 	private SVBar svBar;	
@@ -67,6 +67,7 @@ public class OneWorld extends SherlockFragment {
 	public static final String WORLD_TYPE_CAMERA = "camera";
 	public static final String WORLD_TYPE_LIBRARY = "library";
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setHasOptionsMenu(true);
@@ -91,7 +92,7 @@ public class OneWorld extends SherlockFragment {
 		Bundle bundle = getArguments();
 		if(bundle != null){
 			id_world = bundle.getLong("id_world");
-			name_app = bundle.getString("name_world");
+			name_world = bundle.getString("name_world");
 			
 			world.clear();
 			world = mainActivity.katbagHandler.selectTypeSrcAndScaleFactorWorldForId(id_world);
@@ -331,6 +332,6 @@ public class OneWorld extends SherlockFragment {
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.worlds_row_name) + " " +  name_app);
+	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.worlds_row_name) + " " +  name_world);
 	}
 }

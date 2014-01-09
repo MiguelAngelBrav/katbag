@@ -15,7 +15,7 @@ import android.util.Log;
 public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "katbag_db.sqlite3";
-	private static final int DATABASE_VERSION = 7;
+	private static final int DATABASE_VERSION = 10;
 	
 	public static final String TABLE_APPLICATIONS = "applications";
 	public static final String FIELD_APP_ID = "_ID";
@@ -32,7 +32,17 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String TABLE_DRAWINGS = "drawings";
 	public static final String FIELD_DRAWING_ID = "_ID";
 	public static final String FIELD_DRAWING_APP_ID = "drawing_app_id";
-	public static final String FIELD_DRAWING_SRC = "drawing_src";
+	
+	public static final String TABLE_DRAWING_PARTS = "drawing_parts";
+	public static final String FIELD_DRAWING_PART_ID = "_ID";
+	public static final String FIELD_DRAWING_PART_DRAWING_ID = "drawing_part_drawing_id";
+	public static final String FIELD_DRAWING_PART_NAME = "drawing_part_name";
+	public static final String FIELD_DRAWING_PART_TOP = "drawing_part_top";
+	public static final String FIELD_DRAWING_PART_LEFT = "drawing_part_left";
+	public static final String FIELD_DRAWING_PART_WIDTH = "drawing_part_width";
+	public static final String FIELD_DRAWING_PART_HEIGHT = "drawing_part_height";
+	public static final String FIELD_DRAWING_PART_ROTATE = "drawing_part_rotate";
+	public static final String FIELD_DRAWING_PART_ORDER = "drawing_part_order";
 	
 	public static final int SCORE_FOR_HAVE_WORLDS = 20;
 	public static final int SCORE_FOR_HAVE_DRAWINGS = 20;
@@ -76,9 +86,22 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		
 		query = "CREATE TABLE " + TABLE_DRAWINGS + " ("
 				+ _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-				+ FIELD_DRAWING_APP_ID + " INTEGER NOT NULL, " 
-				+ FIELD_DRAWING_SRC + " TEXT NOT NULL, " 
+				+ FIELD_DRAWING_APP_ID + " INTEGER NOT NULL, "  
 				+ "FOREIGN KEY(" + FIELD_DRAWING_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE"
+				+ ");";
+		db.execSQL(query);
+		
+		query = "CREATE TABLE " + TABLE_DRAWING_PARTS + " ("
+				+ _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+				+ FIELD_DRAWING_PART_DRAWING_ID + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_NAME + " TEXT NOT NULL, "
+				+ FIELD_DRAWING_PART_TOP + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_LEFT + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_WIDTH + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_HEIGHT + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_ROTATE  + " INTEGER NOT NULL, " 
+				+ FIELD_DRAWING_PART_ORDER  + " INTEGER NOT NULL, " 
+				+ "FOREIGN KEY(" + FIELD_DRAWING_PART_DRAWING_ID + ") REFERENCES " + TABLE_DRAWINGS + "(" + FIELD_DRAWING_ID + ") ON DELETE CASCADE"
 				+ ");";
 		db.execSQL(query);
 	}
@@ -88,6 +111,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_APPLICATIONS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORLDS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWINGS);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWING_PARTS);
 		onCreate(db);
 	}
 	
@@ -267,28 +291,14 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	// ==================================================================================
 	
 	// insert new drawing
-	public long insertDrawing(long id_app, String src) {
+	public long insertDrawing(long id_app) {
 		long id = -1;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_DRAWING_APP_ID, id_app);
-		values.put(FIELD_DRAWING_SRC, src);
 		id = this.getWritableDatabase().insert(TABLE_DRAWINGS, null, values);	
 		this.close();
 		
 		Log.d("insertDrawing", "id: " + id + ", save!");
-		
-		return id;
-	}
-	
-	// update drawing
-	public long updateDrawing(long id, String src) {
-		String filter = FIELD_DRAWING_ID + " = " + id;
-		ContentValues values = new ContentValues();
-		values.put(FIELD_DRAWING_SRC, src);
-		this.getWritableDatabase().update(TABLE_DRAWINGS, values, filter, null);	
-		this.close();
-		
-		Log.d("updateDrawing", "src: " + src + ", id: " + id + ", update!");
 		
 		return id;
 	}
@@ -319,5 +329,152 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		Log.d("deleteDrawingForId", "id: " + id + ", delete!");
 		
 		return this.getWritableDatabase().delete(TABLE_DRAWINGS, query, null) > 0;
+	}
+	
+	// ==================================================================================
+	//                                      DRAWING PART
+	// ==================================================================================
+	
+	// insert new drawing part
+	public long insertDrawingPart(long id_drawing, String name, int top, int left, int width, int height, int rotate, int order) {
+		long id = -1;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DRAWING_PART_DRAWING_ID, id_drawing); 
+		values.put(FIELD_DRAWING_PART_NAME, name);
+		values.put(FIELD_DRAWING_PART_TOP, top); 
+		values.put(FIELD_DRAWING_PART_LEFT, left); 
+		values.put(FIELD_DRAWING_PART_WIDTH, width); 
+		values.put(FIELD_DRAWING_PART_HEIGHT, height); 
+		values.put(FIELD_DRAWING_PART_ROTATE, rotate);
+		values.put(FIELD_DRAWING_PART_ORDER, order);
+		
+		id = this.getWritableDatabase().insert(TABLE_DRAWING_PARTS, null, values);	
+		this.close();
+		
+		Log.d("insertDrawingPart", "id_drawing: " + id_drawing + ", id: " + id + ", save!");
+		
+		return id;
+	}
+	
+	// update drawing part
+	public long updateDrawingPart(long id, int top, int left, int width, int height, int rotate) {
+		String filter = FIELD_DRAWING_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DRAWING_PART_TOP, top); 
+		values.put(FIELD_DRAWING_PART_LEFT, left); 
+		values.put(FIELD_DRAWING_PART_WIDTH, width); 
+		values.put(FIELD_DRAWING_PART_HEIGHT, height); 
+		values.put(FIELD_DRAWING_PART_ROTATE, rotate);
+		this.getWritableDatabase().update(TABLE_DRAWING_PARTS, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDrawingPart", "top:" + top + ", left:" + left + ", w:" + width + ", h:" + height + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// update drawing part position
+	public long updateDrawingPartPosition(long id, int top, int left, int width, int height) {
+		String filter = FIELD_DRAWING_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DRAWING_PART_TOP, top); 
+		values.put(FIELD_DRAWING_PART_LEFT, left); 
+		values.put(FIELD_DRAWING_PART_WIDTH, width); 
+		values.put(FIELD_DRAWING_PART_HEIGHT, height);
+		this.getWritableDatabase().update(TABLE_DRAWING_PARTS, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDrawingPartPosition", "top:" + top + ", left:" + left + ", w:" + width + ", h:" + height + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// update drawing part rotate
+	public long updateDrawingPartRotate(long id, int top, int left, int width, int height, int rotate) {
+		String filter = FIELD_DRAWING_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DRAWING_PART_TOP, top); 
+		values.put(FIELD_DRAWING_PART_LEFT, left); 
+		values.put(FIELD_DRAWING_PART_WIDTH, width); 
+		values.put(FIELD_DRAWING_PART_HEIGHT, height); 
+		values.put(FIELD_DRAWING_PART_ROTATE, rotate); 
+		this.getWritableDatabase().update(TABLE_DRAWING_PARTS, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDrawingPartRotate", "top:" + top + ", left:" + left + ", w:" + width + ", h:" + height + ", r:" + rotate + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// update drawing part order
+	public long updateDrawingPartOrder(long id, int order) {
+		String filter = FIELD_DRAWING_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DRAWING_PART_ORDER, order); 
+		this.getWritableDatabase().update(TABLE_DRAWING_PARTS, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDrawingPartOrder", "order:" + order + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// select drawig parts
+	public List<String> selectDrawingsPartsForIdApp(long id_drawing) {
+		List<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DRAWING_PART_ID + ", " 
+				+ FIELD_DRAWING_PART_NAME + ", "
+				+ FIELD_DRAWING_PART_TOP + ", "
+				+ FIELD_DRAWING_PART_LEFT + ", "
+				+ FIELD_DRAWING_PART_WIDTH + ", "
+				+ FIELD_DRAWING_PART_HEIGHT + ", "
+				+ FIELD_DRAWING_PART_ROTATE + ", "
+				+ FIELD_DRAWING_PART_DRAWING_ID
+				+ " from " + TABLE_DRAWING_PARTS + " where " + FIELD_DRAWING_PART_DRAWING_ID + " = " + id_drawing + " order by " + FIELD_DRAWING_PART_ORDER;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			do {
+				results.add(cursor.getString(0) + "&&" + 
+						cursor.getString(1) + "&&" + 
+						cursor.getString(2) + "&&" + 
+						cursor.getString(3) + "&&" + 
+						cursor.getString(4) + "&&" + 
+						cursor.getString(5) + "&&" + 
+						cursor.getString(6) + "&&" +
+						cursor.getString(7));
+			} while (cursor.moveToNext());
+			cursor.close();
+		}		
+		
+		return results;
+	}
+	
+	// select rotate drawig parts
+	public int selectDrawingsPartsRotateForIdApp(long id_drawing_part) {
+		int result = -1;
+		String query = "select " + FIELD_DRAWING_PART_ROTATE
+				+ " from " + TABLE_DRAWING_PARTS + " where " + FIELD_DRAWING_PART_ID + " = " + id_drawing_part;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			result = cursor.getInt(0);
+			cursor.close();
+		}		
+		
+		return result;
+	}
+	
+	// delete drawing part for id
+	public boolean deleteDrawingPartForId(String id) {
+		String query = FIELD_DRAWING_PART_ID + " = " + id;
+		
+		Log.d("deleteDrawingPartForId", "id: " + id + ", delete!");
+		
+		return this.getWritableDatabase().delete(TABLE_DRAWING_PARTS, query, null) > 0;
 	}
 }

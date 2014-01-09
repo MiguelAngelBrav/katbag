@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/one_drawing_dropdown_menu_setting"
+        android:icon="@drawable/ic_action_add_person"
+        android:showAsAction="always|withText">
+        <menu>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_body"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_body"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_hat"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_hat"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_wig"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_wig"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_eyes"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_eyes"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_glasses"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_glasses"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_mouth"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_mouth"/>
+            <item
+                android:id="@+id/one_drawing_dropdown_menu_accesory"
+                android:showAsAction="never"
+                android:title="@string/one_drawing_dropdown_menu_accesory"/>
+        </menu>
+    </item>
+
+</menu>
