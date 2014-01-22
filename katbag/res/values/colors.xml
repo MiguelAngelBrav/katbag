@@ -3,8 +3,8 @@
 
     <!-- actionbar -->
     <color name="title_text_color_actionbar">#FFFFFF</color>
-    
-    <!-- colores personalizados -->
+
+    <!-- custom -->
     <color name="background_color_layout">#F0F0F0</color>
     <color name="background_color_layout_default">#FFFFFF</color>
     <color name="background_color_layout_press">#CCCCCC</color>
@@ -17,8 +17,22 @@
     <color name="generic_item_title">#393838</color>
     <color name="generic_item_subtitle">#909090</color>
     <color name="subtitle">#909090</color>
-    
+    <color name="dialog_text_item_normal">#FFFFFF</color>
+    <color name="dialog_text_item_important">#99CC00</color>
+
     <!-- one world -->
     <color name="border_one_drawing_part">#0000FF</color>
+
+    <!-- develop -->
+    <color name="develop_line_level_0">#9E0000</color>
+    <color name="develop_line_level_1">#DD0000</color>
+    <color name="develop_line_level_2">#FF0000</color>
+    <color name="develop_line_level_3">#FF6600</color>
+    <color name="develop_line_level_4">#FF9900</color>
+    <color name="develop_line_level_5">#FFCC00</color>
+    <color name="develop_line_level_6">#FFE305</color>
+    <color name="develop_line_level_7">#FFEE0F</color>
+    <color name="develop_line_level_8">#FFFE78</color>
+    <color name="develop_line_level_9">#FFFFCC</color>
 
 </resources>

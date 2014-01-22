@@ -1,5 +1,7 @@
 package cl.ipp.katbag.core;
 
+import java.util.Locale;
+
 import org.holoeverywhere.widget.Toast;
 
 import android.content.Context;
@@ -30,5 +32,10 @@ public class KatbagUtilities {
              return null;   
 		}   
 	};
+	
+	public static String capitalizeString(String s) {
+		s = s.substring(0, 1).toUpperCase(Locale.getDefault()) + s.substring(1, s.length()).toLowerCase(Locale.getDefault());
+		return s;
+	}
 
 }

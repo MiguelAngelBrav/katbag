@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- motion -->
+    <string-array name="motion_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="motion_name">
+        <item><![CDATA[Mover el <b><i>personaje N</i></b> pasos]]></item> <!-- 0 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> a <b><i>XY</i></b>]]></item> <!-- 1 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> solo en el eje X]]></item> <!-- 2 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> solo en el eje Y]]></item> <!-- 3 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> al centro]]></item> <!-- 4 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> con el acelerómetro]]></item> <!-- 5 -->
+        <item><![CDATA[Rotar el <b><i>personaje</i></b> a la derecha <b><i>N</i></b> grados]]></item> <!-- 6 -->
+        <item><![CDATA[Rotar el <b><i>personaje</i></b> a la izquierda <b><i>N</i></b> grados]]></item> <!-- 7 -->
+        <item><![CDATA[Cambiar X por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 8 -->
+        <item><![CDATA[Cambiar Y por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 9 -->
+        <item><![CDATA[Si el <b><i>personaje</i></b> colisiona con el borde, mover en sentido opuesto]]></item> <!-- 10 -->
+    </string-array>
+    <string-array name="motion_row">
+        <item>Mover el %1$s %2$s pasos</item> <!-- 0 -->
+        <item>Mover el %1$s a X%2$s Y%3$s</item> <!-- 1 -->
+        <item>Mover el %1$s solo en el eje X</item> <!-- 2 -->
+        <item>Mover el %1$s solo en el eje Y</item> <!-- 3 -->
+        <item>Mover el %1$s al centro</item> <!-- 4 -->
+        <item>Mover el %1$s con el acelerómetro</item> <!-- 5 -->
+        <item>Rotar el %1$s a la derecha %2$s grados</item> <!-- 6 -->
+        <item>Rotar el %1$s a la izquierda %2$s grados</item> <!-- 7 -->
+        <item>Cambiar X por %1$s del %2$s</item> <!-- 8 -->
+        <item>Cambiar Y por %1$s del %2$s</item> <!-- 9 -->
+        <item>Si el %1$s colisiona con el borde, mover en sentido opuesto</item> <!-- 10 -->
+    </string-array>
+
+    <!-- look -->
+    <string-array name="look_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="look_name">
+        <item><![CDATA[Esconder el <b><i>personaje</b></i>]]></item> <!-- 0 -->
+        <item><![CDATA[Mostrar el <b><i>personaje</b></i>]]></item> <!-- 1 -->
+        <item><![CDATA[Cambiar el <b><i>personaje A</b></i> por el <b><i>personaje B</b></i>]]></item> <!-- 2 -->
+    </string-array>
+    <string-array name="look_row">
+        <item>Esconder el %1$s</item> <!-- 0 -->
+        <item>Mostrar el %1$s</item> <!-- 1 -->
+        <item>Cambiar el %1$s por el %2$s</item> <!-- 2 -->
+    </string-array>
+
+    <!-- sound -->
+    <string-array name="sound_id">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="sound_name">
+        <item><![CDATA[Reproducir un <b><i>sonido</b></i>]]></item>
+        <item><![CDATA[Silenciar todos los sonidos]]></item>
+    </string-array>
+    <string-array name="sound_row">
+        <item>Reproducir el sonido: \"%1$s\"</item>
+        <item>Silenciar todos los sonidos</item>
+    </string-array>
+
+    <!-- control -->
+    <string-array name="control_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="control_name">
+        <item><![CDATA[Esperar <b><i>N</i></b> segundos]]></item>
+        <item><![CDATA[Repetir <b><i>N</i></b> veces]]></item>
+        <item><![CDATA[Repetir infinitamente]]></item>
+        <item><![CDATA[Iniciar puntaje en <b><i>N</i></b>]]></item>
+        <item><![CDATA[Sumar <b><i>N</i></b> puntos]]></item>
+        <item><![CDATA[Restar <b><i>N</i></b> puntos]]></item>
+        <item><![CDATA[Mostrar <b><i>mensaje</b></i>]]></item>
+        <item><![CDATA[Si puntaje es mayor a <b><i>N</b></i>]]></item>
+        <item><![CDATA[Si puntaje es menor a <b><i>N</b></i>]]></item>
+    </string-array>
+    <string-array name="control_row">
+        <item>Esperar %1$s segundos</item> <!-- 0 -->
+        <item>Repetir %1$s veces</item> <!-- 1 -->
+        <item>Repetir infinitamente</item> <!-- 2 -->
+        <item>Iniciar puntaje en %1$s</item> <!-- 3 -->
+        <item>Sumar %1$s puntos</item> <!-- 4 -->
+        <item>Restar %1$s puntos</item> <!-- 5 -->
+        <item>Mostrar mensaje: \"%1$s\"</item> <!-- 6 -->
+        <item>Si puntaje es mayor a %1$s</item> <!-- 7 -->
+        <item>Si puntaje es menor a %1$s</item> <!-- 8 -->
+    </string-array>
+    <string-array name="control_indent">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <!-- sensing -->
+    <string-array name="sensing_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="sensing_name">
+        <item><![CDATA[Si tocas el <b><i>personaje</b></i>]]></item>
+        <item><![CDATA[Si el <b><i>personaje</b></i> colisiona con otros personajes]]></item>
+        <item><![CDATA[Si el <b><i>personaje</b></i> <b><i>A</i></b> colisiona con el <b><i>personaje B</i></b>]]></item>
+        <item><![CDATA[Si <b><i>mueves</b></i> el dispositivo]]></item>
+    </string-array>
+    <string-array name="sensing_row">
+        <item>Si tocas el %1$s</item>
+        <item>Si el %1$s colisiona con otros personajes</item>
+        <item>Si el %1$s colisiona con el %2$s</item>
+        <item>Si mueves el dispositivo</item>
+    </string-array>
+    <string-array name="sensing_indent">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- sound -->
+    <string-array name="sound_list">
+        <item>sound_02_juegos_dig_dug_dies</item>
+        <item>sound_02_juegos_dig_dug_game_music_normal</item>
+        <item>sound_02_juegos_dig_dug_game_music_urgent</item>
+        <item>sound_02_juegos_pacman_die</item>
+        <item>sound_02_juegos_pacman_intermission</item>
+        <item>sound_02_juegos_pacman_power_pill</item>
+        <item>sound_02_juegos_qbert</item>
+        <item>sound_02_juegos_robotron</item>
+        <item>sound_02_juegos_space_invaders</item>
+        <item>sound_02_juegos_street_fighter_ryu_hadouken</item>
+        <item>sound_02_juegos_street_fighter_ryu_shouryuuken</item>
+        <item>sound_02_juegos_super_mario_bross_1up_extra_life</item>
+        <item>sound_02_juegos_super_mario_bross_brick_break</item>
+        <item>sound_02_juegos_super_mario_bross_brick_unbreakable</item>
+        <item>sound_02_juegos_super_mario_bross_castle_theme_song</item>
+        <item>sound_02_juegos_super_mario_bross_coin</item>
+        <item>sound_02_juegos_super_mario_bross_enemy_stomp</item>
+        <item>sound_02_juegos_super_mario_bross_extra_life</item>
+        <item>sound_02_juegos_super_mario_bross_fireball_throw</item>
+        <item>sound_02_juegos_super_mario_bross_going_down_pipe</item>
+        <item>sound_02_juegos_super_mario_bross_jump</item>
+        <item>sound_02_juegos_super_mario_bross_mario_dies</item>
+        <item>sound_02_juegos_super_mario_bross_out_of_time</item>
+        <item>sound_02_juegos_super_mario_bross_shell_kick</item>
+        <item>sound_02_juegos_super_mario_bross_stage_cleared</item>
+        <item>sound_02_juegos_super_mario_bross_stage_cleared2</item>
+        <item>sound_02_juegos_theme_dig_dug</item>
+        <item>sound_02_juegos_theme_frogger</item>
+        <item>sound_02_juegos_theme_galaga</item>
+        <item>sound_02_juegos_theme_pacman_intermission</item>
+        <item>sound_02_juegos_theme_pacman</item>
+        <item>sound_02_juegos_theme_pole_position</item>
+        <item>sound_02_juegos_theme_tron</item>
+        <item>sound_01_animales_buho</item>
+        <item>sound_01_animales_burro</item>
+        <item>sound_01_animales_caballo_galope</item>
+        <item>sound_01_animales_caballo_relincho</item>
+        <item>sound_01_animales_caiman</item>
+        <item>sound_01_animales_cerdo</item>
+        <item>sound_01_animales_delfin</item>
+        <item>sound_01_animales_elefante</item>
+        <item>sound_01_animales_gallina</item>
+        <item>sound_01_animales_gato_domestico</item>
+        <item>sound_01_animales_grillo</item>
+        <item>sound_01_animales_leon</item>
+        <item>sound_01_animales_lince</item>
+        <item>sound_01_animales_lobo</item>
+        <item>sound_01_animales_mono</item>
+        <item>sound_01_animales_orca</item>
+        <item>sound_01_animales_oso_grizzly</item>
+        <item>sound_01_animales_oveja</item>
+        <item>sound_01_animales_pajaro_cardinal</item>
+        <item>sound_01_animales_pavo</item>
+        <item>sound_01_animales_perro</item>
+        <item>sound_01_animales_rana</item>
+        <item>sound_01_animales_serpiente_de_cascabel_01</item>
+        <item>sound_01_animales_serpiente_de_cascabel_02</item>
+        <item>sound_01_animales_tigre</item>
+        <item>sound_01_animales_vaca_01</item>
+        <item>sound_01_animales_vaca_02</item>
+        <item>sound_03_humanos_abucheo_chico</item>
+        <item>sound_03_humanos_abucheo_grande</item>
+        <item>sound_03_humanos_aplausos</item>
+        <item>sound_03_humanos_bebe_llanto</item>
+        <item>sound_03_humanos_bebe</item>
+        <item>sound_03_humanos_beso</item>
+        <item>sound_03_humanos_eructo</item>
+        <item>sound_03_humanos_estornudo</item>
+        <item>sound_03_humanos_grito_de_mujer</item>
+        <item>sound_03_humanos_latidos</item>
+        <item>sound_03_humanos_pasos_sobre_rocas_chicas</item>
+        <item>sound_03_humanos_pedo</item>
+        <item>sound_03_humanos_ronquido</item>
+        <item>sound_03_humanos_silbar</item>
+        <item>sound_03_humanos_tragar</item>
+        <item>sound_04_fondo_benny_hill_theme_yakety_sax</item>
+        <item>sound_04_fondo_beverly_hills_cop_axel_f</item>
+        <item>sound_04_fondo_frogs_in_swamp</item>
+        <item>sound_04_fondo_good_bad_ugly</item>
+        <item>sound_04_fondo_heavenly_choir_op_9_sanctus_rheinberger</item>
+        <item>sound_04_fondo_police_radio</item>
+        <item>sound_04_fondo_psycho_stab</item>
+        <item>sound_04_fondo_rocky_eye_of_the_tiger</item>
+        <item>sound_04_fondo_suspense_music</item>
+        <item>sound_05_series_charlie_brown_teacher_voice</item>
+        <item>sound_05_series_flinstones_run</item>
+        <item>sound_05_series_flinstones_yabba_dabba_doo</item>
+        <item>sound_05_series_infinity_ward_logo_sound</item>
+        <item>sound_05_series_light_saber</item>
+        <item>sound_05_series_nariz_embrujada</item>
+        <item>sound_05_series_simpsons_nelson_haha</item>
+        <item>sound_06_efectos_apagar</item>
+        <item>sound_06_efectos_beep_sensurado</item>
+        <item>sound_06_efectos_beep</item>
+        <item>sound_06_efectos_blip_rapido</item>
+        <item>sound_06_efectos_blip</item>
+        <item>sound_06_efectos_bocina_de_bicicleta</item>
+        <item>sound_06_efectos_bocina_payaso</item>
+        <item>sound_06_efectos_boing_agudo</item>
+        <item>sound_06_efectos_boing_resorte</item>
+        <item>sound_06_efectos_boing</item>
+        <item>sound_06_efectos_bombo_grande</item>
+        <item>sound_06_efectos_bonk</item>
+        <item>sound_06_efectos_campana_ding_01</item>
+        <item>sound_06_efectos_campana_ding_02</item>
+        <item>sound_06_efectos_cartoon_boing</item>
+        <item>sound_06_efectos_cartoon_burbujas</item>
+        <item>sound_06_efectos_cartoon_mordida</item>
+        <item>sound_06_efectos_cartoon_reloj_cuckoo</item>
+        <item>sound_06_efectos_cartoon_silvato</item>
+        <item>sound_06_efectos_chapotear</item>
+        <item>sound_06_efectos_drama</item>
+        <item>sound_06_efectos_droid_google_android_sound</item>
+        <item>sound_06_efectos_falla_computador_antiguo</item>
+        <item>sound_06_efectos_golpe_de_aro</item>
+        <item>sound_06_efectos_mosca_volando</item>
+        <item>sound_06_efectos_pluck_01</item>
+        <item>sound_06_efectos_pluck_02</item>
+        <item>sound_06_efectos_pluck_boing</item>
+        <item>sound_06_efectos_pop</item>
+        <item>sound_06_efectos_rapido</item>
+        <item>sound_06_efectos_ring</item>
+        <item>sound_06_efectos_rinky_dink</item>
+        <item>sound_06_efectos_rueda_de_la_fortuna</item>
+        <item>sound_06_efectos_silbato_desliza_abajo_arriba</item>
+        <item>sound_06_efectos_silbato_deslizar_arriba</item>
+        <item>sound_06_efectos_sirena</item>
+        <item>sound_06_efectos_sonido_fx_futurista_02</item>
+        <item>sound_06_efectos_sonido_fx_suturista_01</item>
+        <item>sound_06_efectos_sumbido_01</item>
+        <item>sound_06_efectos_sumbido_02</item>
+        <item>sound_06_efectos_sumbido_03</item>
+        <item>sound_06_efectos_sumbido_04</item>
+        <item>sound_06_efectos_sumbido_05</item>
+        <item>sound_06_efectos_tablero_de_relleno</item>
+        <item>sound_06_efectos_timbre_campana</item>
+        <item>sound_06_efectos_timbre</item>
+        <item>sound_06_efectos_tronbon_triste</item>
+        <item>sound_06_efectos_tubo_subida</item>
+        <item>sound_06_efectos_whiff</item>
+        <item>sound_06_efectos_zumbador_01</item>
+        <item>sound_06_efectos_zumbador_02</item>
+    </string-array>
+
+</resources>

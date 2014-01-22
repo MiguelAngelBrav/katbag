@@ -59,6 +59,6 @@ public class Board extends SherlockFragment {
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_board);
+	    mainActivity.getSupportActionBar().setTitle(R.string.title_activity_board);
 	}
 }

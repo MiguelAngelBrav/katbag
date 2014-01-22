@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import cl.ipp.katbag.MainActivity;
@@ -31,7 +31,7 @@ public class Add extends Fragment implements OnClickListener {
 	public static long id_app = -1; // initial value
 	public static String name_app_text = "";
 	public MainActivity mainActivity;
-	public LinearLayout config_app_worlds, config_app_drawings, config_app_developments;
+	public RelativeLayout config_app_worlds, config_app_drawings, config_app_developments;
 	public Fragment mFragment;
 	public static final int MAX_LENGTH = 30;
 	public ProgressBar progress;
@@ -54,9 +54,9 @@ public class Add extends Fragment implements OnClickListener {
         setTitleAndImageForTypeApp();
         setEditTextNameApp();        
 
-        config_app_worlds = (LinearLayout) v.findViewById(R.id.config_app_worlds);
-        config_app_drawings = (LinearLayout) v.findViewById(R.id.config_app_drawings);
-        config_app_developments = (LinearLayout) v.findViewById(R.id.config_app_developments);
+        config_app_worlds = (RelativeLayout) v.findViewById(R.id.config_app_worlds);
+        config_app_drawings = (RelativeLayout) v.findViewById(R.id.config_app_drawings);
+        config_app_developments = (RelativeLayout) v.findViewById(R.id.config_app_developments);
         
         config_app_worlds.setOnClickListener(this);
         config_app_drawings.setOnClickListener(this);
@@ -115,6 +115,8 @@ public class Add extends Fragment implements OnClickListener {
 	                	
 	                	score_id_and_name = SCORE_FOR_HAVE_ID_AND_NAME;
 	                	estimatedProgress();
+	                	
+	                	onResume();
 					}
                 }
                 return false;
@@ -141,7 +143,7 @@ public class Add extends Fragment implements OnClickListener {
 				break;
 				
 			case R.id.config_app_developments:
-				mFragment = new Developments();
+				mFragment = new Develop();
 				break;
 			}
 			
@@ -162,7 +164,7 @@ public class Add extends Fragment implements OnClickListener {
         	score = 0;
 		} else {
         	score_id_and_name = SCORE_FOR_HAVE_ID_AND_NAME;
-        	score = mainActivity.katbagHandler.estimatedProgress(String.valueOf(id_app)); 
+        	score = mainActivity.katbagHandler.estimatedProgress(id_app); 
 		}
 	    
 	    progress.setProgress(score_id_and_name + score);		
@@ -171,7 +173,10 @@ public class Add extends Fragment implements OnClickListener {
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
+	    if (!name_app_text.contentEquals("")) {
+			title = getString(R.string.add_edit_app) + " " + name_app_text;
+		}
+	    mainActivity.getSupportActionBar().setTitle(title);
 	    name_app.setText(name_app_text);
 
 	    estimatedProgress();

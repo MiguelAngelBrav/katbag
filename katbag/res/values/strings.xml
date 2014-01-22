@@ -13,7 +13,7 @@
     <string name="title_activity_select_type">Selecciona Tipo</string>
     <string name="title_activity_worlds">Escenarios</string>
     <string name="title_activity_drawings">Personajes</string>
-    <string name="title_activity_developments">Programa</string>
+    <string name="title_activity_developments">Programando</string>
     <string name="image_description">image</string>
 
     <!-- messages -->
@@ -23,7 +23,14 @@
     <string name="name_app_update">Listo!, acabas de cambiar el nombre</string>
     <string name="app_empty">Primero debes completar el nombre y presionar OK en el teclado</string>
 
-    <!-- texts menu -->
+    <!-- dialog generic -->
+    <string name="dialog_title_select">Selecciona</string>
+    <string name="dialog_title_select_picker_color">Selecciona un color</string>
+    <string name="dialog_button_cancel">Cancelar</string>
+    <string name="dialog_button_select">Seleccionar</string>
+    <string name="dialog_button_ok">Ok</string>
+
+    <!-- menu -->
     <string name="subtitle_options_menu">Opciones de menú</string>
     <string name="option_menu_board">Tablero</string>
     <string name="option_menu_add">Nuevo</string>
@@ -35,7 +42,14 @@
     <string name="dialog_exit_button_yes">Si</string>
     <string name="dialog_exit_button_no">No</string>
 
-    <!-- texts select type -->
+    <!-- board -->
+    <string name="board_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
+
+    <!-- edit -->
+    <string name="edit_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
+    <string name="edit_get_id">Id App:</string>
+
+    <!-- select type -->
     <string name="select_type_item_game_title">Juegos</string>
     <string name="select_type_item_book_title">Libros</string>
     <string name="select_type_item_comic_title">Comics</string>
@@ -43,7 +57,8 @@
     <string name="select_type_item_book_subtitle">Crea un cuento con imagenes y sonido</string>
     <string name="select_type_item_comic_subtitle">Crea tus propios personajes con dialogo</string>
 
-    <!-- texts add -->
+    <!-- add -->
+    <string name="add_edit_app">Editando</string>
     <string name="subtitle_config_app">Detalles</string>
     <string name="config_hint_name_app">Escribe un nombre</string>
     <string name="config_app_worlds_title">Escenarios</string>
@@ -53,43 +68,83 @@
     <string name="config_app_drawings_subtitle">Arma tus personajes arrastrando partes</string>
     <string name="config_app_developments_subtitle">Objetos, eventos, acciones, movimiento</string>
 
-    <!-- texts worlds -->
+    <!-- worlds -->
     <string name="worlds_dropdown_menu_new">Nuevo</string>
     <string name="worlds_dropdown_menu_duplicate">Duplicar</string>
     <string name="worlds_row_name">Escenario</string>
     <string name="worlds_not_register">No has creado escenarios, crea uno nuevo desde el menú superior</string>
 
-    <!-- texts board -->
-    <string name="board_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
-
-    <!-- text edit -->
-    <string name="edit_not_register">No has creado aplicaciones, crea una desde el menú principal</string>
-    <string name="edit_get_id">Id App:</string>
-
-    <!-- text drawings -->
+    <!-- drawings -->
     <string name="drawings_dropdown_menu_new">Nuevo</string>
     <string name="drawings_dropdown_menu_duplicate">Duplicar</string>
     <string name="drawings_row_name">Personaje</string>
-    <string name="drawings_not_register">No has creado personajess, crea uno nuevo desde el menú superior</string>
+    <string name="drawings_not_register">No has creado personajes, crea uno nuevo desde el menú superior</string>
 
-    <!-- text about -->
-    <string name="about_version">Acerca de Katbag: ver</string>
-    <string name="about_text">Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, 
-        construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. \n\n
-        Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
-        desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
-    <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
+    <!-- development -->
+    <string name="develop_not_register">No has agregado instrucciones, crea instrucciones nuevas desde el menú superior</string>
+    <string name="develop_dropdown_menu_add_world">Escenario</string>
+    <string name="develop_dropdown_menu_add_drawing">Personaje</string>
+    <string name="develop_dropdown_menu_add_motion">Movimiento</string>
+    <string name="develop_dropdown_menu_add_look">Vista</string>
+    <string name="develop_dropdown_menu_add_sound">Sonido</string>
+    <string name="develop_dropdown_menu_add_control">Control</string>
+    <string name="develop_dropdown_menu_add_sensing">Detección</string>
+    <string name="develop_edittext_number_default_value">5</string>
+    <string name="develop_edittext_number_default_string">Hola soy katbag! ;)</string>
+    <string name="develop_message_not_drawing">Primero debes agregar personajes</string>
+    <string name="develop_dialog_motion_move_the">Mover el</string>
+    <string name="develop_dialog_motion_steps">pasos</string>
+    <string name="develop_dialog_motion_to">a</string>
+    <string name="develop_dialog_motion_x">X</string>
+    <string name="develop_dialog_motion_y">Y</string>
+    <string name="develop_dialog_motion_only_axis_x">solo en el eje X</string>
+    <string name="develop_dialog_motion_only_axis_y">solo en el eje Y</string>
+    <string name="develop_dialog_motion_to_the_center">al centro</string>
+    <string name="develop_dialog_motion_with_the_accelerometer">con el acelerómetro</string>
+    <string name="develop_dialog_motion_rotate_the">Rotar el</string>
+    <string name="develop_dialog_motion_to_the_right">a la derecha</string>
+    <string name="develop_dialog_motion_to_the_left">a la izquierda</string>
+    <string name="develop_dialog_motion_degrees">grados</string>
+    <string name="develop_dialog_motion_change_x_for">Cambiar X por</string>
+    <string name="develop_dialog_motion_change_y_for">Cambiar Y por</string>
+    <string name="develop_dialog_motion_of">del</string>
+    <string name="develop_dialog_motion_if_the">Si el</string>
+    <string name="develop_dialog_motion_collides_with_the_edge">colisiona con el borde,</string>
+    <string name="develop_dialog_motion_move_opposite_direction">mover en sentido opuesto</string>
+    <string name="develop_dialog_look_hide_the">Esconder el</string>
+    <string name="develop_dialog_look_show_the">Mostrar el</string>
+    <string name="develop_dialog_look_change_the">Cambiar el</string>
+    <string name="develop_dialog_look_for_the">por el</string>
+    <string name="develop_dialog_sound_play_the_sound">Reproducir el sonido:</string>
+    <string name="develop_dialog_control_wait">Esperar</string>
+    <string name="develop_dialog_control_seconds">segundos</string>
+    <string name="develop_dialog_control_repeat">Repetir</string>
+    <string name="develop_dialog_control_times">veces</string>
+    <string name="develop_dialog_control_repeat_indefinitely">Repetir infinitamente</string>
+    <string name="develop_dialog_control_start_score_in">Iniciar puntaje en</string>
+    <string name="develop_dialog_control_add">Sumar</string>
+    <string name="develop_dialog_control_deduct">Restar</string>
+    <string name="develop_dialog_control_score">puntos</string>
+    <string name="develop_dialog_control_show">Mostrar mensaje:</string>
+    <string name="develop_dialog_control_score_higher_to">Si puntaje es mayor a</string>
+    <string name="develop_dialog_control_score_less_to">Si puntaje es menor a</string>
+    <string name="develop_dialog_sensing_if_touch_the">Si tocas el</string>
+    <string name="develop_dialog_sensing_if_the">Si el</string>
+    <string name="develop_dialog_sensing_other">otros personajes</string>
+    <string name="develop_dialog_sensing_collides_with_the">colisiona con el</string>
+    <string name="develop_dialog_sensing_collides_with">colisiona con</string>
+    <string name="develop_message_empty_n">No puedes dejar los campos vacios</string>
+    <string name="develop_message_not_different">Los personajes seleccionados deben ser diferentes</string>
+    <string name="develop_message_drawing_exist">El personaje ya existe</string>
+    <string name="develop_title_indent">Indentar código</string>
 
-    <!-- text one world -->
+    <!-- one world -->
     <string name="one_world_dropdown_menu_color">Selecciona Color</string>
     <string name="one_world_dropdown_menu_photo_album">Imagen de Galería</string>
     <string name="one_world_dropdown_menu_take_photo">Tomar una Foto</string>
     <string name="one_world_dropdown_menu_add_audio">Agregar Audio</string>
-    <string name="one_world_picker_color_title">Selecciona un color</string>
-    <string name="one_world_picker_color_button_cancel">Cancelar</string>
-    <string name="one_world_picker_color_button_select">Seleccionar</string>
 
-    <!-- text one drawing -->
+    <!-- one drawing -->
     <string name="one_drawing_dropdown_menu_body">Cuerpo</string>
     <string name="one_drawing_dropdown_menu_hat">Sombrero</string>
     <string name="one_drawing_dropdown_menu_wig">Peluca</string>
@@ -97,8 +152,6 @@
     <string name="one_drawing_dropdown_menu_glasses">Anteojos</string>
     <string name="one_drawing_dropdown_menu_mouth">Boca</string>
     <string name="one_drawing_dropdown_menu_accesory">Accesorios</string>
-    <string name="one_drawing_list_view_parts">Selecciona</string>
-    <string name="one_drawing_dialog_part">Cancelar</string>
     <string name="one_drawing_name_part_body">Cuerpo</string>
     <string name="one_drawing_name_part_hat">Sombrero</string>
     <string name="one_drawing_name_part_wig">Pelo</string>
@@ -108,5 +161,16 @@
     <string name="one_drawing_name_part_accesory">Accesorios</string>
     <string name="one_drawing_name_part_accesory">Accesorios</string>
     <string name="one_drawing_message_only_a_body">Solo puedes usar un cuerpo</string>
+
+    <!-- about -->
+    <string name="about_version">Acerca de Katbag: ver</string>
+    <string name="about_text">Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, 
+        construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. \n\n
+        Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
+        desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
+    <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
+    <string name="title_activity_player">Player</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

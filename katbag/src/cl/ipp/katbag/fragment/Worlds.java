@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -94,16 +95,33 @@ public class Worlds extends SherlockFragment {
 			
 		} else {
 			notRegister.setVisibility(View.GONE);
-
+			
+			Parcelable state = worldsListView.onSaveInstanceState();
 			adapter = new WorldsRowAdapter(
 					v.getContext(), 
 					R.layout.row_worlds, 
 					idList);
 			
-			worldsListView.setRemoveListener(onRemove);
-			worldsListView.setAdapter(adapter);	
+			worldsListView.setAdapter(adapter);			
+			worldsListView.setRemoveListener(onRemove);			
+			worldsListView.onRestoreInstanceState(state);
 		}
 	}
+	
+	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
+		
+		@Override
+		public void remove(int which) {
+			Log.d("remove", "remove which:" + which);
+			
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);			
+			mainActivity.katbagHandler.deleteWorldForId(Long.parseLong(item));
+			
+			adapter.notifyDataSetChanged();
+			worldsListView.refreshDrawableState();
+		}
+	};
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -177,24 +195,12 @@ public class Worlds extends SherlockFragment {
 		}
 	}
 		
-	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
-		
-		@Override
-		public void remove(int which) {
-			Log.d("remove", "remove which:" + which);
-			
-			String item = (String) adapter.getItem(which);
-			adapter.remove(item);			
-			mainActivity.katbagHandler.deleteWorldForId(item);
-			
-			adapter.notifyDataSetChanged();
-			worldsListView.refreshDrawableState();
-		}
-	};
-		
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_worlds);
+	    mainActivity.getSupportActionBar().setTitle(Add.name_app_text + " - " + getString(R.string.title_activity_worlds));
+	    
+	    editMode = true;
+	    editMode();
 	}
 }

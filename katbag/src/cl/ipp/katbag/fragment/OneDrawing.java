@@ -295,7 +295,7 @@ public class OneDrawing extends SherlockFragment {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(
 				mainActivity.context);
-		builder.setTitle(getString(R.string.one_drawing_list_view_parts));
+		builder.setTitle(getString(R.string.dialog_title_select));
 		builder.setAdapter(adapter, new OnClickListener() {
 
 			@Override
@@ -305,7 +305,7 @@ public class OneDrawing extends SherlockFragment {
 			}
 		});
 
-		builder.setNegativeButton(getString(R.string.one_drawing_dialog_part),
+		builder.setNegativeButton(getString(R.string.dialog_button_cancel),
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						// :)
@@ -509,7 +509,7 @@ public class OneDrawing extends SherlockFragment {
 				body = false;
 			}
 			
-			mainActivity.katbagHandler.deleteDrawingPartForId(String.valueOf(imageViewLive.getId()));
+			mainActivity.katbagHandler.deleteDrawingPartForId(imageViewLive.getId());
 			one_drawing.removeView(imageViewLive);
 			one_drawing.invalidate();
 		}
@@ -518,8 +518,7 @@ public class OneDrawing extends SherlockFragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		((MainActivity) getActivity()).getSupportActionBar().setTitle(
-				getString(R.string.drawings_row_name) + " " + name_drawing);
+		mainActivity.getSupportActionBar().setTitle(Add.name_app_text + " - " + getString(R.string.drawings_row_name) + " " + name_drawing);
 	}
 
 }

@@ -115,18 +115,21 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
-    <style name="generic_row_clickable_base" parent="generic_row">
+    <style name="generic_row_2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="generic_row_clickable" parent="generic_row">
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingLeft">10dp</item>
-    </style>
-
-    <style name="generic_row_clickable" parent="generic_row_clickable_base">
         <item name="android:background">@drawable/row_generic</item>
     </style>
 
-    <style name="generic_row_no_clickable" parent="generic_row_clickable_base">
-        <item name="android:background">@drawable/row_generic</item>
+    <style name="generic_row_clickable_2" parent="generic_row_2">
+        <item name="android:background">@drawable/row_generic_2</item>
     </style>
 
     <style name="generic_row_for_input" parent="generic_row">
@@ -177,8 +180,6 @@
     <style name="generic_item_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:maxWidth">220dp</item>
-        <item name="android:paddingRight">10dp</item>
         <item name="android:textColor">@color/generic_item_title</item>
         <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
@@ -188,7 +189,7 @@
 
     <style name="generic_item_title_1" parent="generic_item_title">
         <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">11dp</item>
     </style>
 
     <style name="generic_item_title_2" parent="generic_item_title">
@@ -203,10 +204,12 @@
     </style>
 
     <style name="generic_wrap_image_arrow_right">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="image_row_base_right">
@@ -226,6 +229,10 @@
 
     <style name="image_row_remove" parent="image_row_base_right">
         <item name="android:src">@drawable/katbag_icon_remove</item>
+    </style>
+
+    <style name="image_row_drag" parent="image_row_base_right">
+        <item name="android:src">@drawable/katbag_icon_drag</item>
     </style>
 
     <!-- toolbar -->
@@ -265,6 +272,28 @@
 
     <style name="generic_image_toolbar_trash" parent="generic_image_toolbar">
         <item name="android:src">@drawable/katbag_toolbar_icon_trash</item>
+    </style>
+
+    <style name="develop_dialog_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxWidth">220dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="develop_dialog_text_normal" parent="develop_dialog_text">
+        <item name="android:textColor">@color/dialog_text_item_normal</item>
+    </style>
+
+    <style name="develop_dialog_text_important" parent="develop_dialog_text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dialog_text_item_important</item>
     </style>
 
 </resources>

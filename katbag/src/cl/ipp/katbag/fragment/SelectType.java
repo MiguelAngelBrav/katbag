@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 
@@ -15,7 +15,7 @@ public class SelectType extends Fragment implements OnClickListener {
 	
 	static View v = null;
 	public static MainActivity mainActivity;
-	public LinearLayout type_app_game, type_app_book, type_app_comic;
+	public RelativeLayout type_app_game, type_app_book, type_app_comic;
 	public Fragment mFragment;
 	
 	@Override
@@ -23,21 +23,15 @@ public class SelectType extends Fragment implements OnClickListener {
 		v = inflater.inflate(R.layout.fragment_select_type, container, false);
 		mainActivity = (MainActivity) super.getActivity();
 		
-		type_app_game = (LinearLayout) v.findViewById(R.id.type_app_game);
-		type_app_book = (LinearLayout) v.findViewById(R.id.type_app_book);
-		type_app_comic = (LinearLayout) v.findViewById(R.id.type_app_comic);
+		type_app_game = (RelativeLayout) v.findViewById(R.id.type_app_game);
+		type_app_book = (RelativeLayout) v.findViewById(R.id.type_app_book);
+		type_app_comic = (RelativeLayout) v.findViewById(R.id.type_app_comic);
 		
 		type_app_game.setOnClickListener(this);
 		type_app_book.setOnClickListener(this);
 		type_app_comic.setOnClickListener(this);
 		
 		return v;
-	}
-	
-	@Override
-	public void onResume() {
-	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_select_type);
 	}
 
 	@Override
@@ -74,5 +68,9 @@ public class SelectType extends Fragment implements OnClickListener {
 		t.commit();			
 	}
 	
-	
+	@Override
+	public void onResume() {
+	    super.onResume();
+	    mainActivity.getSupportActionBar().setTitle(R.string.title_activity_select_type);
+	}	
 }

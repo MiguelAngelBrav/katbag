@@ -34,48 +34,72 @@
         <activity
             android:name="cl.ipp.katbag.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.RootActivity"
-            android:label="@string/app_name" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Add"
-            android:label="@string/title_activity_add" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_add"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Board"
-            android:label="@string/title_activity_board" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_board"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.fragment.Developments"
-            android:label="@string/title_activity_developments" >
+            android:name="cl.ipp.katbag.fragment.Develop"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_developments"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Drawings"
-            android:label="@string/title_activity_drawings" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_drawings"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Edit"
-            android:label="@string/title_activity_edit" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_edit"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Menu"
-            android:label="@string/title_activity_menu" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_menu"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.SelectType"
-            android:label="@string/title_activity_select_type" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_select_type"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Worlds"
-            android:label="@string/title_activity_worlds" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_worlds"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.OneWorld"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_worlds" >
+            android:label="@string/title_activity_worlds"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.Player"
+            android:label="@string/title_activity_player" >
         </activity>
     </application>
 

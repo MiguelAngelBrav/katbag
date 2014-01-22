@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -94,6 +95,7 @@ public class Drawings extends SherlockFragment {
 		} else {
 			notRegister.setVisibility(View.GONE);
 
+			Parcelable state = drawingsListView.onSaveInstanceState();
 			adapter = new DrawingsRowAdapter(
 					v.getContext(), 
 					R.layout.row_drawings, 
@@ -101,8 +103,23 @@ public class Drawings extends SherlockFragment {
 			
 			drawingsListView.setRemoveListener(onRemove);
 			drawingsListView.setAdapter(adapter);	
+			drawingsListView.onRestoreInstanceState(state);
 		}
 	}
+	
+	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
+		@Override
+		public void remove(int which) {
+			Log.d("remove", "remove which:" + which);
+			
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);	
+			mainActivity.katbagHandler.deleteDrawingForId(Long.parseLong(item));
+			
+			adapter.notifyDataSetChanged();
+			drawingsListView.refreshDrawableState();
+		}
+	};
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -173,23 +190,12 @@ public class Drawings extends SherlockFragment {
 		}
 	}
 		
-	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
-		@Override
-		public void remove(int which) {
-			Log.d("remove", "remove which:" + which);
-			
-			String item = (String) adapter.getItem(which);
-			adapter.remove(item);	
-			mainActivity.katbagHandler.deleteDrawingForId(item);
-			
-			adapter.notifyDataSetChanged();
-			drawingsListView.refreshDrawableState();
-		}
-	};
-		
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_drawings);
+	    mainActivity.getSupportActionBar().setTitle(Add.name_app_text + " - " + getString(R.string.title_activity_drawings));
+	    
+	    editMode = true;
+	    editMode();
 	}
 }

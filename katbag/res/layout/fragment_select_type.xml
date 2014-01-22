@@ -7,7 +7,7 @@
 
     <!-- game -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/type_app_game"
         style="@style/generic_row_clickable" >
 
@@ -15,7 +15,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:orientation="vertical" >
 
             <TextView
@@ -31,11 +32,11 @@
 
             <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
     <!-- book -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/type_app_book"
         style="@style/generic_row_clickable" >
 
@@ -43,7 +44,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:orientation="vertical" >
 
             <TextView
@@ -59,11 +61,11 @@
 
             <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
     <!-- comic -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/type_app_comic"
         style="@style/generic_row_clickable" >
 
@@ -71,7 +73,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:orientation="vertical" >
 
             <TextView
@@ -87,6 +90,6 @@
 
             <ImageView style="@style/image_row_arrow_right" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

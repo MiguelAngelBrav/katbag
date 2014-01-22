@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/develop_dropdown_menu_player"
+        android:icon="@drawable/ic_action_play_over_video"
+        android:showAsAction="always|withText"/>
+    <item
+        android:id="@+id/develop_dropdown_menu_edit"
+        android:icon="@drawable/ic_action_edit"
+        android:showAsAction="always|withText"/>
+    <item
+        android:id="@+id/develop_dropdown_menu_add"
+        android:icon="@drawable/ic_action_new"
+        android:showAsAction="always|withText">
+        <menu>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_world"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_world"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_drawing"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_drawing"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_motion"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_motion"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_look"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_look"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_sound"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_sound"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_control"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_control"/>
+            <item
+                android:id="@+id/develop_dropdown_menu_add_sensing"
+                android:showAsAction="never"
+                android:title="@string/develop_dropdown_menu_add_sensing"/>
+        </menu>
+    </item>
+
+</menu>

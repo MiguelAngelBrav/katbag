@@ -1,22 +1,25 @@
-package cl.ipp.katbag.fragment;
+package cl.ipp.katbag;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import cl.ipp.katbag.MainActivity;
-import cl.ipp.katbag.R;
+import android.widget.RelativeLayout;
 
-public class Developments extends Fragment {
+public class Player extends Fragment {
 	
 	static View v = null;
-	public MainActivity mainActivity;
-
+	public static MainActivity mainActivity;
+	public RelativeLayout type_app_game, type_app_book, type_app_comic;
+	public Fragment mFragment;
+	
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		v = inflater.inflate(R.layout.fragment_player, container, false);
 		mainActivity = (MainActivity) super.getActivity();
-		v = inflater.inflate(R.layout.fragment_developments, container, false);
 		
 		return v;
 	}
+
 }

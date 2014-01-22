@@ -3,7 +3,6 @@ package cl.ipp.katbag.core;
 import static android.provider.BaseColumns._ID;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -15,7 +14,7 @@ import android.util.Log;
 public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "katbag_db.sqlite3";
-	private static final int DATABASE_VERSION = 10;
+	private static final int DATABASE_VERSION = 11;
 	
 	public static final String TABLE_APPLICATIONS = "applications";
 	public static final String FIELD_APP_ID = "_ID";
@@ -43,6 +42,19 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String FIELD_DRAWING_PART_HEIGHT = "drawing_part_height";
 	public static final String FIELD_DRAWING_PART_ROTATE = "drawing_part_rotate";
 	public static final String FIELD_DRAWING_PART_ORDER = "drawing_part_order";
+	
+	public static final String TABLE_DEVELOP = "develop";
+	public static final String FIELD_DEVELOP_ID = "_ID";
+	public static final String FIELD_DEVELOP_APP_ID = "develop_app_id";
+	public static final String FIELD_DEVELOP_STATEMENT = "develop_statement";
+	public static final String FIELD_DEVELOP_HUMAN_STATEMENT = "develop_huma_statement";
+	public static final String FIELD_DEVELOP_VALUE_01 = "develop_value_01";
+	public static final String FIELD_DEVELOP_VALUE_02 = "develop_value_02";
+	public static final String FIELD_DEVELOP_VALUE_03 = "develop_value_03";
+	public static final String FIELD_DEVELOP_VALUE_04 = "develop_value_04";
+	public static final String FIELD_DEVELOP_VALUE_05 = "develop_value_05";
+	public static final String FIELD_DEVELOP_LEVEL = "develop_level";
+	public static final String FIELD_DEVELOP_ORDER = "develop_order";
 	
 	public static final int SCORE_FOR_HAVE_WORLDS = 20;
 	public static final int SCORE_FOR_HAVE_DRAWINGS = 20;
@@ -104,6 +116,22 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 				+ "FOREIGN KEY(" + FIELD_DRAWING_PART_DRAWING_ID + ") REFERENCES " + TABLE_DRAWINGS + "(" + FIELD_DRAWING_ID + ") ON DELETE CASCADE"
 				+ ");";
 		db.execSQL(query);
+		
+		query = "CREATE TABLE " + TABLE_DEVELOP + " ("
+				+ _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+				+ FIELD_DEVELOP_APP_ID + " INTEGER NOT NULL, "
+				+ FIELD_DEVELOP_STATEMENT + " TEXT NOT NULL, " 
+				+ FIELD_DEVELOP_HUMAN_STATEMENT + " TEXT NOT NULL, " 
+				+ FIELD_DEVELOP_VALUE_01 + " TEXT NOT NULL, " 
+				+ FIELD_DEVELOP_VALUE_02 + " TEXT NULL, " 
+				+ FIELD_DEVELOP_VALUE_03 + " TEXT NULL, " 
+				+ FIELD_DEVELOP_VALUE_04 + " TEXT NULL, " 
+				+ FIELD_DEVELOP_VALUE_05 + " TEXT NULL, "
+				+ FIELD_DEVELOP_LEVEL + " INTEGER NOT NULL, "
+				+ FIELD_DEVELOP_ORDER + " INTEGER NOT NULL, "
+				+ "FOREIGN KEY(" + FIELD_DEVELOP_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE"
+				+ ");";
+		db.execSQL(query);		
 	}
 
 	@Override
@@ -112,6 +140,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORLDS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWINGS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWING_PARTS);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEVELOP);
 		onCreate(db);
 	}
 	
@@ -119,7 +148,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	//                                      GENERIC
 	// ==================================================================================
 	
-	public int estimatedProgress(String id_app) {
+	public int estimatedProgress(long id_app) {
 		Cursor cursor;
 		String query;
 		int result = 0;
@@ -138,12 +167,12 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		if (cursor.getCount() > 0) result = result + SCORE_FOR_HAVE_DRAWINGS;
 		cursor.close();
 		
-		// have a development?
-//		query = "select " + FIELD_WORLD_ID + " from " + TABLE_WORLDS + " where " + FIELD_WORLD_APP_ID + " = " + id_app;
-//		cursor = this.getReadableDatabase().rawQuery(query, null);
-//		
-//		if (cursor.getCount() > 0) result = result + SCORE_FOR_HAVE_DEVELOPMENTS;
-//		cursor.close();
+		// have a develop
+		query = "select " + FIELD_DEVELOP_ID + " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_APP_ID + " = " + id_app;
+		cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) result = result + SCORE_FOR_HAVE_DEVELOPMENTS;
+		cursor.close();
 		
 		return result;
 	}
@@ -178,8 +207,8 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// select all apps
-	public List<String> selectAllApps() {
-		List<String> results = new ArrayList<String>();
+	public ArrayList<String> selectAllApps() {
+		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 		
 		String query = "select " + FIELD_APP_ID + ", " + FIELD_APP_NAME + ", " + FIELD_APP_TYPE + " from " + TABLE_APPLICATIONS + " order by " + FIELD_APP_ID + " desc ";
@@ -197,7 +226,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// delete app for id
-	public boolean deleteAppForId(String id) {
+	public boolean deleteAppForId(long id) {
 		String query = FIELD_APP_ID + " = " + id;
 		
 		Log.d("deleteAppForId", "id: " + id + ", delete!");
@@ -240,8 +269,8 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// select worlds
-	public List<String> selectWorldsForIdApp(long id_app) {
-		List<String> results = new ArrayList<String>();
+	public ArrayList<String> selectWorldsForIdApp(long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 		
 		String query = "select " + FIELD_WORLD_ID + " from " + TABLE_WORLDS + " where " + FIELD_WORLD_APP_ID + " = " + id_app;
@@ -259,8 +288,8 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// select worlds
-	public List<String> selectTypeSrcAndScaleFactorWorldForId(long id_world) {
-		List<String> results = new ArrayList<String>();
+	public ArrayList<String> selectTypeSrcAndScaleFactorWorldForId(long id_world) {
+		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 		
 		String query = "select " + FIELD_WORLD_TYPE + ", " + FIELD_WORLD_SRC + ", " + FIELD_WORLD_SCALE_FACTOR + " from " + TABLE_WORLDS + " where " + FIELD_WORLD_ID + " = " + id_world;
@@ -278,7 +307,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// delete world for id
-	public boolean deleteWorldForId(String id) {
+	public boolean deleteWorldForId(long id) {
 		String query = FIELD_WORLD_ID + " = " + id;
 		
 		Log.d("deleteWorldForId", "id: " + id + ", delete!");
@@ -304,8 +333,8 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// select drawig
-	public List<String> selectDrawingsForIdApp(long id_app) {
-		List<String> results = new ArrayList<String>();
+	public ArrayList<String> selectDrawingsForIdApp(long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 		
 		String query = "select " + FIELD_DRAWING_ID + " from " + TABLE_DRAWINGS + " where " + FIELD_DRAWING_APP_ID + " = " + id_app;
@@ -323,7 +352,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// delete drawing for id
-	public boolean deleteDrawingForId(String id) {
+	public boolean deleteDrawingForId(long id) {
 		String query = FIELD_DRAWING_ID + " = " + id;
 		
 		Log.d("deleteDrawingForId", "id: " + id + ", delete!");
@@ -420,8 +449,8 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// select drawig parts
-	public List<String> selectDrawingsPartsForIdApp(long id_drawing) {
-		List<String> results = new ArrayList<String>();
+	public ArrayList<String> selectDrawingsPartsForIdApp(long id_drawing) {
+		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 		
 		String query = "select " + FIELD_DRAWING_PART_ID + ", " 
@@ -470,11 +499,236 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 	
 	// delete drawing part for id
-	public boolean deleteDrawingPartForId(String id) {
+	public boolean deleteDrawingPartForId(long id) {
 		String query = FIELD_DRAWING_PART_ID + " = " + id;
 		
 		Log.d("deleteDrawingPartForId", "id: " + id + ", delete!");
 		
 		return this.getWritableDatabase().delete(TABLE_DRAWING_PARTS, query, null) > 0;
+	}
+	
+	// ==================================================================================
+	//                                      DEVELOP
+	// ==================================================================================
+	
+	// insert new develop
+	public long insertDevelop(long id_app, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5, int level, int order) {
+		long id = -1;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DEVELOP_APP_ID, id_app); 
+		values.put(FIELD_DEVELOP_STATEMENT, statement); 
+		values.put(FIELD_DEVELOP_HUMAN_STATEMENT, human_statement);
+		values.put(FIELD_DEVELOP_VALUE_01, value1);
+		values.put(FIELD_DEVELOP_VALUE_02, value2);
+		values.put(FIELD_DEVELOP_VALUE_03, value3);
+		values.put(FIELD_DEVELOP_VALUE_04, value4);
+		values.put(FIELD_DEVELOP_VALUE_05, value5);
+		values.put(FIELD_DEVELOP_LEVEL, level);
+		values.put(FIELD_DEVELOP_ORDER, order);		
+		
+		id = this.getWritableDatabase().insert(TABLE_DEVELOP, null, values);	
+		this.close();
+		
+		Log.d("insertDevelop", "id_app: " + id_app + ", id: " + id + ", save!");
+		
+		updateDevelopOrder(id, id);
+		
+		return id;
+	}
+	
+	// update develop
+	public long updateDevelop(long id, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5) {
+		String filter = FIELD_DEVELOP_ID + " = " + id;
+		ContentValues values = new ContentValues(); 
+		values.put(FIELD_DEVELOP_STATEMENT, statement); 
+		values.put(FIELD_DEVELOP_HUMAN_STATEMENT, human_statement);
+		values.put(FIELD_DEVELOP_VALUE_01, value1);
+		values.put(FIELD_DEVELOP_VALUE_02, value2);
+		values.put(FIELD_DEVELOP_VALUE_03, value3);
+		values.put(FIELD_DEVELOP_VALUE_04, value4);
+		values.put(FIELD_DEVELOP_VALUE_05, value5);
+		
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDevelop", "id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// update develop level
+	public long updateDevelopLevel(long id, int level) {
+		String filter = FIELD_DEVELOP_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DEVELOP_LEVEL, level); 
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDevelopLevel", "level:" + level + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// update develop order
+	public long updateDevelopOrder(long id, long order) {
+		String filter = FIELD_DEVELOP_ID + " = " + id;
+		ContentValues values = new ContentValues();
+		values.put(FIELD_DEVELOP_ORDER, order); 
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);	
+		this.close();
+		
+		Log.d("updateDevelopOrder", "order:" + order + ", id:" + id + ", update!");
+		
+		return id;
+	}
+	
+	// select develop
+	public ArrayList<String> selectDevelopForIdApp(long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_ID + ", " 
+				+ FIELD_DEVELOP_STATEMENT + ", "
+				+ FIELD_DEVELOP_HUMAN_STATEMENT + ", "
+				+ FIELD_DEVELOP_VALUE_01 + ", "
+				+ FIELD_DEVELOP_VALUE_02 + ", "
+				+ FIELD_DEVELOP_VALUE_03 + ", "
+				+ FIELD_DEVELOP_VALUE_04 + ", "
+				+ FIELD_DEVELOP_VALUE_05 + ", "
+				+ FIELD_DEVELOP_LEVEL + ", "
+				+ FIELD_DEVELOP_ORDER
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_APP_ID + " = " + id_app + " order by " + FIELD_DEVELOP_ORDER + " ASC";
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			do {
+				results.add(cursor.getString(0) + "&&" + 
+						cursor.getString(1) + "&&" + 
+						cursor.getString(2) + "&&" + 
+						cursor.getString(3) + "&&" + 
+						cursor.getString(4) + "&&" + 
+						cursor.getString(5) + "&&" + 
+						cursor.getString(6) + "&&" +
+						cursor.getString(7) + "&&" +
+						cursor.getString(8) + "&&" +
+						cursor.getString(9));
+			} while (cursor.moveToNext());
+			cursor.close();
+		}		
+		
+		return results;
+	}
+	
+	// select develop
+	public ArrayList<String> selectDevelopForId(long id) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_STATEMENT + ", "
+				+ FIELD_DEVELOP_HUMAN_STATEMENT + ", "
+				+ FIELD_DEVELOP_VALUE_01 + ", "
+				+ FIELD_DEVELOP_VALUE_02 + ", "
+				+ FIELD_DEVELOP_VALUE_03 + ", "
+				+ FIELD_DEVELOP_VALUE_04 + ", "
+				+ FIELD_DEVELOP_VALUE_05 + ", "
+				+ FIELD_DEVELOP_LEVEL + ", "
+				+ FIELD_DEVELOP_ORDER
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_ID + " = " + id + " order by " + FIELD_DEVELOP_ORDER;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			results.add(cursor.getString(0)); 
+			results.add(cursor.getString(1)); 
+			results.add(cursor.getString(2)); 
+			results.add(cursor.getString(3)); 
+			results.add(cursor.getString(4)); 
+			results.add(cursor.getString(5)); 
+			results.add(cursor.getString(6));
+			results.add(cursor.getString(7));
+			results.add(cursor.getString(8));
+			cursor.close();
+		}		
+		
+		return results;
+	}
+	
+	// select develop
+	public ArrayList<String> selectDevelopAllDrawing(long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_VALUE_01				
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_STATEMENT + " = \"" + "drawing" + "\" and " + FIELD_DEVELOP_APP_ID + " = " + id_app +" order by " + FIELD_DEVELOP_VALUE_01 + " ASC";
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		
+		if (cursor.getCount() > 0) {
+			cursor.moveToFirst();
+			do {
+				results.add(cursor.getString(0));
+				
+			} while (cursor.moveToNext());
+			cursor.close();
+		}		
+		
+		return results;
+	}
+	
+	// select develop
+	public int selectDevelopStatementCount(String statement, long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_ID				
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_STATEMENT + " = \"" + statement + "\" and " + FIELD_DEVELOP_APP_ID + " = " + id_app;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);		
+		
+		return cursor.getCount();
+	}
+	
+	// select develop
+	public boolean selectDevelopDrawingExist(String value, long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_ID				
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_STATEMENT + " = \"" + "drawing" + "\" and " + FIELD_DEVELOP_VALUE_01 + " = \"" + value + "\" and " + FIELD_DEVELOP_APP_ID + " = " + id_app;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		if (cursor.getCount() > 0) return true;
+		else return false;
+	}
+	
+	// select develop
+	public boolean selectDevelopDrawingInUse(String value, long id_app) {
+		ArrayList<String> results = new ArrayList<String>();
+		results.clear();
+		
+		String query = "select " + FIELD_DEVELOP_ID				
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_STATEMENT + " = \"" + "drawing" + "\" and " + FIELD_DEVELOP_VALUE_01 + " = \"" + value + "\" and " + FIELD_DEVELOP_APP_ID + " = " + id_app;
+		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+		if (cursor.getCount() > 0) return true;
+		
+		query = "select " + FIELD_DEVELOP_ID				
+				
+				+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_STATEMENT + " = \"" + "drawing" + "\" and " + FIELD_DEVELOP_VALUE_01 + " = \"" + value + "\" and " + FIELD_DEVELOP_APP_ID + " = " + id_app;
+		cursor = this.getReadableDatabase().rawQuery(query, null);
+		if (cursor.getCount() > 0) return true;
+		else return false;
+	}
+	
+	// delete develop
+	public boolean deleteDevelopForId(long id) {
+		String query = FIELD_DEVELOP_ID + " = " + id;
+		
+		Log.d("deleteDevelopForId", "id: " + id + ", delete!");
+		
+		return this.getWritableDatabase().delete(TABLE_DEVELOP, query, null) > 0;
 	}
 }

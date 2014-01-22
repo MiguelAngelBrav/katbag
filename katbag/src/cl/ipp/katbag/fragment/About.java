@@ -33,6 +33,6 @@ public class About extends Fragment {
 			e.printStackTrace();
 		}
 		
-		((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
+		mainActivity.getSupportActionBar().setTitle(title);
 	}
 }

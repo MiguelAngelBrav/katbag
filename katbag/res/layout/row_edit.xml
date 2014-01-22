@@ -5,20 +5,37 @@
     android:background="@color/background_color_layout"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/edit_row"
         style="@style/generic_row_clickable" >
 
-        <ImageView
-            android:id="@+id/edit_row_image"
-            style="@style/image_row_game" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="0dp" >
 
-        <TextView
-            android:id="@+id/edit_row_name"
-            style="@style/generic_item_title_1"
-            android:text="Nombre de ejemplo" />
+            <ImageView
+                android:id="@+id/edit_row_image"
+                style="@style/image_row_game" />
+        </LinearLayout>
 
-        <LinearLayout style="@style/generic_wrap_image_arrow_right" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toLeftOf="@+id/m_image"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/edit_row_name"
+                style="@style/generic_item_title_1"
+                android:text="Nombre de ejemplokasdjnakjndkajsndkajndkjansdkjanskdnaksjnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/m_image"
+            style="@style/generic_wrap_image_arrow_right" >
 
             <ImageView
                 android:id="@+id/edit_row_image_arrow"
@@ -29,13 +46,13 @@
                 style="@style/image_row_remove"
                 android:visibility="gone" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/edit_row_id"
         style="@style/generic_item_title_1"
         android:visibility="gone" />
-    
+
     <TextView
         android:id="@+id/edit_row_type_app"
         style="@style/generic_item_title_1"

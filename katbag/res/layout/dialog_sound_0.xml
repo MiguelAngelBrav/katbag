@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/cl.ipp.katbag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="25dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="20dp" >
+
+    <TextView
+        style="@style/develop_dialog_text_normal"
+        android:text="@string/develop_dialog_sound_play_the_sound" />
+
+    <org.holoeverywhere.widget.Spinner
+        android:id="@+id/dialog_sound"
+        style="@style/develop_dialog_text_important"
+        android:drawSelectorOnTop="true"
+        android:minWidth="15dp"
+        app:spinnerMode="dialog" />
+
+</LinearLayout>

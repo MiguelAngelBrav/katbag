@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/develop_row"
+        style="@style/generic_row_clickable_2" >
+
+        <LinearLayout
+            android:id="@+id/develop_line_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/develop_line_level_0"
+            android:orientation="vertical"
+            android:paddingLeft="0dp" >
+
+            <ImageView
+                android:id="@+id/develop_row_image_indent_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_description"
+                android:background="@drawable/katbag_icon_one_develop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/m_image"
+            android:layout_toRightOf="@+id/develop_line_level"
+            android:orientation="vertical"
+            android:paddingTop="3dp" >
+
+            <TextView
+                android:id="@+id/develop_row_name"
+                style="@style/generic_item_title_2"
+                android:layout_marginRight="5dp"
+                android:paddingTop="2dp"
+                android:text="dffsdfsdfsdfskdfsjdnfkjsdnfkjsdnfkjsdnfkjsndfkjsdnfksdnfkjnsdfkjsdkjfnskjdfnksdjfnjkdsfn" />
+
+            <TextView
+                android:id="@+id/develop_row_sub_name"
+                style="@style/generic_item_subtitle"
+                android:paddingTop="2dp"
+                android:text="id:234" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/m_image"
+            style="@style/generic_wrap_image_arrow_right" >
+
+            <ImageView
+                android:id="@+id/develop_row_image_arrow"
+                style="@style/image_row_edit" />
+
+            <ImageView
+                android:id="@id/develop_row_image_remove"
+                style="@style/image_row_remove"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@id/develop_row_image_drag"
+                style="@style/image_row_drag"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -162,15 +162,15 @@ public class OneWorld extends SherlockFragment {
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity.context);
 		builder.setView(dialog_layout);
-		builder.setTitle(getString(R.string.one_world_picker_color_title));
+		builder.setTitle(getString(R.string.dialog_title_select_picker_color));
 		
-		builder.setNegativeButton(getString(R.string.one_world_picker_color_button_cancel), new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(getString(R.string.dialog_button_cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) { 
             	// :)
             }
         });
 		
-		builder.setPositiveButton(getString(R.string.one_world_picker_color_button_select), new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(getString(R.string.dialog_button_select), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
             	mainActivity.katbagHandler.updateWorld(id_world, WORLD_TYPE_COLOR, String.valueOf(pickerColor.getColor()), -1);
             	setColorBackground(pickerColor.getColor());
@@ -332,6 +332,6 @@ public class OneWorld extends SherlockFragment {
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.worlds_row_name) + " " +  name_world);
+	    mainActivity.getSupportActionBar().setTitle(Add.name_app_text + " - " + getString(R.string.worlds_row_name) + " " +  name_world);
 	}
 }

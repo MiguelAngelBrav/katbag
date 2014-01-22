@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -103,15 +104,34 @@ public class Edit extends SherlockFragment {
 		} else {		
 			notRegister.setVisibility(View.GONE);
 
+			Parcelable state = editListView.onSaveInstanceState();
 			adapter = new EditRowAdapter(
 					v.getContext(), 
 					R.layout.row_edit, 
 					idList);
 			
 			editListView.setRemoveListener(onRemove);
-			editListView.setAdapter(adapter);	
+			editListView.setAdapter(adapter);			
+			editListView.onRestoreInstanceState(state);
 		}
 	}
+	
+	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
+		@Override
+		public void remove(int which) {
+			Log.d("remove", "remove which:" + which);
+			
+			String item = (String) adapter.getItem(which);
+			adapter.remove(item);
+			
+			String d[] = item.split("&&");
+			
+			mainActivity.katbagHandler.deleteAppForId(Long.parseLong(d[0]));
+			
+			adapter.notifyDataSetChanged();
+			editListView.refreshDrawableState();
+		}
+	};
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -169,26 +189,12 @@ public class Edit extends SherlockFragment {
 		}
 	}
 		
-	private DragSortListView.RemoveListener onRemove = new DragSortListView.RemoveListener() {
-		@Override
-		public void remove(int which) {
-			Log.d("remove", "remove which:" + which);
-			
-			String item = (String) adapter.getItem(which);
-			adapter.remove(item);
-			
-			String d[] = item.split("&&");
-			
-			mainActivity.katbagHandler.deleteAppForId(d[0]);
-			
-			adapter.notifyDataSetChanged();
-			editListView.refreshDrawableState();
-		}
-	};
-	
 	@Override
 	public void onResume() {
 	    super.onResume();
-	    ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_activity_edit);
+	    mainActivity.getSupportActionBar().setTitle(R.string.title_activity_edit);
+	    
+	    editMode = true;
+	    editMode();
 	}
 }
