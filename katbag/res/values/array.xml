@@ -14,32 +14,38 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+        <item>11</item>
+        <item>12</item>
     </string-array>
     <string-array name="motion_name">
-        <item><![CDATA[Mover el <b><i>personaje N</i></b> pasos]]></item> <!-- 0 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b>, <b><i>N</i></b> pasos]]></item> <!-- 0 -->
         <item><![CDATA[Mover el <b><i>personaje</i></b> a <b><i>XY</i></b>]]></item> <!-- 1 -->
         <item><![CDATA[Mover el <b><i>personaje</i></b> solo en el eje X]]></item> <!-- 2 -->
         <item><![CDATA[Mover el <b><i>personaje</i></b> solo en el eje Y]]></item> <!-- 3 -->
         <item><![CDATA[Mover el <b><i>personaje</i></b> al centro]]></item> <!-- 4 -->
         <item><![CDATA[Mover el <b><i>personaje</i></b> con el acelerómetro]]></item> <!-- 5 -->
-        <item><![CDATA[Rotar el <b><i>personaje</i></b> a la derecha <b><i>N</i></b> grados]]></item> <!-- 6 -->
-        <item><![CDATA[Rotar el <b><i>personaje</i></b> a la izquierda <b><i>N</i></b> grados]]></item> <!-- 7 -->
-        <item><![CDATA[Cambiar X por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 8 -->
-        <item><![CDATA[Cambiar Y por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 9 -->
-        <item><![CDATA[Si el <b><i>personaje</i></b> colisiona con el borde, mover en sentido opuesto]]></item> <!-- 10 -->
+        <item><![CDATA[Cambiar X por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 6 -->
+        <item><![CDATA[Cambiar Y por <b><i>N</i></b> del <b><i>personaje</i></b>]]></item> <!-- 7 -->
+        <item><![CDATA[Mover automáticamente el <b><i>personaje</i></b>]]></item> <!-- 8 -->
+        <item><![CDATA[Mover el <b><i>personaje</i></b> de forma aleatoria]]></item> <!-- 9 -->
+        <item><![CDATA[Cancelar movimiento con acelerómetro del <b><i>personaje</i></b>]]></item> <!-- 10 -->
+        <item><![CDATA[Cancelar movimiento automático del <b><i>personaje</i></b>]]></item> <!-- 11 -->
+        <item><![CDATA[Cancelar movimiento aleatorio del <b><i>personaje</i></b>]]></item> <!-- 12 -->
     </string-array>
     <string-array name="motion_row">
-        <item>Mover el %1$s %2$s pasos</item> <!-- 0 -->
+        <item>Mover el %1$s, %2$s pasos</item> <!-- 0 -->
         <item>Mover el %1$s a X%2$s Y%3$s</item> <!-- 1 -->
         <item>Mover el %1$s solo en el eje X</item> <!-- 2 -->
         <item>Mover el %1$s solo en el eje Y</item> <!-- 3 -->
         <item>Mover el %1$s al centro</item> <!-- 4 -->
         <item>Mover el %1$s con el acelerómetro</item> <!-- 5 -->
-        <item>Rotar el %1$s a la derecha %2$s grados</item> <!-- 6 -->
-        <item>Rotar el %1$s a la izquierda %2$s grados</item> <!-- 7 -->
-        <item>Cambiar X por %1$s del %2$s</item> <!-- 8 -->
-        <item>Cambiar Y por %1$s del %2$s</item> <!-- 9 -->
-        <item>Si el %1$s colisiona con el borde, mover en sentido opuesto</item> <!-- 10 -->
+        <item>Cambiar X por %1$s del %2$s</item> <!-- 6 -->
+        <item>Cambiar Y por %1$s del %2$s</item> <!-- 7 -->
+        <item>Mover automáticamente el %1$s</item> <!-- 8 -->
+        <item>Mover el %1$s de forma aleatoria</item> <!-- 9 -->
+        <item>Cancelar movimiento con acelerómetro del %1$s</item> <!-- 10 -->
+        <item>Cancelar movimiento automático del %1$s</item> <!-- 11 -->
+        <item>Cancelar movimiento aleatorio del %1$s</item> <!-- 12 -->
     </string-array>
 
     <!-- look -->
@@ -51,26 +57,29 @@
     <string-array name="look_name">
         <item><![CDATA[Esconder el <b><i>personaje</b></i>]]></item> <!-- 0 -->
         <item><![CDATA[Mostrar el <b><i>personaje</b></i>]]></item> <!-- 1 -->
-        <item><![CDATA[Cambiar el <b><i>personaje A</b></i> por el <b><i>personaje B</b></i>]]></item> <!-- 2 -->
+        <item><![CDATA[Cambiar apariencia del <b><i>personaje A</b></i> por apariencia del <b><i>personaje B</b></i>]]></item> <!-- 2 -->
     </string-array>
     <string-array name="look_row">
         <item>Esconder el %1$s</item> <!-- 0 -->
         <item>Mostrar el %1$s</item> <!-- 1 -->
-        <item>Cambiar el %1$s por el %2$s</item> <!-- 2 -->
+        <item>Cambiar apariencia del %1$s por apariencia del %2$s</item> <!-- 2 -->
     </string-array>
 
     <!-- sound -->
     <string-array name="sound_id">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
     </string-array>
     <string-array name="sound_name">
         <item><![CDATA[Reproducir un <b><i>sonido</b></i>]]></item>
-        <item><![CDATA[Silenciar todos los sonidos]]></item>
+        <item><![CDATA[Desactivar sonidos]]></item>
+        <item><![CDATA[Activar sonidos]]></item>
     </string-array>
     <string-array name="sound_row">
         <item>Reproducir el sonido: \"%1$s\"</item>
-        <item>Silenciar todos los sonidos</item>
+        <item>Desactivar sonidos</item>
+        <item>Activar sonidos</item>
     </string-array>
 
     <!-- control -->
@@ -82,63 +91,46 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
-        <item>7</item>
-        <item>8</item>
     </string-array>
     <string-array name="control_name">
-        <item><![CDATA[Esperar <b><i>N</i></b> segundos]]></item>
-        <item><![CDATA[Repetir <b><i>N</i></b> veces]]></item>
-        <item><![CDATA[Repetir infinitamente]]></item>
-        <item><![CDATA[Iniciar puntaje en <b><i>N</i></b>]]></item>
-        <item><![CDATA[Sumar <b><i>N</i></b> puntos]]></item>
-        <item><![CDATA[Restar <b><i>N</i></b> puntos]]></item>
-        <item><![CDATA[Mostrar <b><i>mensaje</b></i>]]></item>
-        <item><![CDATA[Si puntaje es mayor a <b><i>N</b></i>]]></item>
-        <item><![CDATA[Si puntaje es menor a <b><i>N</b></i>]]></item>
+        <item><![CDATA[Esperar <b><i>N</i></b> segundos]]></item> <!-- 0 -->
+        <item><![CDATA[Repetir <b><i>N</i></b> veces]]></item> <!-- 1 -->
+        <item><![CDATA[Iniciar puntaje en <b><i>N</i></b>]]></item> <!-- 2 -->
+        <item><![CDATA[Sumar <b><i>N</i></b> puntos]]></item> <!-- 3 -->
+        <item><![CDATA[Restar <b><i>N</i></b> puntos]]></item> <!-- 4 -->
+        <item><![CDATA[Mostrar <b><i>mensaje</b></i>]]></item> <!-- 5 -->
+        <item><![CDATA[Si el puntaje es igual a <b><i>N</b></i>]]></item> <!-- 6 -->
     </string-array>
     <string-array name="control_row">
         <item>Esperar %1$s segundos</item> <!-- 0 -->
         <item>Repetir %1$s veces</item> <!-- 1 -->
-        <item>Repetir infinitamente</item> <!-- 2 -->
-        <item>Iniciar puntaje en %1$s</item> <!-- 3 -->
-        <item>Sumar %1$s puntos</item> <!-- 4 -->
-        <item>Restar %1$s puntos</item> <!-- 5 -->
-        <item>Mostrar mensaje: \"%1$s\"</item> <!-- 6 -->
-        <item>Si puntaje es mayor a %1$s</item> <!-- 7 -->
-        <item>Si puntaje es menor a %1$s</item> <!-- 8 -->
+        <item>Iniciar puntaje en %1$s</item> <!-- 2 -->
+        <item>Sumar %1$s puntos</item> <!-- 3 -->
+        <item>Restar %1$s puntos</item> <!-- 4 -->
+        <item>Mostrar mensaje: \"%1$s\"</item> <!-- 5 -->
+        <item>Si el puntaje es igual a %1$s</item> <!-- 6 -->
     </string-array>
     <string-array name="control_indent">
-        <item>0</item>
         <item>1</item>
-        <item>2</item>
-        <item>7</item>
-        <item>8</item>
+        <item>6</item>
     </string-array>
 
     <!-- sensing -->
     <string-array name="sensing_id">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
     </string-array>
     <string-array name="sensing_name">
         <item><![CDATA[Si tocas el <b><i>personaje</b></i>]]></item>
-        <item><![CDATA[Si el <b><i>personaje</b></i> colisiona con otros personajes]]></item>
-        <item><![CDATA[Si el <b><i>personaje</b></i> <b><i>A</i></b> colisiona con el <b><i>personaje B</i></b>]]></item>
-        <item><![CDATA[Si <b><i>mueves</b></i> el dispositivo]]></item>
+        <item><![CDATA[Si <b><i>sacudes</b></i> el dispositivo]]></item>
     </string-array>
     <string-array name="sensing_row">
         <item>Si tocas el %1$s</item>
-        <item>Si el %1$s colisiona con otros personajes</item>
-        <item>Si el %1$s colisiona con el %2$s</item>
-        <item>Si mueves el dispositivo</item>
+        <item>Si sacudes el dispositivo</item>
     </string-array>
     <string-array name="sensing_indent">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
     </string-array>
 
     <!-- sound -->

@@ -8,36 +8,36 @@ package com.larswerkman.holocolorpicker;
 
 public final class R {
 	public static final class attr {
-		public static final int bar_length = 0x7f010007;
-		public static final int bar_pointer_halo_radius = 0x7f010009;
-		public static final int bar_pointer_radius = 0x7f010008;
-		public static final int bar_thickness = 0x7f010006;
-		public static final int color_center_halo_radius = 0x7f010003;
-		public static final int color_center_radius = 0x7f010002;
-		public static final int color_pointer_halo_radius = 0x7f010005;
-		public static final int color_pointer_radius = 0x7f010004;
-		public static final int color_wheel_radius = 0x7f010000;
-		public static final int color_wheel_thickness = 0x7f010001;
+		public static final int bar_length = 0x7f010026;
+		public static final int bar_pointer_halo_radius = 0x7f010028;
+		public static final int bar_pointer_radius = 0x7f010027;
+		public static final int bar_thickness = 0x7f010025;
+		public static final int color_center_halo_radius = 0x7f010022;
+		public static final int color_center_radius = 0x7f010021;
+		public static final int color_pointer_halo_radius = 0x7f010024;
+		public static final int color_pointer_radius = 0x7f010023;
+		public static final int color_wheel_radius = 0x7f01001f;
+		public static final int color_wheel_thickness = 0x7f010020;
 	}
 	public static final class dimen {
-		public static final int bar_length = 0x7f070007;
-		public static final int bar_pointer_halo_radius = 0x7f070009;
-		public static final int bar_pointer_radius = 0x7f070008;
-		public static final int bar_thickness = 0x7f070006;
-		public static final int color_center_halo_radius = 0x7f070002;
-		public static final int color_center_radius = 0x7f070003;
-		public static final int color_pointer_halo_radius = 0x7f070004;
-		public static final int color_pointer_radius = 0x7f070005;
-		public static final int color_wheel_radius = 0x7f070000;
-		public static final int color_wheel_thickness = 0x7f070001;
+		public static final int bar_length = 0x7f0c0014;
+		public static final int bar_pointer_halo_radius = 0x7f0c0016;
+		public static final int bar_pointer_radius = 0x7f0c0015;
+		public static final int bar_thickness = 0x7f0c0013;
+		public static final int color_center_halo_radius = 0x7f0c000f;
+		public static final int color_center_radius = 0x7f0c0010;
+		public static final int color_pointer_halo_radius = 0x7f0c0011;
+		public static final int color_pointer_radius = 0x7f0c0012;
+		public static final int color_wheel_radius = 0x7f0c000d;
+		public static final int color_wheel_thickness = 0x7f0c000e;
 	}
 	public static final class styleable {
-		public static final int[] ColorBars = { 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009 };
+		public static final int[] ColorBars = { 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028 };
 		public static final int ColorBars_bar_length = 1;
 		public static final int ColorBars_bar_pointer_halo_radius = 3;
 		public static final int ColorBars_bar_pointer_radius = 2;
 		public static final int ColorBars_bar_thickness = 0;
-		public static final int[] ColorPicker = { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005 };
+		public static final int[] ColorPicker = { 0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024 };
 		public static final int ColorPicker_color_center_halo_radius = 3;
 		public static final int ColorPicker_color_center_radius = 2;
 		public static final int ColorPicker_color_pointer_halo_radius = 5;

@@ -22,20 +22,20 @@ public class BoardRowAdapter extends ArrayAdapter<String> {
 		this.context = context;
 		this.items = items;
 	}
-	
+
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		View v = convertView;
 		if (v == null) {
 			LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = vi.inflate(R.layout.row_board, parent, false);	
+			v = vi.inflate(R.layout.row_board, parent, false);
 		}
-		
+
 		array = items.get(position).toString().split("&&");
 		String mId = array[0];
 		String mName = array[1];
 		String mTypeApp = array[2];
-		
+
 		ImageView image = (ImageView) v.findViewById(R.id.board_row_image);
 		if (mTypeApp.contentEquals("game")) {
 			image.setImageResource(R.drawable.katbag_icon_game);
@@ -44,18 +44,22 @@ public class BoardRowAdapter extends ArrayAdapter<String> {
 		} else if (mTypeApp.contentEquals("comic")) {
 			image.setImageResource(R.drawable.katbag_icon_comic);
 		}
-		
+
 		TextView name = (TextView) v.findViewById(R.id.board_row_name);
 		if (name != null) {
 			name.setText(mName);
 		}
-		
+
 		TextView id = (TextView) v.findViewById(R.id.board_row_id);
 		if (id != null) {
 			id.setText(mId);
 		}
-				
-		
+
+		TextView type = (TextView) v.findViewById(R.id.board_row_type);
+		if (type != null) {
+			type.setText(mTypeApp);
+		}
+
 		return v;
 	}
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/one_page_dropdown_menu_play_sound"
+        android:icon="@drawable/ic_action_volume_on"
+        android:showAsAction="always|withText">
+    </item>
+    <item
+        android:id="@+id/one_page_remove_drawing"
+        android:icon="@drawable/ic_action_remove"
+        android:showAsAction="always|withText">
+    </item>
+    <item
+        android:id="@+id/one_page_dropdown_menu_add"
+        android:icon="@drawable/ic_action_new"
+        android:showAsAction="always|withText">
+        <menu>
+            <item
+                android:id="@+id/one_page_dropdown_menu_add_world"
+                android:showAsAction="never"
+                android:title="@string/one_page_dropdown_menu_add_world"/>
+            <item
+                android:id="@+id/one_page_dropdown_menu_add_drawing"
+                android:showAsAction="never"
+                android:title="@string/one_page_dropdown_menu_add_drawing"/>
+            <item
+                android:id="@+id/one_page_dropdown_menu_add_sound"
+                android:showAsAction="never"
+                android:title="@string/one_page_dropdown_menu_add_sound"/>
+            <item
+                android:id="@+id/one_page_dropdown_menu_remove_sound"
+                android:showAsAction="never"
+                android:title="@string/one_page_dropdown_menu_remove_sound"/>
+        </menu>
+    </item>
+
+</menu>

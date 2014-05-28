@@ -2,13 +2,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color_layout"
-    android:orientation="vertical"
+    android:background="@color/background_color_layout_default"
     tools:context=".Player" >
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/player_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:clipChildren="false" />
+
+    <View
+        android:id="@+id/player_line_horizontal_editmode"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"
+        android:background="@color/player_line_blue_editmode"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/player_line_vertical_editmode"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/player_line_blue_editmode"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/player_button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_centerInParent="true"
+        android:background="@color/background_holo_dark"
+        android:drawableRight="@drawable/ic_action_play_over_video"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/player_button_start"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/player_score_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background_holo_dark"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:paddingBottom="1dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/image_description"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            style="@style/generic_item_score"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="2dp"
+            android:text="@string/player_label_score" />
+
+        <TextView
+            android:id="@+id/player_score"
+            style="@style/generic_item_score"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:text="..." />
+    </LinearLayout>
 
 </RelativeLayout>

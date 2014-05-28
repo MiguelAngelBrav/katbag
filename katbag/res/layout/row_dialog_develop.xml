@@ -20,11 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:ellipsize="end"
             android:gravity="center_vertical"
-            android:lines="1"
             android:maxWidth="220dp"
-            android:singleLine="true"
             android:text="@string/worlds_row_name"
             android:textColor="@color/menu_item"
             android:textSize="16sp" />

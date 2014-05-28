@@ -78,7 +78,6 @@
     <style name="menu_row">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">-1dp</item>
         <item name="android:background">@drawable/row_menu</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:paddingTop">10dp</item>
@@ -177,6 +176,14 @@
         <item name="android:src">@drawable/katbag_icon_developments</item>
     </style>
 
+    <style name="image_row_pages" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_pages</item>
+    </style>
+
+    <style name="image_row_one_page" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_one_page</item>
+    </style>
+
     <style name="generic_item_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -201,6 +208,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/generic_item_subtitle</item>
         <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="generic_item_score">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/generic_item_score</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="generic_wrap_image_arrow_right">
@@ -236,42 +250,52 @@
     </style>
 
     <!-- toolbar -->
-    <style name="generic_wrap_image_toolbar">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_margin">3dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:clickable">true</item>
-    </style>
-
     <style name="generic_image_toolbar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginLeft">3dp</item>
         <item name="android:contentDescription">@string/image_description</item>
     </style>
 
     <style name="generic_image_toolbar_bringtofront" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_bringtofront</item>
+        <item name="android:background">@drawable/toolbar_icon_bringtofront</item>
     </style>
 
     <style name="generic_image_toolbar_expand" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_expand</item>
+        <item name="android:background">@drawable/toolbar_icon_expand</item>
     </style>
 
     <style name="generic_image_toolbar_contract" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_contract</item>
-    </style>
-
-    <style name="generic_image_toolbar_turnleft" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_turnleft</item>
-    </style>
-
-    <style name="generic_image_toolbar_turnright" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_turnright</item>
+        <item name="android:background">@drawable/toolbar_icon_contract</item>
     </style>
 
     <style name="generic_image_toolbar_trash" parent="generic_image_toolbar">
-        <item name="android:src">@drawable/katbag_toolbar_icon_trash</item>
+        <item name="android:background">@drawable/toolbar_icon_trash</item>
+    </style>
+
+    <style name="generic_image_toolbar_alignleft" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_alignleft</item>
+    </style>
+
+    <style name="generic_image_toolbar_aligncenter" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_aligncenter</item>
+    </style>
+
+    <style name="generic_image_toolbar_alignright" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_alignright</item>
+    </style>
+
+    <style name="generic_image_toolbar_fontsizeup" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_fontsizeup</item>
+    </style>
+
+    <style name="generic_image_toolbar_fontsizedown" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_fontsizedown</item>
+    </style>
+
+    <style name="generic_image_toolbar_textcolor" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_textcolor</item>
     </style>
 
     <style name="develop_dialog_text">
@@ -294,6 +318,7 @@
     <style name="develop_dialog_text_important" parent="develop_dialog_text">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/dialog_text_item_important</item>
+        <item name="android:maxLength">5</item>
     </style>
 
 </resources>

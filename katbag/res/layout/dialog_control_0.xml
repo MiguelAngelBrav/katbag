@@ -17,7 +17,7 @@
         android:id="@+id/dialog_n"
         style="@style/develop_dialog_text_important"
         android:hint=""
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <TextView
         style="@style/develop_dialog_text_normal"

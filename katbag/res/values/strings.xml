@@ -14,6 +14,8 @@
     <string name="title_activity_worlds">Escenarios</string>
     <string name="title_activity_drawings">Personajes</string>
     <string name="title_activity_developments">Programando</string>
+    <string name="title_activity_pages">Páginas</string>
+    <string name="title_activity_player">Player</string>
     <string name="image_description">image</string>
 
     <!-- messages -->
@@ -21,14 +23,14 @@
     <string name="name_app_short">El nombre debe tener 3 caracteres como mínimo</string>
     <string name="name_app_new">Listo!, ahora puedes agregar los escenario, personajes y la programación</string>
     <string name="name_app_update">Listo!, acabas de cambiar el nombre</string>
-    <string name="app_empty">Primero debes completar el nombre y presionar OK en el teclado</string>
+    <string name="app_empty">Primero debes completar el nombre y presionar Enter en el teclado</string>
 
     <!-- dialog generic -->
     <string name="dialog_title_select">Selecciona</string>
     <string name="dialog_title_select_picker_color">Selecciona un color</string>
     <string name="dialog_button_cancel">Cancelar</string>
     <string name="dialog_button_select">Seleccionar</string>
-    <string name="dialog_button_ok">Ok</string>
+    <string name="dialog_button_ok">OK</string>
 
     <!-- menu -->
     <string name="subtitle_options_menu">Opciones de menú</string>
@@ -59,14 +61,16 @@
 
     <!-- add -->
     <string name="add_edit_app">Editando</string>
-    <string name="subtitle_config_app">Detalles</string>
+    <string name="subtitle_config_app">Progreso de la construcción</string>
     <string name="config_hint_name_app">Escribe un nombre</string>
     <string name="config_app_worlds_title">Escenarios</string>
     <string name="config_app_drawings_title">Personajes</string>
     <string name="config_app_developments_title">Programación</string>
+    <string name="config_app_pages_title">Páginas</string>
     <string name="config_app_worlds_subtitle">Selecciona color, imagen ó una foto</string>
     <string name="config_app_drawings_subtitle">Arma tus personajes arrastrando partes</string>
     <string name="config_app_developments_subtitle">Objetos, eventos, acciones, movimiento</string>
+    <string name="config_app_pages_subtitle">Páginas que componen el libro</string>
 
     <!-- worlds -->
     <string name="worlds_dropdown_menu_new">Nuevo</string>
@@ -108,13 +112,17 @@
     <string name="develop_dialog_motion_change_x_for">Cambiar X por</string>
     <string name="develop_dialog_motion_change_y_for">Cambiar Y por</string>
     <string name="develop_dialog_motion_of">del</string>
-    <string name="develop_dialog_motion_if_the">Si el</string>
-    <string name="develop_dialog_motion_collides_with_the_edge">colisiona con el borde,</string>
-    <string name="develop_dialog_motion_move_opposite_direction">mover en sentido opuesto</string>
+    <string name="develop_dialog_motion_automatically_move_the">Mover automáticamente el</string>
+    <string name="develop_dialog_motion_move">el borde, mover en</string>
+    <string name="develop_dialog_motion_randomly">de forma aleatoria</string>
+    <string name="develop_dialog_motion_cancel_movement">Cancelar movimiento</string>
+    <string name="develop_dialog_motion_with_accelerometer">con acelerómetro del</string>
+    <string name="develop_dialog_motion_automatic">automático del</string>
+    <string name="develop_dialog_motion_random">aleatorio del</string>
     <string name="develop_dialog_look_hide_the">Esconder el</string>
     <string name="develop_dialog_look_show_the">Mostrar el</string>
-    <string name="develop_dialog_look_change_the">Cambiar el</string>
-    <string name="develop_dialog_look_for_the">por el</string>
+    <string name="develop_dialog_look_change_appearance">Cambiar apariencia del</string>
+    <string name="develop_dialog_look_for_appearance">por apariencia del</string>
     <string name="develop_dialog_sound_play_the_sound">Reproducir el sonido:</string>
     <string name="develop_dialog_control_wait">Esperar</string>
     <string name="develop_dialog_control_seconds">segundos</string>
@@ -126,8 +134,7 @@
     <string name="develop_dialog_control_deduct">Restar</string>
     <string name="develop_dialog_control_score">puntos</string>
     <string name="develop_dialog_control_show">Mostrar mensaje:</string>
-    <string name="develop_dialog_control_score_higher_to">Si puntaje es mayor a</string>
-    <string name="develop_dialog_control_score_less_to">Si puntaje es menor a</string>
+    <string name="develop_dialog_control_score_equal_to">Si el puntaje es igual a</string>
     <string name="develop_dialog_sensing_if_touch_the">Si tocas el</string>
     <string name="develop_dialog_sensing_if_the">Si el</string>
     <string name="develop_dialog_sensing_other">otros personajes</string>
@@ -138,11 +145,19 @@
     <string name="develop_message_drawing_exist">El personaje ya existe</string>
     <string name="develop_title_indent">Indentar código</string>
 
+    <!-- pages -->
+    <string name="pages_dropdown_menu_new">Nuevo</string>
+    <string name="pages_dropdown_menu_duplicate">Duplicar</string>
+    <string name="pages_row_name">Página</string>
+    <string name="pages_not_register">No has creado páginas, crea una nueva desde el menú superior</string>
+    <string name="pages_text_default">Este texto es un ejemplo, quita esto ya ;)</string>
+
     <!-- one world -->
     <string name="one_world_dropdown_menu_color">Selecciona Color</string>
     <string name="one_world_dropdown_menu_photo_album">Imagen de Galería</string>
     <string name="one_world_dropdown_menu_take_photo">Tomar una Foto</string>
     <string name="one_world_dropdown_menu_add_audio">Agregar Audio</string>
+    <string name="one_world_select_picture">Selecciona una imagen</string>
 
     <!-- one drawing -->
     <string name="one_drawing_dropdown_menu_body">Cuerpo</string>
@@ -161,6 +176,20 @@
     <string name="one_drawing_name_part_accesory">Accesorios</string>
     <string name="one_drawing_name_part_accesory">Accesorios</string>
     <string name="one_drawing_message_only_a_body">Solo puedes usar un cuerpo</string>
+    <string name="one_drawing_message_not_image_selected">No fue posible seleccionar la imagen</string>
+
+    <!-- one page -->
+    <string name="one_page_dropdown_menu_add_world">Escenario</string>
+    <string name="one_page_dropdown_menu_add_sound">Sonido de fondo</string>
+    <string name="one_page_dropdown_menu_remove_sound">Eliminar Sonido de fondo</string>
+    <string name="one_page_dropdown_menu_add_drawing">Personaje</string>
+    <string name="one_page_write_text_here">Escribir el texto aquí</string>
+    <string name="one_page_default_font">fonts/toony_loons.ttf</string>
+    <string name="one_page_message_sound_not_set">Aún no seleccionas un sonido</string>
+    <string name="one_page_dialog_remove_drawer_title">Eliminar Personaje</string>
+    <string name="one_page_dialog_remove_drawer_text">¿Quieres eliminar el personaje %s?</string>
+    <string name="one_page_dialog_remove_drawer_button_yes">Si</string>
+    <string name="one_page_dialog_remove_drawer_button_no">No</string>
 
     <!-- about -->
     <string name="about_version">Acerca de Katbag: ver</string>
@@ -169,7 +198,13 @@
         Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
         desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
     <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
-    <string name="title_activity_player">Player</string>
+
+    <!-- player -->
+    <string name="player_title_editmode">(Edición)</string>
+    <string name="player_message_not_accetitle_editmode">(Edición)</string>
+    <string name="player_button_start">Iniciar</string>
+    <string name="player_label_score">Puntaje:</string>
+    <string name="title_activity_player_book">Player Book</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 

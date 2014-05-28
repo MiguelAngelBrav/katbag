@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_layout_default"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/one_page_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:paddingTop="5dp" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/one_page_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="@string/one_page_write_text_here"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:scrollHorizontally="false"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textColor="@color/generic_item_title"
+                android:paddingTop="48dp" >
+
+                <requestFocus />
+            </EditText>
+        </ScrollView>
+    </RelativeLayout>
+    
+    <HorizontalScrollView
+        android:id="@+id/horizontalScroll"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/background_toolbar"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:scrollbars="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/toolbar_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@color/background_toolbar"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:scrollbars="horizontal" >
+
+            <ImageView
+                android:id="@+id/toolbar_alignleft"
+                style="@style/generic_image_toolbar_alignleft"
+                android:contentDescription="@string/image_description" />
+
+            <ImageView
+                android:id="@+id/toolbar_aligncenter"
+                style="@style/generic_image_toolbar_aligncenter"
+                android:contentDescription="@string/image_description" />
+
+            <ImageView
+                android:id="@+id/toolbar_alignright"
+                style="@style/generic_image_toolbar_alignright"
+                android:contentDescription="@string/image_description" />
+
+            <ImageView
+                android:id="@+id/toolbar_fontsizeup"
+                style="@style/generic_image_toolbar_fontsizeup"
+                android:contentDescription="@string/image_description" />
+
+            <ImageView
+                android:id="@+id/toolbar_fontsizedown"
+                style="@style/generic_image_toolbar_fontsizedown"
+                android:contentDescription="@string/image_description" />
+
+            <ImageView
+                android:id="@+id/toolbar_textcolor"
+                style="@style/generic_image_toolbar_textcolor"
+                android:contentDescription="@string/image_description" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>

@@ -11,12 +11,12 @@
 
     <TextView
         style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_control_show" />
+        android:text="@string/develop_dialog_control_score_equal_to" />
 
     <EditText
-        android:id="@+id/dialog_message"
+        android:id="@+id/dialog_n"
         style="@style/develop_dialog_text_important"
         android:hint=""
-        android:inputType="text" />
+        android:inputType="number" />
 
 </LinearLayout>

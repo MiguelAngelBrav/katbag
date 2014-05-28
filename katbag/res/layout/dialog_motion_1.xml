@@ -4,45 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingBottom="25dp"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:paddingTop="20dp" >
 
-    <TextView
-        style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_motion_move_the" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <org.holoeverywhere.widget.Spinner
-        android:id="@+id/dialog_drawing"
-        style="@style/develop_dialog_text_important"
-        android:drawSelectorOnTop="true"
-        android:minWidth="15dp"
-        app:spinnerMode="dialog" />
+        <TextView
+            style="@style/develop_dialog_text_normal"
+            android:text="@string/develop_dialog_motion_move_the" />
 
-    <TextView
-        style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_motion_to" />
+        <org.holoeverywhere.widget.Spinner
+            android:id="@+id/dialog_drawing"
+            style="@style/develop_dialog_text_important"
+            android:drawSelectorOnTop="true"
+            android:minWidth="15dp"
+            app:spinnerMode="dialog" />
+    </LinearLayout>
 
-    <TextView
-        style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_motion_x" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/dialog_x"
-        style="@style/develop_dialog_text_important"
-        android:hint=""
-        android:inputType="number" />
+        <TextView
+            style="@style/develop_dialog_text_normal"
+            android:text="@string/develop_dialog_motion_to" />
 
-    <TextView
-        style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_motion_y" />
+        <TextView
+            style="@style/develop_dialog_text_normal"
+            android:text="@string/develop_dialog_motion_x" />
 
-    <EditText
-        android:id="@+id/dialog_y"
-        style="@style/develop_dialog_text_important"
-        android:hint=""
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/dialog_x"
+            style="@style/develop_dialog_text_important"
+            android:hint=""
+            android:inputType="number" />
+
+        <TextView
+            style="@style/develop_dialog_text_normal"
+            android:text="@string/develop_dialog_motion_y" />
+
+        <EditText
+            android:id="@+id/dialog_y"
+            style="@style/develop_dialog_text_important"
+            android:hint=""
+            android:inputType="number" />
+    </LinearLayout>
 
 </LinearLayout>

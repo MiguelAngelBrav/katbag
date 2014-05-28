@@ -21,20 +21,20 @@ public class DialogDevelopRowAdapter extends ArrayAdapter<String> {
 		this.context = context;
 		this.names = names;
 	}
-	
+
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		View v = convertView;
 		if (v == null) {
 			LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = vi.inflate(R.layout.row_dialog_develop, parent, false);	
+			v = vi.inflate(R.layout.row_dialog_develop, parent, false);
 		}
-		
+
 		TextView name = (TextView) v.findViewById(R.id.dialog_develop_row_name);
 		if (name != null) {
 			name.setText(Html.fromHtml(names.get(position)));
-		}	
-		
+		}
+
 		return v;
 	}
 }

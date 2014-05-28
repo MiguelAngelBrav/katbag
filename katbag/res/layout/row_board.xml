@@ -53,4 +53,9 @@
         style="@style/generic_item_title_1"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/board_row_type"
+        style="@style/generic_item_title_1"
+        android:visibility="gone" />
+
 </LinearLayout>

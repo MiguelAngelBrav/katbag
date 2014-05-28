@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,61 +6,40 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/toolbar_part"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:background="@android:color/background_dark"
+        android:background="@color/background_toolbar"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:padding="3dp" >
 
-        <LinearLayout
+        <ImageView
             android:id="@+id/toolbar_part_bringtofront"
-            style="@style/generic_wrap_image_toolbar" >
+            style="@style/generic_image_toolbar_bringtofront"
+            android:contentDescription="@string/image_description" />
 
-            <ImageView style="@style/generic_image_toolbar_bringtofront" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
             android:id="@+id/toolbar_part_expand"
-            style="@style/generic_wrap_image_toolbar" >
+            style="@style/generic_image_toolbar_expand"
+            android:contentDescription="@string/image_description" />
 
-            <ImageView style="@style/generic_image_toolbar_expand" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
             android:id="@+id/toolbar_part_contract"
-            style="@style/generic_wrap_image_toolbar" >
+            style="@style/generic_image_toolbar_contract"
+            android:contentDescription="@string/image_description" />
 
-            <ImageView style="@style/generic_image_toolbar_contract" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/toolbar_part_turnleft"
-            style="@style/generic_wrap_image_toolbar" >
-
-            <ImageView style="@style/generic_image_toolbar_turnleft" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/toolbar_part_turnright"
-            style="@style/generic_wrap_image_toolbar" >
-
-            <ImageView style="@style/generic_image_toolbar_turnright" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
             android:id="@+id/toolbar_part_trash"
-            style="@style/generic_wrap_image_toolbar" >
-
-            <ImageView style="@style/generic_image_toolbar_trash" />
-        </LinearLayout>
+            style="@style/generic_image_toolbar_trash"
+            android:contentDescription="@string/image_description" />
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/one_drawing"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="45dp" >
-    </RelativeLayout>
+        android:paddingTop="5dp" />
 
-</RelativeLayout>
+</LinearLayout>

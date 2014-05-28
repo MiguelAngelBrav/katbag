@@ -12,15 +12,23 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" >
+    </uses-permission>
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme" >
+         >
         <activity
             android:name="cl.ipp.katbag.SplashActivity"
             android:label="@string/app_name"
@@ -35,71 +43,89 @@
             android:name="cl.ipp.katbag.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.RootActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Add"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_add"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Board"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_board"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Develop"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_developments"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Drawings"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_drawings"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Edit"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_edit"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Menu"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_menu"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.SelectType"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_select_type"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.Worlds"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_worlds"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.OneWorld"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_worlds"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
-            android:name="cl.ipp.katbag.Player"
-            android:label="@string/title_activity_player" >
+            android:name="cl.ipp.katbag.fragment.Player"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.fragment.Pages"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.fragment.OnePage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player"
+            android:windowSoftInputMode="stateHidden|adjustUnspecified" >
+        </activity>
+        <activity
+            android:name="cl.ipp.katbag.fragment.PlayerBook"
+            android:label="@string/title_activity_player_book" >
         </activity>
     </application>
 

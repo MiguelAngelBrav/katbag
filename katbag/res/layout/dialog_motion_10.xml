@@ -17,18 +17,7 @@
 
         <TextView
             style="@style/develop_dialog_text_normal"
-            android:text="@string/develop_dialog_motion_if_the" />
-
-        <org.holoeverywhere.widget.Spinner
-            android:id="@+id/dialog_drawing"
-            style="@style/develop_dialog_text_important"
-            android:drawSelectorOnTop="true"
-            android:minWidth="15dp"
-            app:spinnerMode="dialog" />
-
-        <TextView
-            style="@style/develop_dialog_text_normal"
-            android:text="@string/develop_dialog_motion_collides_with_the_edge" />
+            android:text="@string/develop_dialog_motion_cancel_movement" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,7 +27,20 @@
 
         <TextView
             style="@style/develop_dialog_text_normal"
-            android:text="@string/develop_dialog_motion_move_opposite_direction" />
+            android:text="@string/develop_dialog_motion_with_accelerometer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <org.holoeverywhere.widget.Spinner
+            android:id="@+id/dialog_drawing"
+            style="@style/develop_dialog_text_important"
+            android:drawSelectorOnTop="true"
+            android:minWidth="15dp"
+            app:spinnerMode="dialog" />
     </LinearLayout>
 
 </LinearLayout>

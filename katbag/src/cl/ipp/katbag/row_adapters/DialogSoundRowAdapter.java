@@ -23,44 +23,45 @@ public class DialogSoundRowAdapter extends ArrayAdapter<String> {
 	public DialogSoundRowAdapter(Context context, int layoutResourceId, List<String> items, List<String> names) {
 		super(context, layoutResourceId, items);
 		this.context = context;
-		this.items= items; 
+		this.items = items;
 		this.names = names;
 	}
-	
+
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		View v = convertView;
 		if (v == null) {
 			LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = vi.inflate(R.layout.row_dialog_sound, parent, false);	
+			v = vi.inflate(R.layout.row_dialog_sound, parent, false);
 		}
-		
+
 		TextView name = (TextView) v.findViewById(R.id.dialog_sound_row_name);
 		if (name != null) {
 			name.setText(Html.fromHtml(names.get(position)));
 		}
-		
+
 		ImageView preview = (ImageView) v.findViewById(R.id.dialog_sound_preview);
 		preview.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				int sound = context.getResources().getIdentifier(items.get(position), "raw", context.getPackageName());;
+				int sound = context.getResources().getIdentifier(items.get(position), "raw", context.getPackageName());
+				;
 				stopPlayer();
-				
+
 				mPlayer = MediaPlayer.create(context, sound);
-				mPlayer.start();				
+				mPlayer.start();
 			}
 		});
-		
+
 		return v;
 	}
-	
+
 	public void stopPlayer() {
 		if (mPlayer != null) {
 			mPlayer.stop();
 			mPlayer.release();
 			mPlayer = null;
 		}
-	}	
+	}
 }

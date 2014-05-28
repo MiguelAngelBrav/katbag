@@ -11,7 +11,7 @@
 
     <TextView
         style="@style/develop_dialog_text_normal"
-        android:text="@string/develop_dialog_control_add" />
+        android:text="@string/develop_dialog_control_deduct" />
 
     <EditText
         android:id="@+id/dialog_n"
