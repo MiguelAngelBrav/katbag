@@ -66,10 +66,10 @@
     <!-- comic -->
 
     <RelativeLayout
-        android:id="@+id/type_app_comic"
+        android:id="@+id/type_app_comics"
         style="@style/generic_row_clickable" >
 
-        <ImageView style="@style/image_row_comic" />
+        <ImageView style="@style/image_row_comics" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -79,11 +79,11 @@
 
             <TextView
                 style="@style/generic_item_title_2"
-                android:text="@string/select_type_item_comic_title" />
+                android:text="@string/select_type_item_comics_title" />
 
             <TextView
                 style="@style/generic_item_subtitle"
-                android:text="@string/select_type_item_comic_subtitle" />
+                android:text="@string/select_type_item_comics_subtitle" />
         </LinearLayout>
 
         <LinearLayout style="@style/generic_wrap_image_arrow_right" >

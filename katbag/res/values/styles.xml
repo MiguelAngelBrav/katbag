@@ -152,8 +152,8 @@
         <item name="android:src">@drawable/katbag_icon_book</item>
     </style>
 
-    <style name="image_row_comic" parent="generic_image_row">
-        <item name="android:src">@drawable/katbag_icon_comic</item>
+    <style name="image_row_comics" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_comics</item>
     </style>
 
     <style name="image_row_worlds" parent="generic_image_row">
@@ -181,6 +181,10 @@
     </style>
 
     <style name="image_row_one_page" parent="generic_image_row">
+        <item name="android:src">@drawable/katbag_icon_one_page</item>
+    </style>
+    
+    <style name="image_row_one_comics_page" parent="generic_image_row">
         <item name="android:src">@drawable/katbag_icon_one_page</item>
     </style>
 

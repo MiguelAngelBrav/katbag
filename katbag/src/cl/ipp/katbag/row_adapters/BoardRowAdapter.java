@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 
 public class BoardRowAdapter extends ArrayAdapter<String> {
@@ -37,12 +38,12 @@ public class BoardRowAdapter extends ArrayAdapter<String> {
 		String mTypeApp = array[2];
 
 		ImageView image = (ImageView) v.findViewById(R.id.board_row_image);
-		if (mTypeApp.contentEquals("game")) {
+		if (mTypeApp.contentEquals(MainActivity.TYPE_APP_GAME)) {
 			image.setImageResource(R.drawable.katbag_icon_game);
-		} else if (mTypeApp.contentEquals("book")) {
+		} else if (mTypeApp.contentEquals(MainActivity.TYPE_APP_BOOK)) {
 			image.setImageResource(R.drawable.katbag_icon_book);
-		} else if (mTypeApp.contentEquals("comic")) {
-			image.setImageResource(R.drawable.katbag_icon_comic);
+		} else if (mTypeApp.contentEquals(MainActivity.TYPE_APP_COMICS)) {
+			image.setImageResource(R.drawable.katbag_icon_comics);
 		}
 
 		TextView name = (TextView) v.findViewById(R.id.board_row_name);

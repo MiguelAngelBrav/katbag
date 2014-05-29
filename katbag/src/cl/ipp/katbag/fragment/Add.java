@@ -78,22 +78,22 @@ public class Add extends Fragment implements OnClickListener {
 		config_app_developments.setOnClickListener(this);
 		config_app_pages.setOnClickListener(this);
 
-		if (type_app.contentEquals("game")) {
+		if (type_app.contentEquals(MainActivity.TYPE_APP_GAME)) {
 			config_app_worlds.setVisibility(View.VISIBLE);
 			config_app_developments.setVisibility(View.VISIBLE);
 			config_app_drawings.setVisibility(View.VISIBLE);
 			config_app_pages.setVisibility(View.GONE);
 
-		} else if (type_app.contentEquals("book")) {
+		} else if (type_app.contentEquals(MainActivity.TYPE_APP_BOOK)) {
 			config_app_worlds.setVisibility(View.VISIBLE);
 			config_app_developments.setVisibility(View.GONE);
 			config_app_drawings.setVisibility(View.VISIBLE);
 			config_app_pages.setVisibility(View.VISIBLE);
 
-		} else if (type_app.contentEquals("comic")) {
-			config_app_worlds.setVisibility(View.GONE);
+		} else if (type_app.contentEquals(MainActivity.TYPE_APP_COMICS)) {
+			config_app_worlds.setVisibility(View.VISIBLE);
 			config_app_developments.setVisibility(View.GONE);
-			config_app_drawings.setVisibility(View.GONE);
+			config_app_drawings.setVisibility(View.VISIBLE);
 			config_app_pages.setVisibility(View.GONE);
 		}
 
@@ -104,15 +104,15 @@ public class Add extends Fragment implements OnClickListener {
 	public void setTitleAndImageForTypeApp() {
 		image_type_app = (ImageView) v.findViewById(R.id.config_image_type_app);
 
-		if (type_app.contentEquals("game")) {
+		if (type_app.contentEquals(MainActivity.TYPE_APP_GAME)) {
 			title = getString(R.string.title_activity_add_game);
 			image_type_app.setImageResource(R.drawable.katbag_icon_game);
-		} else if (type_app.contentEquals("book")) {
+		} else if (type_app.contentEquals(MainActivity.TYPE_APP_BOOK)) {
 			title = getString(R.string.title_activity_add_book);
 			image_type_app.setImageResource(R.drawable.katbag_icon_book);
-		} else if (type_app.contentEquals("comic")) {
-			title = getString(R.string.title_activity_add_comic);
-			image_type_app.setImageResource(R.drawable.katbag_icon_comic);
+		} else if (type_app.contentEquals(MainActivity.TYPE_APP_COMICS)) {
+			title = getString(R.string.title_activity_add_comics);
+			image_type_app.setImageResource(R.drawable.katbag_icon_comics);
 		}
 	}
 
@@ -175,6 +175,7 @@ public class Add extends Fragment implements OnClickListener {
 
 			Bundle bundle = new Bundle();
 			bundle.putLong("id_app", id_app);
+			bundle.putString("type_app", type_app);
 			mFragment.setArguments(bundle);
 
 			FragmentTransaction t = getActivity().getSupportFragmentManager().beginTransaction();

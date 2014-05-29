@@ -7,7 +7,7 @@
     <string name="title_activity_add">&#8230;</string>
     <string name="title_activity_add_game">Nuevo Juego</string>
     <string name="title_activity_add_book">Nuevo Libro</string>
-    <string name="title_activity_add_comic">Nuevo Comic</string>
+    <string name="title_activity_add_comics">Nuevo Comics</string>
     <string name="title_activity_edit">Editar Aplicaciones</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_select_type">Selecciona Tipo</string>
@@ -54,10 +54,10 @@
     <!-- select type -->
     <string name="select_type_item_game_title">Juegos</string>
     <string name="select_type_item_book_title">Libros</string>
-    <string name="select_type_item_comic_title">Comics</string>
+    <string name="select_type_item_comics_title">Comics</string>
     <string name="select_type_item_game_subtitle">Crea juegos sencillos</string>
     <string name="select_type_item_book_subtitle">Crea un cuento con imagenes y sonido</string>
-    <string name="select_type_item_comic_subtitle">Crea tus propios personajes con dialogo</string>
+    <string name="select_type_item_comics_subtitle">Crea tus propios personajes con dialogo</string>
 
     <!-- add -->
     <string name="add_edit_app">Editando</string>
@@ -151,6 +151,13 @@
     <string name="pages_row_name">Página</string>
     <string name="pages_not_register">No has creado páginas, crea una nueva desde el menú superior</string>
     <string name="pages_text_default">Este texto es un ejemplo, quita esto ya ;)</string>
+    
+    <!-- comics pages -->
+    <string name="comics_pages_dropdown_menu_new">Nuevo</string>
+    <string name="comics_pages_dropdown_menu_duplicate">Duplicar</string>
+    <string name="comics_pages_row_name">Página</string>
+    <string name="comics_pages_not_register">No has creado páginas, crea una nueva desde el menú superior</string>
+    <string name="comics_pages_text_default">Este texto es un ejemplo, quita esto ya ;)</string>    
 
     <!-- one world -->
     <string name="one_world_dropdown_menu_color">Selecciona Color</string>
@@ -167,6 +174,9 @@
     <string name="one_drawing_dropdown_menu_glasses">Anteojos</string>
     <string name="one_drawing_dropdown_menu_mouth">Boca</string>
     <string name="one_drawing_dropdown_menu_accesory">Accesorios</string>
+    <string name="one_drawing_dropdown_menu_comics_action">(Comic) Acciones</string>
+    <string name="one_drawing_dropdown_menu_comics_balloon_text">(Comic) Globos de Texto</string>
+    <string name="one_drawing_dropdown_menu_comics_object">(Comic) Objetos</string>
     <string name="one_drawing_name_part_body">Cuerpo</string>
     <string name="one_drawing_name_part_hat">Sombrero</string>
     <string name="one_drawing_name_part_wig">Pelo</string>
@@ -174,7 +184,9 @@
     <string name="one_drawing_name_part_glasses">Anteojos</string>
     <string name="one_drawing_name_part_mouth">Boca</string>
     <string name="one_drawing_name_part_accesory">Accesorios</string>
-    <string name="one_drawing_name_part_accesory">Accesorios</string>
+    <string name="one_drawing_name_part_comics_action">(Comic) Acciones</string>
+    <string name="one_drawing_name_part_comics_balloon_text">(Comic) Globos de Texto</string>
+    <string name="one_drawing_name_part_comics_object">(Comic) Objetos</string>
     <string name="one_drawing_message_only_a_body">Solo puedes usar un cuerpo</string>
     <string name="one_drawing_message_not_image_selected">No fue posible seleccionar la imagen</string>
 
@@ -190,6 +202,19 @@
     <string name="one_page_dialog_remove_drawer_text">¿Quieres eliminar el personaje %s?</string>
     <string name="one_page_dialog_remove_drawer_button_yes">Si</string>
     <string name="one_page_dialog_remove_drawer_button_no">No</string>
+    
+    <!-- one comics page -->
+    <string name="one_comics_page_dropdown_menu_add_world">Escenario</string>
+    <string name="one_comics_page_dropdown_menu_add_sound">Sonido de fondo</string>
+    <string name="one_comics_page_dropdown_menu_remove_sound">Eliminar Sonido de fondo</string>
+    <string name="one_comics_page_dropdown_menu_add_drawing">Personaje</string>
+    <string name="one_comics_page_write_text_here">Escribir el texto aquí</string>
+    <string name="one_comics_page_default_font">fonts/toony_loons.ttf</string>
+    <string name="one_comics_page_message_sound_not_set">Aún no seleccionas un sonido</string>
+    <string name="one_comics_page_dialog_remove_drawer_title">Eliminar Personaje</string>
+    <string name="one_comics_page_dialog_remove_drawer_text">¿Quieres eliminar el personaje %s?</string>
+    <string name="one_comics_page_dialog_remove_drawer_button_yes">Si</string>
+    <string name="one_comics_page_dialog_remove_drawer_button_no">No</string>
 
     <!-- about -->
     <string name="about_version">Acerca de Katbag: ver</string>

@@ -17,7 +17,7 @@ public class SelectType extends Fragment implements OnClickListener {
 
 	static View v = null;
 	public static MainActivity mainActivity;
-	public RelativeLayout type_app_game, type_app_book, type_app_comic;
+	public RelativeLayout type_app_game, type_app_book, type_app_comics;
 	public Fragment mFragment;
 
 	@Override
@@ -27,11 +27,11 @@ public class SelectType extends Fragment implements OnClickListener {
 
 		type_app_game = (RelativeLayout) v.findViewById(R.id.type_app_game);
 		type_app_book = (RelativeLayout) v.findViewById(R.id.type_app_book);
-		type_app_comic = (RelativeLayout) v.findViewById(R.id.type_app_comic);
+		type_app_comics = (RelativeLayout) v.findViewById(R.id.type_app_comics);
 
 		type_app_game.setOnClickListener(this);
 		type_app_book.setOnClickListener(this);
-		type_app_comic.setOnClickListener(this);
+		type_app_comics.setOnClickListener(this);
 
 		return v;
 	}
@@ -43,15 +43,15 @@ public class SelectType extends Fragment implements OnClickListener {
 
 		switch (v.getId()) {
 		case R.id.type_app_game:
-			type_app = "game";
+			type_app = MainActivity.TYPE_APP_GAME;
 			break;
 
 		case R.id.type_app_book:
-			type_app = "book";
+			type_app = MainActivity.TYPE_APP_BOOK;
 			break;
 
-		case R.id.type_app_comic:
-			type_app = "comic";
+		case R.id.type_app_comics:
+			type_app = MainActivity.TYPE_APP_COMICS;
 			break;
 		}
 

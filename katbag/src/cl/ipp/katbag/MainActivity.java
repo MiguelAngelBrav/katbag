@@ -39,6 +39,10 @@ public class MainActivity extends RootActivity {
 	public boolean inBackground = false;
 	public FragmentManager m;
 	public SlidingMenu slidingMenu;
+	
+	public static final String TYPE_APP_GAME = "game";
+	public static final String TYPE_APP_BOOK = "book";
+	public static final String TYPE_APP_COMICS = "comics";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

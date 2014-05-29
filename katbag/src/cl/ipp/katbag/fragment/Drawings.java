@@ -31,6 +31,7 @@ public class Drawings extends SherlockFragment {
 	public static MainActivity mainActivity;
 	public MenuItem menuItemEdit, menuItemNew;
 	public static long id_app = -1;
+	public String type_app;
 	public TextView notRegister;
 	public DragSortListView drawingsListView;
 	public DrawingsRowAdapter adapter;
@@ -53,6 +54,7 @@ public class Drawings extends SherlockFragment {
 		Bundle bundle = getArguments();
 		if (bundle != null) {
 			id_app = bundle.getLong("id_app");
+			type_app = bundle.getString("type_app");
 		}
 
 		notRegister = (TextView) v.findViewById(R.id.drawings_not_register);
@@ -68,6 +70,7 @@ public class Drawings extends SherlockFragment {
 					Bundle bundle = new Bundle();
 					bundle.putLong("id_drawing", Long.valueOf(idDrawing.getText().toString()));
 					bundle.putString("name_drawing", idDrawing.getText().toString());
+					bundle.putString("type_app", type_app);
 
 					mFragment = new OneDrawing();
 					mFragment.setArguments(bundle);

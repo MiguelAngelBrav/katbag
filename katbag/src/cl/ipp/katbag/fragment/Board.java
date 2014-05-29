@@ -45,7 +45,7 @@ public class Board extends SherlockFragment {
 				TextView typeApp = (TextView) view.findViewById(R.id.board_row_type);
 				TextView nameApp = (TextView) view.findViewById(R.id.board_row_name);
 
-				if (typeApp.getText().toString().contentEquals("game"))
+				if (typeApp.getText().toString().contentEquals(MainActivity.TYPE_APP_GAME))
 					mFragment = new Player();
 				else
 					mFragment = new PlayerBook();

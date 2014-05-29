@@ -14,7 +14,7 @@ import android.util.Log;
 public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "katbag_db.sqlite3";
-	private static final int DATABASE_VERSION = 12;
+	private static final int DATABASE_VERSION = 13;
 
 	public static final String TABLE_APPLICATIONS = "applications";
 	public static final String FIELD_APP_ID = "_ID";
@@ -66,6 +66,17 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String FIELD_PAGE_TEXT_ALIGN = "page_text_align";
 	public static final String FIELD_PAGE_TEXT_COLOR = "page_text_color";
 	public static final String FIELD_PAGE_ORDER = "page_order";
+	
+	public static final String TABLE_TEXTS_PAGE = "texts_page";
+	public static final String FIELD_TEXT_PAGE_ID = "_ID";
+	public static final String FIELD_TEXT_PAGE_APP_ID = "text_page_app_id";
+	public static final String FIELD_TEXT_PAGE_PAGE_ID = "text_page_page_id";
+	public static final String FIELD_TEXT_PAGE_TEXT = "text_page_text";
+	public static final String FIELD_TEXT_PAGE_TEXT_SIZE = "text_page_text_size";
+	public static final String FIELD_TEXT_PAGE_TEXT_ALIGN = "text_page_text_align";
+	public static final String FIELD_TEXT_PAGE_TEXT_COLOR = "text_page_text_color";
+	public static final String FIELD_TEXT_PAGE_TEXT_TOP = "text_page_text_top";
+	public static final String FIELD_TEXT_PAGE_TEXT_LEFT = "text_page_text_left";
 
 	public static final int SCORE_FOR_HAVE_WORLDS = 20;
 	public static final int SCORE_FOR_HAVE_DRAWINGS = 20;
@@ -90,22 +101,79 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		String query = "CREATE TABLE " + TABLE_APPLICATIONS + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_APP_NAME + " TEXT NOT NULL, " + FIELD_APP_TYPE + " TEXT NOT NULL " + ");";
+		String query = "CREATE TABLE " + TABLE_APPLICATIONS + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_APP_NAME + " TEXT NOT NULL, " + 
+				FIELD_APP_TYPE + " TEXT NOT NULL " + ");";
 		db.execSQL(query);
 
-		query = "CREATE TABLE " + TABLE_WORLDS + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_WORLD_APP_ID + " INTEGER NOT NULL, " + FIELD_WORLD_TYPE + " TEXT NOT NULL, " + FIELD_WORLD_SRC + " TEXT NOT NULL, " + FIELD_WORLD_SCALE_FACTOR + " INTEGER NULL, " + "FOREIGN KEY(" + FIELD_WORLD_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
+		query = "CREATE TABLE " + TABLE_WORLDS + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_WORLD_APP_ID + " INTEGER NOT NULL, " + 
+				FIELD_WORLD_TYPE + " TEXT NOT NULL, " + 
+				FIELD_WORLD_SRC + " TEXT NOT NULL, " + 
+				FIELD_WORLD_SCALE_FACTOR + " INTEGER NULL, " + 
+				"FOREIGN KEY(" + FIELD_WORLD_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);
 
-		query = "CREATE TABLE " + TABLE_DRAWINGS + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_DRAWING_APP_ID + " INTEGER NOT NULL, " + "FOREIGN KEY(" + FIELD_DRAWING_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
+		query = "CREATE TABLE " + TABLE_DRAWINGS + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_DRAWING_APP_ID + " INTEGER NOT NULL, " + 
+				"FOREIGN KEY(" + FIELD_DRAWING_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);
 
-		query = "CREATE TABLE " + TABLE_DRAWING_PARTS + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_DRAWING_PART_DRAWING_ID + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_NAME + " TEXT NOT NULL, " + FIELD_DRAWING_PART_TOP + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_LEFT + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_WIDTH + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_HEIGHT + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_ROTATE + " INTEGER NOT NULL, " + FIELD_DRAWING_PART_ORDER + " INTEGER NOT NULL, " + "FOREIGN KEY(" + FIELD_DRAWING_PART_DRAWING_ID + ") REFERENCES " + TABLE_DRAWINGS + "(" + FIELD_DRAWING_ID + ") ON DELETE CASCADE" + ");";
+		query = "CREATE TABLE " + TABLE_DRAWING_PARTS + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_DRAWING_PART_DRAWING_ID + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_NAME + " TEXT NOT NULL, " + 
+				FIELD_DRAWING_PART_TOP + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_LEFT + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_WIDTH + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_HEIGHT + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_ROTATE + " INTEGER NOT NULL, " + 
+				FIELD_DRAWING_PART_ORDER + " INTEGER NOT NULL, " + 
+				"FOREIGN KEY(" + FIELD_DRAWING_PART_DRAWING_ID + ") REFERENCES " + TABLE_DRAWINGS + "(" + FIELD_DRAWING_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);
 
-		query = "CREATE TABLE " + TABLE_DEVELOP + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_DEVELOP_APP_ID + " INTEGER NOT NULL, " + FIELD_DEVELOP_STATEMENT + " TEXT NOT NULL, " + FIELD_DEVELOP_HUMAN_STATEMENT + " TEXT NOT NULL, " + FIELD_DEVELOP_VALUE_01 + " TEXT NOT NULL, " + FIELD_DEVELOP_VALUE_02 + " TEXT NULL, " + FIELD_DEVELOP_VALUE_03 + " TEXT NULL, " + FIELD_DEVELOP_VALUE_04 + " TEXT NULL, " + FIELD_DEVELOP_VALUE_05 + " TEXT NULL, " + FIELD_DEVELOP_LEVEL + " INTEGER NOT NULL, " + FIELD_DEVELOP_ORDER + " INTEGER NOT NULL, " + "FOREIGN KEY(" + FIELD_DEVELOP_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
+		query = "CREATE TABLE " + TABLE_DEVELOP + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_DEVELOP_APP_ID + " INTEGER NOT NULL, " + 
+				FIELD_DEVELOP_STATEMENT + " TEXT NOT NULL, " + 
+				FIELD_DEVELOP_HUMAN_STATEMENT + " TEXT NOT NULL, " + 
+				FIELD_DEVELOP_VALUE_01 + " TEXT NOT NULL, " + 
+				FIELD_DEVELOP_VALUE_02 + " TEXT NULL, " + 
+				FIELD_DEVELOP_VALUE_03 + " TEXT NULL, " + 
+				FIELD_DEVELOP_VALUE_04 + " TEXT NULL, " + 
+				FIELD_DEVELOP_VALUE_05 + " TEXT NULL, " + 
+				FIELD_DEVELOP_LEVEL + " INTEGER NOT NULL, " + 
+				FIELD_DEVELOP_ORDER + " INTEGER NOT NULL, " + 
+				"FOREIGN KEY(" + FIELD_DEVELOP_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);
 
-		query = "CREATE TABLE " + TABLE_PAGES + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_PAGE_APP_ID + " INTEGER NOT NULL, " + FIELD_PAGE_WORLD_ID + " INTEGER NULL, " + FIELD_PAGE_SOUND_ID + " TEXT NULL, " + FIELD_PAGE_TEXT + " TEXT NULL, " + FIELD_PAGE_TEXT_SIZE + " TEXT NULL, " + FIELD_PAGE_TEXT_ALIGN + " TEXT NULL, " + FIELD_PAGE_TEXT_COLOR + " TEXT NULL, " + FIELD_PAGE_ORDER + " INTEGER NOT NULL, " + "FOREIGN KEY(" + FIELD_PAGE_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
+		query = "CREATE TABLE " + TABLE_PAGES + " (" + 
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+				FIELD_PAGE_APP_ID + " INTEGER NOT NULL, " + 
+				FIELD_PAGE_WORLD_ID + " INTEGER NULL, " + 
+				FIELD_PAGE_SOUND_ID + " TEXT NULL, " + 
+				FIELD_PAGE_TEXT + " TEXT NULL, " + 
+				FIELD_PAGE_TEXT_SIZE + " TEXT NULL, " + 
+				FIELD_PAGE_TEXT_ALIGN + " TEXT NULL, " + 
+				FIELD_PAGE_TEXT_COLOR + " TEXT NULL, " + 
+				FIELD_PAGE_ORDER + " INTEGER NOT NULL, " + 
+				"FOREIGN KEY(" + FIELD_PAGE_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
+		db.execSQL(query);		
+		
+		query = "CREATE TABLE " + TABLE_TEXTS_PAGE + " (" +
+				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+				FIELD_TEXT_PAGE_APP_ID + " INTEGER NOT NULL, " +
+				FIELD_TEXT_PAGE_PAGE_ID + " INTEGER NOT NULL, " +
+				FIELD_TEXT_PAGE_TEXT + " TEXT NULL, " +
+				FIELD_TEXT_PAGE_TEXT_SIZE + " TEXT NULL, " +
+				FIELD_TEXT_PAGE_TEXT_ALIGN + " TEXT NULL, " +
+				FIELD_TEXT_PAGE_TEXT_COLOR + " TEXT NULL, " +
+				FIELD_TEXT_PAGE_TEXT_TOP + " INTEGER NOT NULL, " +
+				FIELD_TEXT_PAGE_TEXT_LEFT + " INTEGER NOT NULL, " +
+				"FOREIGN KEY(" + FIELD_TEXT_PAGE_PAGE_ID + ") REFERENCES " + TABLE_PAGES + "(" + FIELD_PAGE_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);
 	}
 
@@ -117,6 +185,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWING_PARTS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEVELOP);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_PAGES);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEXTS_PAGE);
 		onCreate(db);
 	}
 
@@ -975,7 +1044,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 		return result;
 	}
-
+	
 	// ==================================================================================
 	// DEVELOPER SECTION
 	// ==================================================================================

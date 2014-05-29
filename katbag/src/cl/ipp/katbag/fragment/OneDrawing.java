@@ -35,8 +35,10 @@ public class OneDrawing extends SherlockFragment {
 	static View v = null;
 	public MainActivity mainActivity;
 	public long id_drawing = -1;
+	public String type_app = "";
 	public String name_drawing;
-	public MenuItem menuItemBody, menuItemHat, menuItemWig, menuItemEyes, menuItemGlasses, menuItemMouth, menuItemAccesory;
+	public MenuItem menuItemBody, menuItemHat, menuItemWig, menuItemEyes, menuItemGlasses, menuItemMouth, menuItemAccesory,
+			menuItemComicsAction, menuItemComicsBalloonText, menuItemComicsObject;
 
 	public static final String PART_BODY = "katbag_monster_body_";
 	public static final String PART_HAT = "katbag_monster_hat_";
@@ -45,6 +47,9 @@ public class OneDrawing extends SherlockFragment {
 	public static final String PART_GLASSES = "katbag_monster_glasses_";
 	public static final String PART_MOUTH = "katbag_monster_mouth_";
 	public static final String PART_ACCESORY = "katbag_monster_accesory_";
+	public static final String PART_COMICS_ACTION = "katbag_comics_action_";
+	public static final String PART_COMICS_BALLOON_TEXT = "katbag_comics_balloon_text_";
+	public static final String PART_COMICS_OBJECT = "katbag_comics_object_";
 
 	public static final int ELEMENT_LIST_BODY = 11;
 	public static final int ELEMENT_LIST_HAT = 2;
@@ -53,6 +58,9 @@ public class OneDrawing extends SherlockFragment {
 	public static final int ELEMENT_LIST_GLASSES = 4;
 	public static final int ELEMENT_LIST_MOUTH = 11;
 	public static final int ELEMENT_LIST_ACCESORY = 2;
+	public static final int ELEMENT_LIST_COMICS_ACTION = 26;
+	public static final int ELEMENT_LIST_COMICS_BALLOON_TEXT = 16;
+	public static final int ELEMENT_LIST_COMICS_OBJECT = 7;
 
 	public DialogPartRowAdapter adapter;
 	public RelativeLayout one_drawing;
@@ -128,6 +136,7 @@ public class OneDrawing extends SherlockFragment {
 		if (bundle != null) {
 			id_drawing = bundle.getLong("id_drawing");
 			name_drawing = bundle.getString("name_drawing");
+			type_app = bundle.getString("type_app");
 
 			parts = mainActivity.katbagHandler.selectDrawingsPartsForIdApp(id_drawing);
 			for (int i = 0; i < parts.size(); i++) {
@@ -159,6 +168,19 @@ public class OneDrawing extends SherlockFragment {
 		menuItemGlasses = menu.findItem(R.id.one_drawing_dropdown_menu_glasses);
 		menuItemMouth = menu.findItem(R.id.one_drawing_dropdown_menu_mouth);
 		menuItemAccesory = menu.findItem(R.id.one_drawing_dropdown_menu_accesory);
+		menuItemComicsAction = menu.findItem(R.id.one_drawing_dropdown_menu_comics_action);
+		menuItemComicsBalloonText = menu.findItem(R.id.one_drawing_dropdown_menu_comics_balloon_text);
+		menuItemComicsObject = menu.findItem(R.id.one_drawing_dropdown_menu_comics_object);
+		
+		if (!type_app.contentEquals(MainActivity.TYPE_APP_COMICS)) {
+			menuItemComicsAction.setVisible(false);
+			menuItemComicsBalloonText.setVisible(false);
+			menuItemComicsObject.setVisible(false);
+		} else {
+			menuItemComicsAction.setVisible(true);
+			menuItemComicsBalloonText.setVisible(true);
+			menuItemComicsObject.setVisible(true);
+		}
 
 		menuItemBody.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 
@@ -224,6 +246,33 @@ public class OneDrawing extends SherlockFragment {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				dialogSelectPartsFromList(PART_ACCESORY, ELEMENT_LIST_ACCESORY, getString(R.string.one_drawing_name_part_accesory));
+				return true;
+			}
+		});
+		
+		menuItemComicsAction.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				dialogSelectPartsFromList(PART_COMICS_ACTION, ELEMENT_LIST_COMICS_ACTION, getString(R.string.one_drawing_name_part_comics_action));
+				return true;
+			}
+		});
+		
+		menuItemComicsBalloonText.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				dialogSelectPartsFromList(PART_COMICS_BALLOON_TEXT, ELEMENT_LIST_COMICS_BALLOON_TEXT, getString(R.string.one_drawing_name_part_comics_balloon_text));
+				return true;
+			}
+		});
+		
+		menuItemComicsObject.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				dialogSelectPartsFromList(PART_COMICS_OBJECT, ELEMENT_LIST_COMICS_OBJECT, getString(R.string.one_drawing_name_part_comics_object));
 				return true;
 			}
 		});
