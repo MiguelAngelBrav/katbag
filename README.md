@@ -1,4 +1,4 @@
-# Katbag
+![Katbag](/../master/katbag/res/drawable-xhdpi/katbag_about_logo.png?raw=true)
 
 ## ¿Que es Katbag?
 Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. 
