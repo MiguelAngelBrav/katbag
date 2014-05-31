@@ -324,5 +324,26 @@
         <item name="android:textColor">@color/dialog_text_item_important</item>
         <item name="android:maxLength">5</item>
     </style>
+    
+    <style name="katbag_edittext">
+        <item name="android:textStyle">bold</item>
+		<item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:gravity">top</item>
+        <item name="android:hint">@string/one_page_write_text_here</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:overScrollMode">always</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">insideInset</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:textColor">@color/generic_item_title</item>        
+
+    </style>
+    
+    
 
 </resources>

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="15" />
 
     <uses-feature
@@ -121,11 +121,13 @@
             android:name="cl.ipp.katbag.fragment.OnePage"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_player"
-            android:windowSoftInputMode="stateHidden|adjustUnspecified" >
+            android:windowSoftInputMode="stateHidden|stateUnchanged" >
         </activity>
         <activity
             android:name="cl.ipp.katbag.fragment.PlayerBook"
-            android:label="@string/title_activity_player_book" >
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_player_book"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
     </application>
 

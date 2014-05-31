@@ -1,3 +1,10 @@
+/*
+ * Author: Miguel Angel Bravo (@MiguelAngelBrav)
+ *  
+ * Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
+ * Licensed under the Apache 2.0 License.
+ */
+
 package cl.ipp.katbag.core;
 
 import static android.provider.BaseColumns._ID;
@@ -14,7 +21,7 @@ import android.util.Log;
 public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "katbag_db.sqlite3";
-	private static final int DATABASE_VERSION = 13;
+	private static final int DATABASE_VERSION = 17;
 
 	public static final String TABLE_APPLICATIONS = "applications";
 	public static final String FIELD_APP_ID = "_ID";
@@ -53,6 +60,9 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String FIELD_DEVELOP_VALUE_03 = "develop_value_03";
 	public static final String FIELD_DEVELOP_VALUE_04 = "develop_value_04";
 	public static final String FIELD_DEVELOP_VALUE_05 = "develop_value_05";
+	public static final String FIELD_DEVELOP_VALUE_06 = "develop_value_06";
+	public static final String FIELD_DEVELOP_VALUE_07 = "develop_value_07";
+	public static final String FIELD_DEVELOP_VALUE_08 = "develop_value_08";
 	public static final String FIELD_DEVELOP_LEVEL = "develop_level";
 	public static final String FIELD_DEVELOP_ORDER = "develop_order";
 
@@ -61,22 +71,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	public static final String FIELD_PAGE_APP_ID = "page_app_id";
 	public static final String FIELD_PAGE_WORLD_ID = "page_world_id";
 	public static final String FIELD_PAGE_SOUND_ID = "page_sound_id";
-	public static final String FIELD_PAGE_TEXT = "page_text";
-	public static final String FIELD_PAGE_TEXT_SIZE = "page_text_size";
-	public static final String FIELD_PAGE_TEXT_ALIGN = "page_text_align";
-	public static final String FIELD_PAGE_TEXT_COLOR = "page_text_color";
 	public static final String FIELD_PAGE_ORDER = "page_order";
-	
-	public static final String TABLE_TEXTS_PAGE = "texts_page";
-	public static final String FIELD_TEXT_PAGE_ID = "_ID";
-	public static final String FIELD_TEXT_PAGE_APP_ID = "text_page_app_id";
-	public static final String FIELD_TEXT_PAGE_PAGE_ID = "text_page_page_id";
-	public static final String FIELD_TEXT_PAGE_TEXT = "text_page_text";
-	public static final String FIELD_TEXT_PAGE_TEXT_SIZE = "text_page_text_size";
-	public static final String FIELD_TEXT_PAGE_TEXT_ALIGN = "text_page_text_align";
-	public static final String FIELD_TEXT_PAGE_TEXT_COLOR = "text_page_text_color";
-	public static final String FIELD_TEXT_PAGE_TEXT_TOP = "text_page_text_top";
-	public static final String FIELD_TEXT_PAGE_TEXT_LEFT = "text_page_text_left";
 
 	public static final int SCORE_FOR_HAVE_WORLDS = 20;
 	public static final int SCORE_FOR_HAVE_DRAWINGS = 20;
@@ -144,7 +139,10 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 				FIELD_DEVELOP_VALUE_02 + " TEXT NULL, " + 
 				FIELD_DEVELOP_VALUE_03 + " TEXT NULL, " + 
 				FIELD_DEVELOP_VALUE_04 + " TEXT NULL, " + 
-				FIELD_DEVELOP_VALUE_05 + " TEXT NULL, " + 
+				FIELD_DEVELOP_VALUE_05 + " TEXT NULL, " +
+				FIELD_DEVELOP_VALUE_06 + " TEXT NULL, " +
+				FIELD_DEVELOP_VALUE_07 + " TEXT NULL, " +
+				FIELD_DEVELOP_VALUE_08 + " TEXT NULL, " +
 				FIELD_DEVELOP_LEVEL + " INTEGER NOT NULL, " + 
 				FIELD_DEVELOP_ORDER + " INTEGER NOT NULL, " + 
 				"FOREIGN KEY(" + FIELD_DEVELOP_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
@@ -154,27 +152,10 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
 				FIELD_PAGE_APP_ID + " INTEGER NOT NULL, " + 
 				FIELD_PAGE_WORLD_ID + " INTEGER NULL, " + 
-				FIELD_PAGE_SOUND_ID + " TEXT NULL, " + 
-				FIELD_PAGE_TEXT + " TEXT NULL, " + 
-				FIELD_PAGE_TEXT_SIZE + " TEXT NULL, " + 
-				FIELD_PAGE_TEXT_ALIGN + " TEXT NULL, " + 
-				FIELD_PAGE_TEXT_COLOR + " TEXT NULL, " + 
+				FIELD_PAGE_SOUND_ID + " TEXT NULL, " +  
 				FIELD_PAGE_ORDER + " INTEGER NOT NULL, " + 
 				"FOREIGN KEY(" + FIELD_PAGE_APP_ID + ") REFERENCES " + TABLE_APPLICATIONS + "(" + FIELD_APP_ID + ") ON DELETE CASCADE" + ");";
 		db.execSQL(query);		
-		
-		query = "CREATE TABLE " + TABLE_TEXTS_PAGE + " (" +
-				_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-				FIELD_TEXT_PAGE_APP_ID + " INTEGER NOT NULL, " +
-				FIELD_TEXT_PAGE_PAGE_ID + " INTEGER NOT NULL, " +
-				FIELD_TEXT_PAGE_TEXT + " TEXT NULL, " +
-				FIELD_TEXT_PAGE_TEXT_SIZE + " TEXT NULL, " +
-				FIELD_TEXT_PAGE_TEXT_ALIGN + " TEXT NULL, " +
-				FIELD_TEXT_PAGE_TEXT_COLOR + " TEXT NULL, " +
-				FIELD_TEXT_PAGE_TEXT_TOP + " INTEGER NOT NULL, " +
-				FIELD_TEXT_PAGE_TEXT_LEFT + " INTEGER NOT NULL, " +
-				"FOREIGN KEY(" + FIELD_TEXT_PAGE_PAGE_ID + ") REFERENCES " + TABLE_PAGES + "(" + FIELD_PAGE_ID + ") ON DELETE CASCADE" + ");";
-		db.execSQL(query);
 	}
 
 	@Override
@@ -185,7 +166,6 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DRAWING_PARTS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEVELOP);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_PAGES);
-		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEXTS_PAGE);
 		onCreate(db);
 	}
 
@@ -544,7 +524,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	// ==================================================================================
 
 	// insert new develop
-	public long insertDevelop(long id_app, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5, int level, int order) {
+	public long insertDevelop(long id_app, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5, String value6, String value7, String value8, int level, int order) {
 		long id = -1;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_DEVELOP_APP_ID, id_app);
@@ -555,6 +535,9 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		values.put(FIELD_DEVELOP_VALUE_03, value3);
 		values.put(FIELD_DEVELOP_VALUE_04, value4);
 		values.put(FIELD_DEVELOP_VALUE_05, value5);
+		values.put(FIELD_DEVELOP_VALUE_06, value6);
+		values.put(FIELD_DEVELOP_VALUE_07, value7);
+		values.put(FIELD_DEVELOP_VALUE_08, value8);
 		values.put(FIELD_DEVELOP_LEVEL, level);
 		values.put(FIELD_DEVELOP_ORDER, order);
 
@@ -569,7 +552,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 
 	// update develop
-	public long updateDevelop(long id, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5) {
+	public long updateDevelop(long id, String statement, String human_statement, String value1, String value2, String value3, String value4, String value5, String value6, String value7, String value8) {
 		String filter = FIELD_DEVELOP_ID + " = " + id;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_DEVELOP_STATEMENT, statement);
@@ -579,6 +562,9 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		values.put(FIELD_DEVELOP_VALUE_03, value3);
 		values.put(FIELD_DEVELOP_VALUE_04, value4);
 		values.put(FIELD_DEVELOP_VALUE_05, value5);
+		values.put(FIELD_DEVELOP_VALUE_06, value6);
+		values.put(FIELD_DEVELOP_VALUE_07, value7);
+		values.put(FIELD_DEVELOP_VALUE_08, value8);
 
 		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);
 		this.close();
@@ -689,7 +675,20 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 
-		String query = "select " + FIELD_DEVELOP_ID + ", " + FIELD_DEVELOP_STATEMENT + ", " + FIELD_DEVELOP_HUMAN_STATEMENT + ", " + FIELD_DEVELOP_VALUE_01 + ", " + FIELD_DEVELOP_VALUE_02 + ", " + FIELD_DEVELOP_VALUE_03 + ", " + FIELD_DEVELOP_VALUE_04 + ", " + FIELD_DEVELOP_VALUE_05 + ", " + FIELD_DEVELOP_LEVEL + ", " + FIELD_DEVELOP_ORDER
+		String query = "select " + 
+				FIELD_DEVELOP_ID + ", " + 
+				FIELD_DEVELOP_STATEMENT + ", " + 
+				FIELD_DEVELOP_HUMAN_STATEMENT + ", " + 
+				FIELD_DEVELOP_VALUE_01 + ", " + 
+				FIELD_DEVELOP_VALUE_02 + ", " + 
+				FIELD_DEVELOP_VALUE_03 + ", " + 
+				FIELD_DEVELOP_VALUE_04 + ", " + 
+				FIELD_DEVELOP_VALUE_05 + ", " +
+				FIELD_DEVELOP_VALUE_06 + ", " +
+				FIELD_DEVELOP_VALUE_07 + ", " +
+				FIELD_DEVELOP_VALUE_08 + ", " +
+				FIELD_DEVELOP_LEVEL + ", " + 
+				FIELD_DEVELOP_ORDER
 
 		+ " from " + TABLE_DEVELOP + " where " + FIELD_DEVELOP_ID + " = " + id + " order by " + FIELD_DEVELOP_ORDER;
 
@@ -697,7 +696,19 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 		if (cursor.getCount() > 0) {
 			cursor.moveToFirst();
-			results.add(cursor.getString(0) + "&&" + cursor.getString(1) + "&&" + cursor.getString(2) + "&&" + cursor.getString(3) + "&&" + cursor.getString(4) + "&&" + cursor.getString(5) + "&&" + cursor.getString(6) + "&&" + cursor.getString(7) + "&&" + cursor.getString(8) + "&&" + cursor.getString(9));
+			results.add(cursor.getString(0) + "&&" + 
+						cursor.getString(1) + "&&" + 
+						cursor.getString(2) + "&&" + 
+						cursor.getString(3) + "&&" + 
+						cursor.getString(4) + "&&" + 
+						cursor.getString(5) + "&&" + 
+						cursor.getString(6) + "&&" + 
+						cursor.getString(7) + "&&" + 
+						cursor.getString(8) + "&&" +
+						cursor.getString(9) + "&&" +
+						cursor.getString(10) + "&&" +
+						cursor.getString(11) + "&&" +
+						cursor.getString(12));
 			cursor.close();
 		}
 
@@ -866,7 +877,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 
-		String query = "select " + FIELD_PAGE_WORLD_ID + ", " + FIELD_PAGE_SOUND_ID + ", " + FIELD_PAGE_TEXT + ", " + FIELD_PAGE_TEXT_SIZE + ", " + FIELD_PAGE_TEXT_ALIGN + ", " + FIELD_PAGE_TEXT_COLOR + ", " + FIELD_PAGE_ORDER + " from " + TABLE_PAGES + " where " + FIELD_PAGE_ID + " = " + id_page + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
+		String query = "select " + FIELD_PAGE_WORLD_ID + ", " + FIELD_PAGE_SOUND_ID + ", " + FIELD_PAGE_ORDER + " from " + TABLE_PAGES + " where " + FIELD_PAGE_ID + " = " + id_page + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
 
 		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
 
@@ -875,10 +886,6 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 			results.add(cursor.getString(0));
 			results.add(cursor.getString(1));
 			results.add(cursor.getString(2));
-			results.add(cursor.getString(3));
-			results.add(cursor.getString(4));
-			results.add(cursor.getString(5));
-			results.add(cursor.getString(6));
 			cursor.close();
 		}
 
@@ -889,7 +896,13 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 		ArrayList<String> results = new ArrayList<String>();
 		results.clear();
 
-		String query = "select " + FIELD_PAGE_WORLD_ID + ", " + FIELD_PAGE_SOUND_ID + ", " + FIELD_PAGE_TEXT + ", " + FIELD_PAGE_TEXT_SIZE + ", " + FIELD_PAGE_TEXT_ALIGN + ", " + FIELD_PAGE_TEXT_COLOR + ", " + FIELD_PAGE_ORDER + ", " + FIELD_PAGE_ID + " from " + TABLE_PAGES + " where " + FIELD_PAGE_APP_ID + " = " + id_app + " and " + FIELD_PAGE_ORDER + " = " + order;
+		String query = "select " + 
+				FIELD_PAGE_WORLD_ID + ", " + 
+				FIELD_PAGE_SOUND_ID + ", " + 
+				FIELD_PAGE_ORDER + ", " + 
+				FIELD_PAGE_ID + 
+				" from " + TABLE_PAGES + 
+				" where " + FIELD_PAGE_APP_ID + " = " + id_app + " and " + FIELD_PAGE_ORDER + " = " + order;
 
 		Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
 
@@ -899,10 +912,6 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 			results.add(cursor.getString(1));
 			results.add(cursor.getString(2));
 			results.add(cursor.getString(3));
-			results.add(cursor.getString(4));
-			results.add(cursor.getString(5));
-			results.add(cursor.getString(6));
-			results.add(cursor.getString(7));
 			cursor.close();
 		}
 
@@ -919,11 +928,10 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 
 	// insert new page
-	public long insertPage(long id_app, String text, long order) {
+	public long insertPage(long id_app, long order) {
 		long id = -1;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_PAGE_APP_ID, id_app);
-		values.put(FIELD_PAGE_TEXT, text);
 		values.put(FIELD_PAGE_ORDER, order);
 
 		id = this.getWritableDatabase().insert(TABLE_PAGES, null, values);
@@ -953,7 +961,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 	}
 
 	// update page world
-	public long updatePageWorld(long id_app, long id, long id_world) {
+	public long updatePageWorld(long id_app, long id, String id_world) {
 		String filter = FIELD_PAGE_ID + " = " + id + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
 		ContentValues values = new ContentValues();
 		values.put(FIELD_PAGE_WORLD_ID, id_world);
@@ -977,59 +985,74 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 
 		return id;
 	}
-
-	// update page text
-	public long updatePageText(long id_app, long id, String text) {
-		String filter = FIELD_PAGE_ID + " = " + id + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
+	
+	// update one text from page
+	public long updateOneTextFromPage(long id_app, long id_page, long id_text, String text) {
+		String filter = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page + " and " + FIELD_DEVELOP_ID + " = " + id_text;
 		ContentValues values = new ContentValues();
-		values.put(FIELD_PAGE_TEXT, text);
-		this.getWritableDatabase().update(TABLE_PAGES, values, filter, null);
+		values.put(FIELD_DEVELOP_HUMAN_STATEMENT, text);
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);
 		this.close();
 
-		Log.d("updatePageTextAlign", "text:" + text + ", id:" + id + ", update!");
+		Log.d("updateOneTextFromPage", "id_text:" + id_text + ", update!");
 
-		return id;
+		return id_text;
 	}
-
-	// update page text align
-	public long updatePageTextAlign(long id_app, long id, String align) {
-		String filter = FIELD_PAGE_ID + " = " + id + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
+	
+	// update one text from page
+	public long updateOneTextSizeFromPage(long id_app, long id_page, long id_text, String size) {
+		String filter = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page + " and " + FIELD_DEVELOP_ID + " = " + id_text;
 		ContentValues values = new ContentValues();
-		values.put(FIELD_PAGE_TEXT_ALIGN, align);
-		this.getWritableDatabase().update(TABLE_PAGES, values, filter, null);
+		values.put(FIELD_DEVELOP_VALUE_01, size);
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);
 		this.close();
 
-		Log.d("updatePageTextAlign", "align:" + align + ", id:" + id + ", update!");
+		Log.d("updateOneTextFromPage", "id_text:" + id_text + ", size:" + size + ", update!");
 
-		return id;
+		return id_text;
 	}
-
-	// update page text size
-	public long updatePageTextSize(long id_app, long id, int size) {
-		String filter = FIELD_PAGE_ID + " = " + id + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
+	
+	// update one text from page
+	public long updateOneTextAlignFromPage(long id_app, long id_page, long id_text, String align) {
+		String filter = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page + " and " + FIELD_DEVELOP_ID + " = " + id_text;
 		ContentValues values = new ContentValues();
-		values.put(FIELD_PAGE_TEXT_SIZE, size);
-		this.getWritableDatabase().update(TABLE_PAGES, values, filter, null);
+		values.put(FIELD_DEVELOP_VALUE_02, align);
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);
 		this.close();
 
-		Log.d("updatePageTextAlign", "size:" + size + ", id:" + id + ", update!");
+		Log.d("updateOneTextFromPage", "id_text:" + id_text + ", align:" + align + ", update!");
 
-		return id;
+		return id_text;
 	}
-
-	// update page text color
-	public long updatePageTextColor(long id_app, long id, int color) {
-		String filter = FIELD_PAGE_ID + " = " + id + " and " + FIELD_PAGE_APP_ID + " = " + id_app;
+	
+	// update one text from page
+	public long updateOneTextColorFromPage(long id_app, long id_page, long id_text, String color) {
+		String filter = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page + " and " + FIELD_DEVELOP_ID + " = " + id_text;
 		ContentValues values = new ContentValues();
-		values.put(FIELD_PAGE_TEXT_COLOR, color);
-		this.getWritableDatabase().update(TABLE_PAGES, values, filter, null);
+		values.put(FIELD_DEVELOP_VALUE_03, color);
+		this.getWritableDatabase().update(TABLE_DEVELOP, values, filter, null);
 		this.close();
 
-		Log.d("updatePageTextAlign", "color:" + color + ", id:" + id + ", update!");
+		Log.d("updateOneTextFromPage", "id_text:" + id_text + ", color:" + color + ", update!");
 
-		return id;
+		return id_text;
 	}
 
+	// delete develop
+	public boolean deleteOneTextFromPageForId(long id_app, long id_page, long id_text) {
+		String query = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_ID + " = " + id_text + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page;
+		boolean result = false;
+		if (this.getWritableDatabase().delete(TABLE_DEVELOP, query, null) > 0) {
+			query = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_02 + " = " + id_text + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page;
+			if (this.getWritableDatabase().delete(TABLE_DEVELOP, query, null) > 0) {
+				result = true;
+				Log.d("deleteDrawingFromPageForId", "id_app:" + id_app + ", id_page:" + id_page + ", id_text:" + id_text + ", delete!");
+			}
+		}
+
+		return result;
+	}
+	
 	// delete develop
 	public boolean deleteDrawingFromPageForId(long id_app, long id_page, long id_drawing) {
 		String query = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_01 + " = " + id_drawing + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page;
@@ -1038,7 +1061,7 @@ public class KatbagHandlerSqlite extends SQLiteOpenHelper {
 			query = FIELD_DEVELOP_APP_ID + " = " + id_app + " and " + FIELD_DEVELOP_VALUE_02 + " = " + id_drawing + " and " + FIELD_DEVELOP_VALUE_05 + " = " + id_page;
 			if (this.getWritableDatabase().delete(TABLE_DEVELOP, query, null) > 0) {
 				result = true;
-				Log.d("deleteDrawingFromPageForId", "id_app:" + id_app + ", id_page:" + id_page + ", delete!");
+				Log.d("deleteDrawingFromPageForId", "id_app:" + id_app + ", id_page:" + id_page + ", id_drawing:" + id_drawing + ", delete!");
 			}
 		}
 

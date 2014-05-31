@@ -10,22 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false"
-        android:paddingTop="5dp" >
-
-        <TextView
-            android:id="@+id/slider_page_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:gravity="top"
-            android:overScrollMode="always"
-            android:paddingTop="38dp"
-            android:scrollHorizontally="false"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollbarStyle="insideInset"
-            android:scrollbars="vertical"
-            android:textColor="@color/generic_item_title" />
-    </RelativeLayout>
+        android:paddingTop="5dp" />
 
 </RelativeLayout>

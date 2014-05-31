@@ -1,3 +1,10 @@
+/*
+ * Author: Miguel Angel Bravo (@MiguelAngelBrav)
+ *  
+ * Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
+ * Licensed under the Apache 2.0 License.
+ */
+
 package cl.ipp.katbag.fragment;
 
 import java.util.ArrayList;
@@ -190,7 +197,7 @@ public class Pages extends SherlockFragment {
 			public boolean onMenuItemClick(MenuItem item) {
 				editMode = false;
 				menuItemEdit.setIcon(R.drawable.ic_action_edit);
-				mainActivity.katbagHandler.insertPage(id_app, "", 0);
+				mainActivity.katbagHandler.insertPage(id_app, 0);
 				loadListView();
 				return true;
 			}

@@ -191,17 +191,21 @@
     <string name="one_drawing_message_not_image_selected">No fue posible seleccionar la imagen</string>
 
     <!-- one page -->
-    <string name="one_page_dropdown_menu_add_world">Escenario</string>
-    <string name="one_page_dropdown_menu_add_sound">Sonido de fondo</string>
-    <string name="one_page_dropdown_menu_remove_sound">Eliminar Sonido de fondo</string>
-    <string name="one_page_dropdown_menu_add_drawing">Personaje</string>
+    <string name="one_page_dropdown_menu_add_world">Define Escenario</string>
+    <string name="one_page_dropdown_menu_add_drawing">Agrega Personaje</string>
+    <string name="one_page_dropdown_menu_add_text">Agrega Texto</string>
+    <string name="one_page_dropdown_menu_add_sound">Define Sonido de fondo</string>
+    <string name="one_page_dropdown_menu_remove_world">Quitar Escenario</string>
+    <string name="one_page_dropdown_menu_remove_sound">Quitar Sonido de fondo</string>
     <string name="one_page_write_text_here">Escribir el texto aquí</string>
-    <string name="one_page_default_font">fonts/toony_loons.ttf</string>
+    <string name="one_page_default_font">fonts/from_brush_to_caps.ttf</string>
     <string name="one_page_message_sound_not_set">Aún no seleccionas un sonido</string>
-    <string name="one_page_dialog_remove_drawer_title">Eliminar Personaje</string>
-    <string name="one_page_dialog_remove_drawer_text">¿Quieres eliminar el personaje %s?</string>
-    <string name="one_page_dialog_remove_drawer_button_yes">Si</string>
-    <string name="one_page_dialog_remove_drawer_button_no">No</string>
+    <string name="one_page_dialog_remove_drawing_title">Eliminar Personaje</string>
+    <string name="one_page_dialog_remove_drawing_text">¿Quieres eliminar el personaje %s?</string>
+    <string name="one_page_dialog_remove_text_title">Eliminar Texto</string>
+    <string name="one_page_dialog_remove_text_text">¿Quieres eliminar el texto %s?</string>
+    <string name="one_page_dialog_remove_object_button_yes">Si</string>
+    <string name="one_page_dialog_remove_object_button_no">No</string>
     
     <!-- one comics page -->
     <string name="one_comics_page_dropdown_menu_add_world">Escenario</string>

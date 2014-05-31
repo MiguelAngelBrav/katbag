@@ -24,6 +24,7 @@
 
     <!-- one world -->
     <color name="border_one_drawing_part">#0000FF</color>
+    <color name="border_one_drawing_part_default">#999999</color>
     
     <!-- one drawing -->
     <color name="background_toolbar">#3D3D3D</color>

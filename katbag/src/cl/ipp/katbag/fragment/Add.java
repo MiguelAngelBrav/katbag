@@ -1,3 +1,10 @@
+/*
+ * Author: Miguel Angel Bravo (@MiguelAngelBrav)
+ *  
+ * Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
+ * Licensed under the Apache 2.0 License.
+ */
+
 package cl.ipp.katbag.fragment;
 
 import org.holoeverywhere.widget.ProgressBar;
@@ -94,7 +101,7 @@ public class Add extends Fragment implements OnClickListener {
 			config_app_worlds.setVisibility(View.VISIBLE);
 			config_app_developments.setVisibility(View.GONE);
 			config_app_drawings.setVisibility(View.VISIBLE);
-			config_app_pages.setVisibility(View.GONE);
+			config_app_pages.setVisibility(View.VISIBLE);
 		}
 
 		return v;

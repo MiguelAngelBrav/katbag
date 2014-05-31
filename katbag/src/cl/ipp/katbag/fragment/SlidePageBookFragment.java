@@ -1,17 +1,8 @@
 /*
- * Copyright 2012 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Author: Miguel Angel Bravo (@MiguelAngelBrav)
+ *  
+ * Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
+ * Licensed under the Apache 2.0 License.
  */
 
 package cl.ipp.katbag.fragment;
@@ -21,11 +12,9 @@ import java.util.ArrayList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.MeasureSpec;
@@ -34,11 +23,11 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
-import android.widget.TextView;
 import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 import cl.ipp.katbag.core.KatbagDrawing;
 import cl.ipp.katbag.core.KatbagDrawingBuilder;
+import cl.ipp.katbag.core.KatbagEditText;
 
 public class SlidePageBookFragment extends Fragment {
 
@@ -49,21 +38,15 @@ public class SlidePageBookFragment extends Fragment {
 	public ArrayList<String> page = new ArrayList<String>();
 	public ArrayList<String> world = new ArrayList<String>();
 	public String mCurrentPhotoPath = "";
-	public TextView text;
 	public RelativeLayout backgroundView;
 	public boolean mMeasured = false;
 	public int[] loc;
 	private ArrayList<String> develop = new ArrayList<String>();
-	private ArrayList<Integer> drawingList = new ArrayList<Integer>();
 
 	public static final int PAGE_WORLD_ID = 0;
 	public static final int PAGE_SOUND_ID = 1;
-	public static final int PAGE_TEXT = 2;
-	public static final int PAGE_TEXT_SIZE = 3;
-	public static final int PAGE_TEXT_ALIGN = 4;
-	public static final int PAGE_TEXT_COLOR = 5;
-	public static final int PAGE_ORDER = 6;
-	public static final int PAGE_ID = 7;
+	public static final int PAGE_ORDER = 2;
+	public static final int PAGE_ID = 3;
 
 	public static final int WORLD_ARRAY_TYPE = 0;
 	public static final int WORLD_ARRAY_SRC = 1;
@@ -122,51 +105,44 @@ public class SlidePageBookFragment extends Fragment {
 			}
 		});
 
-		text = (TextView) v.findViewById(R.id.slider_page_text);
-		Typeface face = Typeface.createFromAsset(mainActivity.getAssets(), getString(R.string.one_page_default_font));
-		text.setTypeface(face);
-
 		page.clear();
 		page = mainActivity.katbagHandler.selectOnePageForIdAndOrder(id_app, mPageNumber);
 
 		if (page.size() > 0) {
-			if (page.get(PAGE_TEXT) != null)
-				text.setText(page.get(PAGE_TEXT));
-
-			if (page.get(PAGE_WORLD_ID) != null)
+			if ((page.get(PAGE_WORLD_ID) != null) && (!page.get(PAGE_WORLD_ID).contentEquals("")))
 				setWorld(Long.parseLong(page.get(PAGE_WORLD_ID)));
-
-			if (page.get(PAGE_TEXT_ALIGN) != null)
-				setAlignText(page.get(PAGE_TEXT_ALIGN));
-
-			if (page.get(PAGE_TEXT_SIZE) != null)
-				setFontSize(Integer.valueOf(page.get(PAGE_TEXT_SIZE)));
-
-			if (page.get(PAGE_TEXT_COLOR) != null)
-				setColorText(Integer.valueOf(page.get(PAGE_TEXT_COLOR)));
 		}
 	}
 
 	public void setDevelopBook() {
-		drawingList.clear();
-
+		// add first drawing, then text, then motion
 		develop.clear();
 		develop = mainActivity.katbagHandler.selectDevelopBookForIdAppAndPageId(id_app, Integer.parseInt(page.get(PAGE_ID)));
 		for (int i = 0; i < develop.size(); i++) {
 			String[] line = develop.get(i).split("&&");
-
 			if (line[1].contentEquals("drawing")) {
 				setDrawing(line);
 			}
 		}
-
+		
 		for (int i = 0; i < develop.size(); i++) {
 			String[] line = develop.get(i).split("&&");
-
+			if (line[1].contentEquals("text")) {
+				setText(line);
+			}
+		}
+		
+		for (int i = 0; i < develop.size(); i++) {
+			String[] line = develop.get(i).split("&&");
 			if (line[1].contentEquals("motion")) {
-				KatbagDrawing drawingMove = (KatbagDrawing) backgroundView.findViewById(Integer.parseInt(line[4]));
-				if (drawingMove != null)
-					drawingMove.moveToXY(Integer.parseInt(line[5]), Integer.parseInt(line[6]));
+				if (backgroundView.findViewById(Integer.parseInt(line[4])) instanceof KatbagDrawing) {
+					KatbagDrawing drawingMove = (KatbagDrawing) backgroundView.findViewById(Integer.parseInt(line[4]));
+					if (drawingMove != null) drawingMove.moveToXY(Integer.parseInt(line[5]), Integer.parseInt(line[6]));
+				
+				} else if (backgroundView.findViewById(Integer.parseInt(line[4])) instanceof KatbagEditText) {
+					KatbagEditText textMove = (KatbagEditText) backgroundView.findViewById(Integer.parseInt(line[4]));
+					if (textMove != null) textMove.moveToXY(Integer.parseInt(line[5]), Integer.parseInt(line[6]));
+				}
 			}
 		}
 	}
@@ -184,9 +160,7 @@ public class SlidePageBookFragment extends Fragment {
 
 		if (exist) {
 			KatbagDrawingBuilder drawingBuilder = new KatbagDrawingBuilder(mainActivity.context);
-			drawingBuilder.setIdDrawing(Long.parseLong(line[3])); // this build
-																	// the
-																	// drawing
+			drawingBuilder.setIdDrawing(Long.parseLong(line[3])); // this build the drawing
 			Bitmap bitmap = createBitmapFromRelativeLayout(drawingBuilder);
 			KatbagDrawing drawing = new KatbagDrawing(mainActivity.context);
 			drawing.setImageBitmap(bitmap);
@@ -195,8 +169,19 @@ public class SlidePageBookFragment extends Fragment {
 			drawing.setMySize(drawingBuilder.getMyWidth(), drawingBuilder.getMyHeight());
 			drawing.setScaleType(ScaleType.MATRIX);
 			backgroundView.addView(drawing);
-			drawingList.add(Integer.parseInt(line[3]));
 		}
+	}
+	
+	public void setText(String[] line) {	
+		KatbagEditText text = new KatbagEditText(mainActivity.context);
+		text.setId(Integer.parseInt(line[0]));
+		text.setText(line[2]);
+		text.setTextAlign(line[4]);
+		text.setFontSize(Integer.parseInt(line[3]));
+		text.setColorText(Integer.parseInt(line[5]));
+		text.setBackgroundResource(0);
+		text.setKeyListener(null);
+		backgroundView.addView(text);
 	}
 
 	public Bitmap createBitmapFromRelativeLayout(RelativeLayout view) {
@@ -218,23 +203,6 @@ public class SlidePageBookFragment extends Fragment {
 	 */
 	public int getPageNumber() {
 		return mPageNumber;
-	}
-
-	public void setColorText(int color) {
-		text.setTextColor(color);
-	}
-
-	public void setFontSize(int size) {
-		text.setTextSize(size);
-	}
-
-	public void setAlignText(String align) {
-		if (align.contentEquals("left"))
-			text.setGravity(Gravity.TOP | Gravity.LEFT);
-		else if (align.contentEquals("center"))
-			text.setGravity(Gravity.TOP | Gravity.CENTER);
-		else if (align.contentEquals("right"))
-			text.setGravity(Gravity.TOP | Gravity.RIGHT);
 	}
 
 	public void setWorld(long id_world) {

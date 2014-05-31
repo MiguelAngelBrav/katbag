@@ -10,35 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false"
-        android:paddingTop="5dp" >
+        android:focusable="true"
+        android:paddingTop="5dp" />
 
-        <ScrollView
-            android:id="@+id/scrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <EditText
-                android:id="@+id/one_page_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:gravity="top"
-                android:hint="@string/one_page_write_text_here"
-                android:inputType="textMultiLine"
-                android:overScrollMode="always"
-                android:scrollHorizontally="false"
-                android:scrollbarAlwaysDrawVerticalTrack="true"
-                android:scrollbarStyle="insideInset"
-                android:scrollbars="vertical"
-                android:textColor="@color/generic_item_title"
-                android:paddingTop="48dp" >
-
-                <requestFocus />
-            </EditText>
-        </ScrollView>
-    </RelativeLayout>
-    
     <HorizontalScrollView
         android:id="@+id/horizontalScroll"
         android:layout_width="match_parent"
