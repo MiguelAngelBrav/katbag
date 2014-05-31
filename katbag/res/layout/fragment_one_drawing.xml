@@ -16,6 +16,11 @@
         android:padding="3dp" >
 
         <ImageView
+            android:id="@+id/toolbar_part_sendtoback"
+            style="@style/generic_image_toolbar_sendtoback"
+            android:contentDescription="@string/image_description" />
+
+        <ImageView
             android:id="@+id/toolbar_part_bringtofront"
             style="@style/generic_image_toolbar_bringtofront"
             android:contentDescription="@string/image_description" />

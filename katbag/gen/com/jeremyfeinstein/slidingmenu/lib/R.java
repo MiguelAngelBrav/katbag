@@ -325,7 +325,7 @@ public final class R {
 		public static final int showCustom = 0x7f080012;
 		public static final int showHome = 0x7f08000f;
 		public static final int showTitle = 0x7f080011;
-		public static final int slidingmenumain = 0x7f080109;
+		public static final int slidingmenumain = 0x7f08010a;
 		public static final int tabMode = 0x7f08000d;
 		public static final int useLogo = 0x7f08000e;
 		public static final int wrap_content = 0x7f08000a;

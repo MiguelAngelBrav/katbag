@@ -79,7 +79,7 @@ public class OneDrawing extends SherlockFragment {
 	public RelativeLayout one_drawing;
 	public int identifier = 0;
 
-	public ImageView bringToFront, expand, contract, trash;
+	public ImageView sendToBack, bringToFront, expand, contract, trash;
 	public int[] loc;
 	public ImageView imageViewLive = null;
 	public boolean body = false; // you can only use a body
@@ -108,11 +108,20 @@ public class OneDrawing extends SherlockFragment {
 			}
 		});
 
+		sendToBack = (ImageView) v.findViewById(R.id.toolbar_part_sendtoback);
 		bringToFront = (ImageView) v.findViewById(R.id.toolbar_part_bringtofront);
 		expand = (ImageView) v.findViewById(R.id.toolbar_part_expand);
 		contract = (ImageView) v.findViewById(R.id.toolbar_part_contract);
 		trash = (ImageView) v.findViewById(R.id.toolbar_part_trash);
 
+		sendToBack.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				sendToBack();
+			}
+		});
+		
 		bringToFront.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -425,12 +434,29 @@ public class OneDrawing extends SherlockFragment {
 			return dragging;
 		}
 	}
+	
+	public void sendToBack() {
+		if (imageViewLive != null) {
+	        int index = one_drawing.indexOfChild(imageViewLive);
+			for (int i = 0; i < index; i++) {
+				one_drawing.bringChildToFront(one_drawing.getChildAt(i));
+				one_drawing.invalidate();
+	        }
+
+			for (int i = 0; i < one_drawing.getChildCount(); i++) {
+				mainActivity.katbagHandler.updateDrawingPartOrder(one_drawing.getChildAt(i).getId(), i);
+			}
+		}
+	}
 
 	public void bringToFront() {
 		if (imageViewLive != null) {
-			one_drawing.bringChildToFront(imageViewLive);
-			one_drawing.invalidate();
-
+			int index = one_drawing.indexOfChild(imageViewLive);
+			for (int i = index; i < one_drawing.getChildCount(); i++) {
+				one_drawing.bringChildToFront(one_drawing.getChildAt(i));
+				one_drawing.invalidate();
+	        }
+			
 			for (int i = 0; i < one_drawing.getChildCount(); i++) {
 				mainActivity.katbagHandler.updateDrawingPartOrder(one_drawing.getChildAt(i).getId(), i);
 			}

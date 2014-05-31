@@ -262,6 +262,10 @@
         <item name="android:contentDescription">@string/image_description</item>
     </style>
 
+    <style name="generic_image_toolbar_sendtoback" parent="generic_image_toolbar">
+        <item name="android:background">@drawable/toolbar_icon_sendtoback</item>
+    </style>
+    
     <style name="generic_image_toolbar_bringtofront" parent="generic_image_toolbar">
         <item name="android:background">@drawable/toolbar_icon_bringtofront</item>
     </style>
