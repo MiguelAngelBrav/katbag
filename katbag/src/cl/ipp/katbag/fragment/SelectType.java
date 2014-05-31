@@ -7,6 +7,10 @@
 
 package cl.ipp.katbag.fragment;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.os.Bundle;
@@ -21,11 +25,21 @@ import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 
 public class SelectType extends Fragment implements OnClickListener {
+	
+	private Tracker tracker;
 
 	static View v = null;
 	public static MainActivity mainActivity;
 	public RelativeLayout type_app_game, type_app_book, type_app_comics;
 	public Fragment mFragment;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,5 +100,8 @@ public class SelectType extends Fragment implements OnClickListener {
 			mainActivity.slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 }

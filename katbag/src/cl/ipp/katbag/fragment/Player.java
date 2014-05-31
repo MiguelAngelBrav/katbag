@@ -9,6 +9,10 @@ package cl.ipp.katbag.fragment;
 
 import java.util.ArrayList;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.content.Context;
@@ -47,6 +51,8 @@ import cl.ipp.katbag.core.KatbagUtilities;
 
 public class Player extends Fragment implements SensorEventListener {
 
+	private Tracker tracker;
+	
 	static View v = null;
 	public static MainActivity mainActivity;
 	public long id_app = -1;
@@ -112,6 +118,14 @@ public class Player extends Fragment implements SensorEventListener {
 	public static final String WORLD_TYPE_COLOR = "color";
 	public static final String WORLD_TYPE_CAMERA = "camera";
 	public static final String WORLD_TYPE_LIBRARY = "library";
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -858,6 +872,9 @@ public class Player extends Fragment implements SensorEventListener {
 
 		Log.d("onResume", "id_app: " + id_app);
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 
 	@Override

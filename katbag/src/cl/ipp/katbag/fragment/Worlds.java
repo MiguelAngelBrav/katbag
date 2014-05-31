@@ -29,11 +29,17 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.mobeta.android.dslv.DragSortListView;
 
 public class Worlds extends SherlockFragment {
 
+	private Tracker tracker;
+	
 	static View v = null;
 	public static MainActivity mainActivity;
 	public MenuItem menuItemEdit, menuItemNew;
@@ -49,6 +55,8 @@ public class Worlds extends SherlockFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
 	}
 
 	@Override
@@ -175,5 +183,8 @@ public class Worlds extends SherlockFragment {
 			mainActivity.slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 }

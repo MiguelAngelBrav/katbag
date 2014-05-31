@@ -2357,6 +2357,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int default_line_indicator_centered=0x7f0a0002;
         public static final int default_title_indicator_selected_bold=0x7f0a0003;
         public static final int default_underline_indicator_fades=0x7f0a0004;
+        /**  Enable automatic activity tracking 
+         */
+        public static final int ga_autoActivityTracking=0x7f0a000c;
+        /**  Enable automatic exception tracking 
+         */
+        public static final int ga_reportUncaughtExceptions=0x7f0a000d;
         public static final int preferences_prefer_dual_pane=0x7f0a000b;
     }
     public static final class color {
@@ -4065,11 +4071,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sound_06_efectos_zumbador_02=0x7f070091;
     }
     public static final class string {
-        public static final int about_cc_text=0x7f0e00e7;
-        public static final int about_text=0x7f0e00e6;
+        public static final int about_cc_text=0x7f0e00e8;
+        public static final int about_text=0x7f0e00e7;
         /**  about 
          */
-        public static final int about_version=0x7f0e00e5;
+        public static final int about_version=0x7f0e00e6;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abs__action_bar_home_description=0x7f0e0000;
@@ -4109,37 +4115,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f0e0007;
-        public static final int action_settings=0x7f0e00ed;
+        public static final int action_settings=0x7f0e00ee;
         /**  add 
          */
-        public static final int add_edit_app=0x7f0e0058;
-        public static final int app_empty=0x7f0e003f;
+        public static final int add_edit_app=0x7f0e0059;
+        public static final int app_empty=0x7f0e0040;
         /**  generic 
          */
-        public static final int app_name=0x7f0e002c;
+        public static final int app_name=0x7f0e002d;
         public static final int back_button_label=0x7f0e000d;
         /**  board 
          */
-        public static final int board_not_register=0x7f0e004f;
+        public static final int board_not_register=0x7f0e0050;
         public static final int candidates_style=0x7f0e000e;
         public static final int capital_off=0x7f0e000f;
         public static final int capital_on=0x7f0e0010;
-        public static final int comics_pages_dropdown_menu_duplicate=0x7f0e00ac;
+        public static final int comics_pages_dropdown_menu_duplicate=0x7f0e00ad;
         /**  comics pages 
          */
-        public static final int comics_pages_dropdown_menu_new=0x7f0e00ab;
-        public static final int comics_pages_not_register=0x7f0e00ae;
-        public static final int comics_pages_row_name=0x7f0e00ad;
-        public static final int comics_pages_text_default=0x7f0e00af;
-        public static final int config_app_developments_subtitle=0x7f0e0061;
-        public static final int config_app_developments_title=0x7f0e005d;
-        public static final int config_app_drawings_subtitle=0x7f0e0060;
-        public static final int config_app_drawings_title=0x7f0e005c;
-        public static final int config_app_pages_subtitle=0x7f0e0062;
-        public static final int config_app_pages_title=0x7f0e005e;
-        public static final int config_app_worlds_subtitle=0x7f0e005f;
-        public static final int config_app_worlds_title=0x7f0e005b;
-        public static final int config_hint_name_app=0x7f0e005a;
+        public static final int comics_pages_dropdown_menu_new=0x7f0e00ac;
+        public static final int comics_pages_not_register=0x7f0e00af;
+        public static final int comics_pages_row_name=0x7f0e00ae;
+        public static final int comics_pages_text_default=0x7f0e00b0;
+        public static final int config_app_developments_subtitle=0x7f0e0062;
+        public static final int config_app_developments_title=0x7f0e005e;
+        public static final int config_app_drawings_subtitle=0x7f0e0061;
+        public static final int config_app_drawings_title=0x7f0e005d;
+        public static final int config_app_pages_subtitle=0x7f0e0063;
+        public static final int config_app_pages_title=0x7f0e005f;
+        public static final int config_app_worlds_subtitle=0x7f0e0060;
+        public static final int config_app_worlds_title=0x7f0e005c;
+        public static final int config_hint_name_app=0x7f0e005b;
         public static final int date_picker_decrement_day_button=0x7f0e0011;
         public static final int date_picker_decrement_month_button=0x7f0e0012;
         public static final int date_picker_decrement_year_button=0x7f0e0013;
@@ -4149,196 +4155,199 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int date_picker_increment_year_button=0x7f0e0017;
         public static final int date_time_done=0x7f0e0018;
         public static final int date_time_set=0x7f0e0019;
-        public static final int develop_dialog_control_add=0x7f0e0098;
-        public static final int develop_dialog_control_deduct=0x7f0e0099;
-        public static final int develop_dialog_control_repeat=0x7f0e0094;
-        public static final int develop_dialog_control_repeat_indefinitely=0x7f0e0096;
-        public static final int develop_dialog_control_score=0x7f0e009a;
-        public static final int develop_dialog_control_score_equal_to=0x7f0e009c;
-        public static final int develop_dialog_control_seconds=0x7f0e0093;
-        public static final int develop_dialog_control_show=0x7f0e009b;
-        public static final int develop_dialog_control_start_score_in=0x7f0e0097;
-        public static final int develop_dialog_control_times=0x7f0e0095;
-        public static final int develop_dialog_control_wait=0x7f0e0092;
-        public static final int develop_dialog_look_change_appearance=0x7f0e008f;
-        public static final int develop_dialog_look_for_appearance=0x7f0e0090;
-        public static final int develop_dialog_look_hide_the=0x7f0e008d;
-        public static final int develop_dialog_look_show_the=0x7f0e008e;
-        public static final int develop_dialog_motion_automatic=0x7f0e008b;
-        public static final int develop_dialog_motion_automatically_move_the=0x7f0e0086;
-        public static final int develop_dialog_motion_cancel_movement=0x7f0e0089;
-        public static final int develop_dialog_motion_change_x_for=0x7f0e0083;
-        public static final int develop_dialog_motion_change_y_for=0x7f0e0084;
-        public static final int develop_dialog_motion_degrees=0x7f0e0082;
-        public static final int develop_dialog_motion_move=0x7f0e0087;
-        public static final int develop_dialog_motion_move_the=0x7f0e0076;
-        public static final int develop_dialog_motion_of=0x7f0e0085;
-        public static final int develop_dialog_motion_only_axis_x=0x7f0e007b;
-        public static final int develop_dialog_motion_only_axis_y=0x7f0e007c;
-        public static final int develop_dialog_motion_random=0x7f0e008c;
-        public static final int develop_dialog_motion_randomly=0x7f0e0088;
-        public static final int develop_dialog_motion_rotate_the=0x7f0e007f;
-        public static final int develop_dialog_motion_steps=0x7f0e0077;
-        public static final int develop_dialog_motion_to=0x7f0e0078;
-        public static final int develop_dialog_motion_to_the_center=0x7f0e007d;
-        public static final int develop_dialog_motion_to_the_left=0x7f0e0081;
-        public static final int develop_dialog_motion_to_the_right=0x7f0e0080;
-        public static final int develop_dialog_motion_with_accelerometer=0x7f0e008a;
-        public static final int develop_dialog_motion_with_the_accelerometer=0x7f0e007e;
-        public static final int develop_dialog_motion_x=0x7f0e0079;
-        public static final int develop_dialog_motion_y=0x7f0e007a;
-        public static final int develop_dialog_sensing_collides_with=0x7f0e00a1;
-        public static final int develop_dialog_sensing_collides_with_the=0x7f0e00a0;
-        public static final int develop_dialog_sensing_if_the=0x7f0e009e;
-        public static final int develop_dialog_sensing_if_touch_the=0x7f0e009d;
-        public static final int develop_dialog_sensing_other=0x7f0e009f;
-        public static final int develop_dialog_sound_play_the_sound=0x7f0e0091;
-        public static final int develop_dropdown_menu_add_control=0x7f0e0071;
-        public static final int develop_dropdown_menu_add_drawing=0x7f0e006d;
-        public static final int develop_dropdown_menu_add_look=0x7f0e006f;
-        public static final int develop_dropdown_menu_add_motion=0x7f0e006e;
-        public static final int develop_dropdown_menu_add_sensing=0x7f0e0072;
-        public static final int develop_dropdown_menu_add_sound=0x7f0e0070;
-        public static final int develop_dropdown_menu_add_world=0x7f0e006c;
-        public static final int develop_edittext_number_default_string=0x7f0e0074;
-        public static final int develop_edittext_number_default_value=0x7f0e0073;
-        public static final int develop_message_drawing_exist=0x7f0e00a4;
-        public static final int develop_message_empty_n=0x7f0e00a2;
-        public static final int develop_message_not_different=0x7f0e00a3;
-        public static final int develop_message_not_drawing=0x7f0e0075;
+        public static final int develop_dialog_control_add=0x7f0e0099;
+        public static final int develop_dialog_control_deduct=0x7f0e009a;
+        public static final int develop_dialog_control_repeat=0x7f0e0095;
+        public static final int develop_dialog_control_repeat_indefinitely=0x7f0e0097;
+        public static final int develop_dialog_control_score=0x7f0e009b;
+        public static final int develop_dialog_control_score_equal_to=0x7f0e009d;
+        public static final int develop_dialog_control_seconds=0x7f0e0094;
+        public static final int develop_dialog_control_show=0x7f0e009c;
+        public static final int develop_dialog_control_start_score_in=0x7f0e0098;
+        public static final int develop_dialog_control_times=0x7f0e0096;
+        public static final int develop_dialog_control_wait=0x7f0e0093;
+        public static final int develop_dialog_look_change_appearance=0x7f0e0090;
+        public static final int develop_dialog_look_for_appearance=0x7f0e0091;
+        public static final int develop_dialog_look_hide_the=0x7f0e008e;
+        public static final int develop_dialog_look_show_the=0x7f0e008f;
+        public static final int develop_dialog_motion_automatic=0x7f0e008c;
+        public static final int develop_dialog_motion_automatically_move_the=0x7f0e0087;
+        public static final int develop_dialog_motion_cancel_movement=0x7f0e008a;
+        public static final int develop_dialog_motion_change_x_for=0x7f0e0084;
+        public static final int develop_dialog_motion_change_y_for=0x7f0e0085;
+        public static final int develop_dialog_motion_degrees=0x7f0e0083;
+        public static final int develop_dialog_motion_move=0x7f0e0088;
+        public static final int develop_dialog_motion_move_the=0x7f0e0077;
+        public static final int develop_dialog_motion_of=0x7f0e0086;
+        public static final int develop_dialog_motion_only_axis_x=0x7f0e007c;
+        public static final int develop_dialog_motion_only_axis_y=0x7f0e007d;
+        public static final int develop_dialog_motion_random=0x7f0e008d;
+        public static final int develop_dialog_motion_randomly=0x7f0e0089;
+        public static final int develop_dialog_motion_rotate_the=0x7f0e0080;
+        public static final int develop_dialog_motion_steps=0x7f0e0078;
+        public static final int develop_dialog_motion_to=0x7f0e0079;
+        public static final int develop_dialog_motion_to_the_center=0x7f0e007e;
+        public static final int develop_dialog_motion_to_the_left=0x7f0e0082;
+        public static final int develop_dialog_motion_to_the_right=0x7f0e0081;
+        public static final int develop_dialog_motion_with_accelerometer=0x7f0e008b;
+        public static final int develop_dialog_motion_with_the_accelerometer=0x7f0e007f;
+        public static final int develop_dialog_motion_x=0x7f0e007a;
+        public static final int develop_dialog_motion_y=0x7f0e007b;
+        public static final int develop_dialog_sensing_collides_with=0x7f0e00a2;
+        public static final int develop_dialog_sensing_collides_with_the=0x7f0e00a1;
+        public static final int develop_dialog_sensing_if_the=0x7f0e009f;
+        public static final int develop_dialog_sensing_if_touch_the=0x7f0e009e;
+        public static final int develop_dialog_sensing_other=0x7f0e00a0;
+        public static final int develop_dialog_sound_play_the_sound=0x7f0e0092;
+        public static final int develop_dropdown_menu_add_control=0x7f0e0072;
+        public static final int develop_dropdown_menu_add_drawing=0x7f0e006e;
+        public static final int develop_dropdown_menu_add_look=0x7f0e0070;
+        public static final int develop_dropdown_menu_add_motion=0x7f0e006f;
+        public static final int develop_dropdown_menu_add_sensing=0x7f0e0073;
+        public static final int develop_dropdown_menu_add_sound=0x7f0e0071;
+        public static final int develop_dropdown_menu_add_world=0x7f0e006d;
+        public static final int develop_edittext_number_default_string=0x7f0e0075;
+        public static final int develop_edittext_number_default_value=0x7f0e0074;
+        public static final int develop_message_drawing_exist=0x7f0e00a5;
+        public static final int develop_message_empty_n=0x7f0e00a3;
+        public static final int develop_message_not_different=0x7f0e00a4;
+        public static final int develop_message_not_drawing=0x7f0e0076;
         /**  development 
          */
-        public static final int develop_not_register=0x7f0e006b;
-        public static final int develop_title_indent=0x7f0e00a5;
-        public static final int dialog_button_cancel=0x7f0e0042;
-        public static final int dialog_button_ok=0x7f0e0044;
-        public static final int dialog_button_select=0x7f0e0043;
-        public static final int dialog_exit_button_no=0x7f0e004e;
-        public static final int dialog_exit_button_yes=0x7f0e004d;
-        public static final int dialog_exit_text=0x7f0e004c;
-        public static final int dialog_exit_title=0x7f0e004b;
+        public static final int develop_not_register=0x7f0e006c;
+        public static final int develop_title_indent=0x7f0e00a6;
+        public static final int dialog_button_cancel=0x7f0e0043;
+        public static final int dialog_button_ok=0x7f0e0045;
+        public static final int dialog_button_select=0x7f0e0044;
+        public static final int dialog_exit_button_no=0x7f0e004f;
+        public static final int dialog_exit_button_yes=0x7f0e004e;
+        public static final int dialog_exit_text=0x7f0e004d;
+        public static final int dialog_exit_title=0x7f0e004c;
         /**  dialog generic 
          */
-        public static final int dialog_title_select=0x7f0e0040;
-        public static final int dialog_title_select_picker_color=0x7f0e0041;
-        public static final int drawings_dropdown_menu_duplicate=0x7f0e0068;
+        public static final int dialog_title_select=0x7f0e0041;
+        public static final int dialog_title_select_picker_color=0x7f0e0042;
+        public static final int drawings_dropdown_menu_duplicate=0x7f0e0069;
         /**  drawings 
          */
-        public static final int drawings_dropdown_menu_new=0x7f0e0067;
-        public static final int drawings_not_register=0x7f0e006a;
-        public static final int drawings_row_name=0x7f0e0069;
-        public static final int edit_get_id=0x7f0e0051;
+        public static final int drawings_dropdown_menu_new=0x7f0e0068;
+        public static final int drawings_not_register=0x7f0e006b;
+        public static final int drawings_row_name=0x7f0e006a;
+        public static final int edit_get_id=0x7f0e0052;
         /**  edit 
          */
-        public static final int edit_not_register=0x7f0e0050;
-        public static final int hello_world=0x7f0e00ee;
-        public static final int image_description=0x7f0e003a;
+        public static final int edit_not_register=0x7f0e0051;
+        /**  Replace placeholder ID with your tracking ID 
+         */
+        public static final int ga_trackingId=0x7f0e002c;
+        public static final int hello_world=0x7f0e00ef;
+        public static final int image_description=0x7f0e003b;
         public static final int loading=0x7f0e001a;
         /**  messages 
          */
-        public static final int name_app_empty=0x7f0e003b;
-        public static final int name_app_new=0x7f0e003d;
-        public static final int name_app_short=0x7f0e003c;
-        public static final int name_app_update=0x7f0e003e;
+        public static final int name_app_empty=0x7f0e003c;
+        public static final int name_app_new=0x7f0e003e;
+        public static final int name_app_short=0x7f0e003d;
+        public static final int name_app_update=0x7f0e003f;
         public static final int next_button_label=0x7f0e001b;
         public static final int number_picker_decrement_button=0x7f0e001c;
         public static final int number_picker_increment_button=0x7f0e001d;
         public static final int number_picker_increment_scroll_action=0x7f0e001e;
         public static final int number_picker_increment_scroll_mode=0x7f0e001f;
-        public static final int one_comics_page_default_font=0x7f0e00df;
-        public static final int one_comics_page_dialog_remove_drawer_button_no=0x7f0e00e4;
-        public static final int one_comics_page_dialog_remove_drawer_button_yes=0x7f0e00e3;
-        public static final int one_comics_page_dialog_remove_drawer_text=0x7f0e00e2;
-        public static final int one_comics_page_dialog_remove_drawer_title=0x7f0e00e1;
-        public static final int one_comics_page_dropdown_menu_add_drawing=0x7f0e00dd;
-        public static final int one_comics_page_dropdown_menu_add_sound=0x7f0e00db;
+        public static final int one_comics_page_default_font=0x7f0e00e0;
+        public static final int one_comics_page_dialog_remove_drawer_button_no=0x7f0e00e5;
+        public static final int one_comics_page_dialog_remove_drawer_button_yes=0x7f0e00e4;
+        public static final int one_comics_page_dialog_remove_drawer_text=0x7f0e00e3;
+        public static final int one_comics_page_dialog_remove_drawer_title=0x7f0e00e2;
+        public static final int one_comics_page_dropdown_menu_add_drawing=0x7f0e00de;
+        public static final int one_comics_page_dropdown_menu_add_sound=0x7f0e00dc;
         /**  one comics page 
          */
-        public static final int one_comics_page_dropdown_menu_add_world=0x7f0e00da;
-        public static final int one_comics_page_dropdown_menu_remove_sound=0x7f0e00dc;
-        public static final int one_comics_page_message_sound_not_set=0x7f0e00e0;
-        public static final int one_comics_page_write_text_here=0x7f0e00de;
-        public static final int one_drawing_dropdown_menu_accesory=0x7f0e00bb;
+        public static final int one_comics_page_dropdown_menu_add_world=0x7f0e00db;
+        public static final int one_comics_page_dropdown_menu_remove_sound=0x7f0e00dd;
+        public static final int one_comics_page_message_sound_not_set=0x7f0e00e1;
+        public static final int one_comics_page_write_text_here=0x7f0e00df;
+        public static final int one_drawing_dropdown_menu_accesory=0x7f0e00bc;
         /**  one drawing 
          */
-        public static final int one_drawing_dropdown_menu_body=0x7f0e00b5;
-        public static final int one_drawing_dropdown_menu_comics_action=0x7f0e00bc;
-        public static final int one_drawing_dropdown_menu_comics_balloon_text=0x7f0e00bd;
-        public static final int one_drawing_dropdown_menu_comics_object=0x7f0e00be;
-        public static final int one_drawing_dropdown_menu_eyes=0x7f0e00b8;
-        public static final int one_drawing_dropdown_menu_glasses=0x7f0e00b9;
-        public static final int one_drawing_dropdown_menu_hat=0x7f0e00b6;
-        public static final int one_drawing_dropdown_menu_mouth=0x7f0e00ba;
-        public static final int one_drawing_dropdown_menu_wig=0x7f0e00b7;
-        public static final int one_drawing_message_not_image_selected=0x7f0e00ca;
-        public static final int one_drawing_message_only_a_body=0x7f0e00c9;
-        public static final int one_drawing_name_part_accesory=0x7f0e00c5;
-        public static final int one_drawing_name_part_body=0x7f0e00bf;
-        public static final int one_drawing_name_part_comics_action=0x7f0e00c6;
-        public static final int one_drawing_name_part_comics_balloon_text=0x7f0e00c7;
-        public static final int one_drawing_name_part_comics_object=0x7f0e00c8;
-        public static final int one_drawing_name_part_eyes=0x7f0e00c2;
-        public static final int one_drawing_name_part_glasses=0x7f0e00c3;
-        public static final int one_drawing_name_part_hat=0x7f0e00c0;
-        public static final int one_drawing_name_part_mouth=0x7f0e00c4;
-        public static final int one_drawing_name_part_wig=0x7f0e00c1;
-        public static final int one_page_default_font=0x7f0e00d2;
-        public static final int one_page_dialog_remove_drawing_text=0x7f0e00d5;
-        public static final int one_page_dialog_remove_drawing_title=0x7f0e00d4;
-        public static final int one_page_dialog_remove_object_button_no=0x7f0e00d9;
-        public static final int one_page_dialog_remove_object_button_yes=0x7f0e00d8;
-        public static final int one_page_dialog_remove_text_text=0x7f0e00d7;
-        public static final int one_page_dialog_remove_text_title=0x7f0e00d6;
-        public static final int one_page_dropdown_menu_add_drawing=0x7f0e00cc;
-        public static final int one_page_dropdown_menu_add_sound=0x7f0e00ce;
-        public static final int one_page_dropdown_menu_add_text=0x7f0e00cd;
+        public static final int one_drawing_dropdown_menu_body=0x7f0e00b6;
+        public static final int one_drawing_dropdown_menu_comics_action=0x7f0e00bd;
+        public static final int one_drawing_dropdown_menu_comics_balloon_text=0x7f0e00be;
+        public static final int one_drawing_dropdown_menu_comics_object=0x7f0e00bf;
+        public static final int one_drawing_dropdown_menu_eyes=0x7f0e00b9;
+        public static final int one_drawing_dropdown_menu_glasses=0x7f0e00ba;
+        public static final int one_drawing_dropdown_menu_hat=0x7f0e00b7;
+        public static final int one_drawing_dropdown_menu_mouth=0x7f0e00bb;
+        public static final int one_drawing_dropdown_menu_wig=0x7f0e00b8;
+        public static final int one_drawing_message_not_image_selected=0x7f0e00cb;
+        public static final int one_drawing_message_only_a_body=0x7f0e00ca;
+        public static final int one_drawing_name_part_accesory=0x7f0e00c6;
+        public static final int one_drawing_name_part_body=0x7f0e00c0;
+        public static final int one_drawing_name_part_comics_action=0x7f0e00c7;
+        public static final int one_drawing_name_part_comics_balloon_text=0x7f0e00c8;
+        public static final int one_drawing_name_part_comics_object=0x7f0e00c9;
+        public static final int one_drawing_name_part_eyes=0x7f0e00c3;
+        public static final int one_drawing_name_part_glasses=0x7f0e00c4;
+        public static final int one_drawing_name_part_hat=0x7f0e00c1;
+        public static final int one_drawing_name_part_mouth=0x7f0e00c5;
+        public static final int one_drawing_name_part_wig=0x7f0e00c2;
+        public static final int one_page_default_font=0x7f0e00d3;
+        public static final int one_page_dialog_remove_drawing_text=0x7f0e00d6;
+        public static final int one_page_dialog_remove_drawing_title=0x7f0e00d5;
+        public static final int one_page_dialog_remove_object_button_no=0x7f0e00da;
+        public static final int one_page_dialog_remove_object_button_yes=0x7f0e00d9;
+        public static final int one_page_dialog_remove_text_text=0x7f0e00d8;
+        public static final int one_page_dialog_remove_text_title=0x7f0e00d7;
+        public static final int one_page_dropdown_menu_add_drawing=0x7f0e00cd;
+        public static final int one_page_dropdown_menu_add_sound=0x7f0e00cf;
+        public static final int one_page_dropdown_menu_add_text=0x7f0e00ce;
         /**  one page 
          */
-        public static final int one_page_dropdown_menu_add_world=0x7f0e00cb;
-        public static final int one_page_dropdown_menu_remove_sound=0x7f0e00d0;
-        public static final int one_page_dropdown_menu_remove_world=0x7f0e00cf;
-        public static final int one_page_message_sound_not_set=0x7f0e00d3;
-        public static final int one_page_write_text_here=0x7f0e00d1;
-        public static final int one_world_dropdown_menu_add_audio=0x7f0e00b3;
+        public static final int one_page_dropdown_menu_add_world=0x7f0e00cc;
+        public static final int one_page_dropdown_menu_remove_sound=0x7f0e00d1;
+        public static final int one_page_dropdown_menu_remove_world=0x7f0e00d0;
+        public static final int one_page_message_sound_not_set=0x7f0e00d4;
+        public static final int one_page_write_text_here=0x7f0e00d2;
+        public static final int one_world_dropdown_menu_add_audio=0x7f0e00b4;
         /**  one world 
          */
-        public static final int one_world_dropdown_menu_color=0x7f0e00b0;
-        public static final int one_world_dropdown_menu_photo_album=0x7f0e00b1;
-        public static final int one_world_dropdown_menu_take_photo=0x7f0e00b2;
-        public static final int one_world_select_picture=0x7f0e00b4;
-        public static final int option_menu_about=0x7f0e0049;
-        public static final int option_menu_add=0x7f0e0047;
-        public static final int option_menu_board=0x7f0e0046;
-        public static final int option_menu_edit=0x7f0e0048;
-        public static final int pages_dropdown_menu_duplicate=0x7f0e00a7;
+        public static final int one_world_dropdown_menu_color=0x7f0e00b1;
+        public static final int one_world_dropdown_menu_photo_album=0x7f0e00b2;
+        public static final int one_world_dropdown_menu_take_photo=0x7f0e00b3;
+        public static final int one_world_select_picture=0x7f0e00b5;
+        public static final int option_menu_about=0x7f0e004a;
+        public static final int option_menu_add=0x7f0e0048;
+        public static final int option_menu_board=0x7f0e0047;
+        public static final int option_menu_edit=0x7f0e0049;
+        public static final int pages_dropdown_menu_duplicate=0x7f0e00a8;
         /**  pages 
          */
-        public static final int pages_dropdown_menu_new=0x7f0e00a6;
-        public static final int pages_not_register=0x7f0e00a9;
-        public static final int pages_row_name=0x7f0e00a8;
-        public static final int pages_text_default=0x7f0e00aa;
-        public static final int player_button_start=0x7f0e00ea;
-        public static final int player_label_score=0x7f0e00eb;
-        public static final int player_message_not_accetitle_editmode=0x7f0e00e9;
+        public static final int pages_dropdown_menu_new=0x7f0e00a7;
+        public static final int pages_not_register=0x7f0e00aa;
+        public static final int pages_row_name=0x7f0e00a9;
+        public static final int pages_text_default=0x7f0e00ab;
+        public static final int player_button_start=0x7f0e00eb;
+        public static final int player_label_score=0x7f0e00ec;
+        public static final int player_message_not_accetitle_editmode=0x7f0e00ea;
         /**  player 
          */
-        public static final int player_title_editmode=0x7f0e00e8;
+        public static final int player_title_editmode=0x7f0e00e9;
         public static final int ringtone_default=0x7f0e0020;
         public static final int ringtone_picker_title=0x7f0e0021;
         public static final int ringtone_silent=0x7f0e0022;
-        public static final int select_type_item_book_subtitle=0x7f0e0056;
-        public static final int select_type_item_book_title=0x7f0e0053;
-        public static final int select_type_item_comics_subtitle=0x7f0e0057;
-        public static final int select_type_item_comics_title=0x7f0e0054;
-        public static final int select_type_item_game_subtitle=0x7f0e0055;
+        public static final int select_type_item_book_subtitle=0x7f0e0057;
+        public static final int select_type_item_book_title=0x7f0e0054;
+        public static final int select_type_item_comics_subtitle=0x7f0e0058;
+        public static final int select_type_item_comics_title=0x7f0e0055;
+        public static final int select_type_item_game_subtitle=0x7f0e0056;
         /**  select type 
          */
-        public static final int select_type_item_game_title=0x7f0e0052;
+        public static final int select_type_item_game_title=0x7f0e0053;
         public static final int skip_button_label=0x7f0e0023;
-        public static final int subtitle_config_app=0x7f0e0059;
+        public static final int subtitle_config_app=0x7f0e005a;
         /**  menu 
          */
-        public static final int subtitle_options_menu=0x7f0e0045;
+        public static final int subtitle_options_menu=0x7f0e0046;
         public static final int time_picker_decrement_hour_button=0x7f0e0024;
         public static final int time_picker_decrement_minute_button=0x7f0e0025;
         public static final int time_picker_decrement_set_am_button=0x7f0e0026;
@@ -4347,27 +4356,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int time_picker_increment_minute_button=0x7f0e0029;
         public static final int time_picker_increment_set_pm_button=0x7f0e002a;
         public static final int time_picker_separator=0x7f0e002b;
-        public static final int title_activity_add=0x7f0e002e;
-        public static final int title_activity_add_book=0x7f0e0030;
-        public static final int title_activity_add_comics=0x7f0e0031;
-        public static final int title_activity_add_game=0x7f0e002f;
-        public static final int title_activity_board=0x7f0e002d;
-        public static final int title_activity_developments=0x7f0e0037;
-        public static final int title_activity_drawings=0x7f0e0036;
-        public static final int title_activity_edit=0x7f0e0032;
-        public static final int title_activity_menu=0x7f0e0033;
-        public static final int title_activity_pages=0x7f0e0038;
-        public static final int title_activity_player=0x7f0e0039;
-        public static final int title_activity_player_book=0x7f0e00ec;
-        public static final int title_activity_select_type=0x7f0e0034;
-        public static final int title_activity_worlds=0x7f0e0035;
-        public static final int version_app=0x7f0e004a;
-        public static final int worlds_dropdown_menu_duplicate=0x7f0e0064;
+        public static final int title_activity_add=0x7f0e002f;
+        public static final int title_activity_add_book=0x7f0e0031;
+        public static final int title_activity_add_comics=0x7f0e0032;
+        public static final int title_activity_add_game=0x7f0e0030;
+        public static final int title_activity_board=0x7f0e002e;
+        public static final int title_activity_developments=0x7f0e0038;
+        public static final int title_activity_drawings=0x7f0e0037;
+        public static final int title_activity_edit=0x7f0e0033;
+        public static final int title_activity_menu=0x7f0e0034;
+        public static final int title_activity_pages=0x7f0e0039;
+        public static final int title_activity_player=0x7f0e003a;
+        public static final int title_activity_player_book=0x7f0e00ed;
+        public static final int title_activity_select_type=0x7f0e0035;
+        public static final int title_activity_worlds=0x7f0e0036;
+        public static final int version_app=0x7f0e004b;
+        public static final int worlds_dropdown_menu_duplicate=0x7f0e0065;
         /**  worlds 
          */
-        public static final int worlds_dropdown_menu_new=0x7f0e0063;
-        public static final int worlds_not_register=0x7f0e0066;
-        public static final int worlds_row_name=0x7f0e0065;
+        public static final int worlds_dropdown_menu_new=0x7f0e0064;
+        public static final int worlds_not_register=0x7f0e0067;
+        public static final int worlds_row_name=0x7f0e0066;
     }
     public static final class style {
         public static final int ActionBar_Solid_Katbag=0x7f0d00eb;

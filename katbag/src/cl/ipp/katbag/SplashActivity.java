@@ -7,6 +7,8 @@
 
 package cl.ipp.katbag;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,5 +32,21 @@ public class SplashActivity extends Activity {
 			}
 
 		}, TIME_SPLASH);
+	}
+	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		
+		EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+	}
+	
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		EasyTracker.getInstance(this).activityStop(this);  // Add this method.
 	}
 }

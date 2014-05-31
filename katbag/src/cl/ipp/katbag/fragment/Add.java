@@ -26,10 +26,16 @@ import cl.ipp.katbag.MainActivity;
 import cl.ipp.katbag.R;
 import cl.ipp.katbag.core.KatbagUtilities;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class Add extends Fragment implements OnClickListener {
 
+	private Tracker tracker;
+	
 	static View v = null;
 	public String type_app;
 	public EditText name_app;
@@ -44,6 +50,14 @@ public class Add extends Fragment implements OnClickListener {
 	public ProgressBar progress;
 	public int score_id_and_name = 0, score = 0;
 	public static final int SCORE_FOR_HAVE_ID_AND_NAME = 20;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -219,5 +233,8 @@ public class Add extends Fragment implements OnClickListener {
 			mainActivity.slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );		
 	}
 }

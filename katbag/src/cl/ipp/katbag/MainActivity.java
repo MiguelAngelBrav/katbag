@@ -32,6 +32,7 @@ import cl.ipp.katbag.fragment.SelectType;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.google.analytics.tracking.android.EasyTracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnOpenListener;
 
@@ -227,5 +228,21 @@ public class MainActivity extends RootActivity {
 	@Override
 	public void onUserLeaveHint() {
 		inBackground = true;
+	}
+	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		
+		EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+	}
+	
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		EasyTracker.getInstance(this).activityStop(this);  // Add this method.
 	}
 }

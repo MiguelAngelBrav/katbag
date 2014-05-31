@@ -29,8 +29,15 @@ import cl.ipp.katbag.core.KatbagDrawing;
 import cl.ipp.katbag.core.KatbagDrawingBuilder;
 import cl.ipp.katbag.core.KatbagEditText;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
+
 public class SlidePageBookFragment extends Fragment {
 
+	private Tracker tracker;
+	
 	public ViewGroup v;
 	public static MainActivity mainActivity;
 	public static final String ID_APP = "id_app";
@@ -77,6 +84,8 @@ public class SlidePageBookFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		id_app = getArguments().getLong(ID_APP);
 		mPageNumber = getArguments().getInt(PAGE_NUMBER);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
 	}
 
 	@Override
@@ -269,6 +278,15 @@ public class SlidePageBookFragment extends Fragment {
 		BitmapDrawable background = new BitmapDrawable(mainActivity.context.getResources(), bitmap);
 
 		backgroundView.setBackgroundDrawable(background);
+	}
+	
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 
 	@Override

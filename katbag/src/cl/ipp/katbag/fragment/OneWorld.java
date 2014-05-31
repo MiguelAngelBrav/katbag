@@ -47,11 +47,17 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.larswerkman.holocolorpicker.ColorPicker;
 import com.larswerkman.holocolorpicker.SVBar;
 
 public class OneWorld extends SherlockFragment {
+	
+	private Tracker tracker;
 
 	static LinearLayout v = null;
 	public MainActivity mainActivity;
@@ -87,6 +93,8 @@ public class OneWorld extends SherlockFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
 	}
 
 	@Override
@@ -413,6 +421,9 @@ public class OneWorld extends SherlockFragment {
 			mainActivity.slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
 
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 
 	@Override

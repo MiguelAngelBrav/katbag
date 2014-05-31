@@ -24,10 +24,16 @@ import cl.ipp.katbag.R;
 import cl.ipp.katbag.row_adapters.BoardRowAdapter;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.mobeta.android.dslv.DragSortListView;
 
 public class Board extends SherlockFragment {
+	
+	private Tracker tracker;
 
 	static View v = null;
 	public DragSortListView boardListView;
@@ -36,6 +42,14 @@ public class Board extends SherlockFragment {
 	public BoardRowAdapter adapter;
 	public Fragment mFragment;
 	public List<String> idList = new ArrayList<String>();
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		this.tracker = EasyTracker.getInstance(this.getActivity());
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -101,5 +115,8 @@ public class Board extends SherlockFragment {
 			mainActivity.slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 
 		super.onResume();
+		
+		this.tracker.set(Fields.SCREEN_NAME, getClass().getSimpleName());
+        this.tracker.send( MapBuilder.createAppView().build() );
 	}
 }
