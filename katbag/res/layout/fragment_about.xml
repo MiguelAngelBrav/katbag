@@ -14,20 +14,20 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|right"
             android:layout_marginLeft="40dp"
             android:layout_weight="50"
             android:contentDescription="@string/image_description"
-            android:src="@drawable/katbag_about_logo" />
+            android:gravity="center_vertical|right"
+            android:src="@drawable/katbag_about_01" />
 
-        <ImageView  
+        <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|left"
             android:layout_marginRight="40dp"
             android:layout_weight="50"
             android:contentDescription="@string/image_description"
-            android:src="@drawable/katbag_about_develop" />
+            android:gravity="center_vertical|left"
+            android:src="@drawable/katbag_about_02" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,26 +48,18 @@
             android:textColor="@color/generic_item_title"
             android:textSize="14sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/image_description"
-            android:src="@drawable/katbag_about_creative_commons" />
-
         <TextView
-            android:id="@+id/about_text"
+            android:id="@+id/licence_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="8dp"
             android:gravity="center_horizontal"
-            android:text="@string/about_cc_text"
+            android:text="@string/licence_text"
             android:textColor="@color/generic_item_title"
-            android:textSize="11sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
 </LinearLayout>

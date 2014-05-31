@@ -221,12 +221,14 @@
     <string name="one_comics_page_dialog_remove_drawer_button_no">No</string>
 
     <!-- about -->
-    <string name="about_version">Acerca de Katbag: ver</string>
+    <string name="about_version">Acerca de Katbag: Ver</string>
     <string name="about_text">Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, 
-        construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. \n\n
+        construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. \n
         Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y 
         desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)</string>
-    <string name="about_cc_text">Atribución-NoComercial-CompartirIgual 4.0 Internacional</string>
+    <string name="licence_text">Katbag se distribuye como software libre \n bajo la licencia Apache 2.0 \n
+        Para obtener una copia de la licencia dirijase a : \n
+      http://www.apache.org/licenses/LICENSE-2.0</string>
 
     <!-- player -->
     <string name="player_title_editmode">(Edición)</string>
