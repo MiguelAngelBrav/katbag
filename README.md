@@ -3,7 +3,7 @@
 ## ¿Que es Katbag?
 Katbag es un proyecto de código abierto desarrollado para que estudiantes de 8 años o más, construyan sus propios juegos, libros interactivos y comics, usando su creatividad y pensamiento lógico. 
 
-Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y desarrollado por Miguel Angel Bravo (en twitter @MiguelAngelBrav)
+Katbag fue impulsado y financiado por el Instituto Profesional de Providencia (IPP), y fue diseñado y desarrollado por Miguel Angel Bravo (en twitter [@MiguelAngelBrav](http://twitter.com/miguelangelbrav))
 
 ![Katbag](/../master/katbag/res/drawable-xhdpi/katbag_about_01.png?raw=true)   ![Katbag](/../master/katbag/res/drawable-xhdpi/katbag_about_02.png?raw=true)
 
