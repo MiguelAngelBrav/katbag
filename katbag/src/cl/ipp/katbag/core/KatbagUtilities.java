@@ -1,8 +1,7 @@
 /*
  * Author: Miguel Angel Bravo (@MiguelAngelBrav)
- *  
- * Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
- * Licensed under the Apache 2.0 License.
+ * The Android Open Source Project Katbag is licensed under the General GPLv3.
+ * 
  */
 
 package cl.ipp.katbag.core;
