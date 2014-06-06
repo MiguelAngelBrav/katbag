@@ -26,18 +26,14 @@ En Katbag también se pueden crear libros interactivos y comics a través de la 
 5. Agrega un sonido de fondo
 
 ## Licencia
-Copyright (C) 2014 The Android Open Source Project Katbag of IPP and Miguel Angel Bravo
+Katbag fue impulsado por la Dirección de Asuntos Estudiantiles DAE, Instituto Profesional Providencia (IPP), 
+mediante el financiamiento público del Fondo de Innovación Académica FIAC 1101, dependiente de la División de Educación Superior, Ministerio de Educación. "Lo construido con fondos pœblicos, debe ser público"
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-	
-     http://www.apache.org/licenses/LICENSE-2.0
+Katbag ha sido diseñado y desarrollado por Miguel Ángel Bravo (En Twitter ![@MiguelAngelBrav](http://twitter.com/MiguelAngelBrav/))
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Katbag está licenciado como software libre bajo la Licencia Pública General GPLv3.  
+Katbag es libre, por ende, cópialo, compártelo, modifícalo, mejóralo!!
+Para obtener una copia de esta licencia dirigirse a:
 
+![http://gplv3.fsf.org/](http://gplv3.fsf.org/)
 
