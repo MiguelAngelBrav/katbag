@@ -29,11 +29,11 @@ En Katbag también se pueden crear libros interactivos y comics a través de la 
 Katbag fue impulsado por la Dirección de Asuntos Estudiantiles DAE, Instituto Profesional Providencia (IPP), 
 mediante el financiamiento público del Fondo de Innovación Académica FIAC 1101, dependiente de la División de Educación Superior, Ministerio de Educación. "Lo construido con fondos pœblicos, debe ser público"
 
-Katbag ha sido diseñado y desarrollado por Miguel Ángel Bravo (En Twitter ![@MiguelAngelBrav](http://twitter.com/MiguelAngelBrav/))
+Katbag ha sido diseñado y desarrollado por Miguel Ángel Bravo (en twitter [@MiguelAngelBrav](http://twitter.com/miguelangelbrav))
 
 Katbag está licenciado como software libre bajo la Licencia Pública General GPLv3.  
 Katbag es libre, por ende, cópialo, compártelo, modifícalo, mejóralo!!
 Para obtener una copia de esta licencia dirigirse a:
 
-![http://gplv3.fsf.org/](http://gplv3.fsf.org/)
+[http://gplv3.fsf.org/](http://gplv3.fsf.org/)
 
